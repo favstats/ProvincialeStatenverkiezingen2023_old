@@ -1,0 +1,1009 @@
+---
+title: "Eerste Kamerverkiezingen 2023"
+subtitle: "How do political campaigns target voters?"
+author: "Fabio Votta - @favstats"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::robobook:
+    highlight: kate
+---
+
+<style>
+    body .main-container {
+        max-width: 1920px !important;
+    }
+</style>
+
+
+```{r setup, include=FALSE}
+## Global options
+knitr::opts_chunk$set(
+    cache = T, 
+    echo = F, 
+    warning = F, 
+    message = F, 
+    cache.lazy = FALSE
+)
+
+
+# pacman::p_load(tidyverse, highcharter)
+library(tidyverse)
+library(highcharter)
+library(gt)
+
+
+
+options(scipen = 999)
+
+# source("helpers.R")
+
+# pro_reps <- us_advertisers %>% 
+#   filter(left_vs_right == "All Republican-supporting pages")
+
+# source("utils.R")
+```
+
+```{r}
+
+# lab_dat <- readRDS("data/lab_dat.rds")
+
+
+
+election_dat30 <- readRDS("data/election_dat30.rds") %>% 
+    rename(internal_id = page_id)
+
+election_dat7 <- readRDS("data/election_dat7.rds") %>% 
+    rename(internal_id = page_id)
+#     count(coalition)
+
+last7days_string <- "18th February - 24 February 2023"
+last30days_string <- "26th January - 24 February 2023"
+
+# January 26 to Febrary 24
+source("utils.R")
+```
+
+```{r}
+# election_dat30 %>%
+# count(party,sort = T)
+
+
+```
+
+
+## Methodology
+
+We monitored over 800 Dutch political advertisers during the 2023 Erste Kamerverkiezingen to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
+
+To better understand the regional election, we kept only advertisers who:
+
+1. Advertised in the last 7 days (`r last7days_string`)
+2. Advertised in the last 30 days (`r last30days_string`)
+
+
+
+> Note: Meta only provides 7, 30 and 90 days windows for the targeting data in their Ad Library. Meta's data also lags by a few days. We will update this report as soon as new data is available.
+
+## Topline Statistics  {.tabset .tabset-fade .tabset-pills}
+
+### `r last30days_string` (Last 30 days)
+
+```{r}
+# runoff %>% count(ds)
+```
+
+
+```{r}
+
+get_table_dat <- function(x, var) {
+    
+    
+
+x %>% 
+        distinct(internal_id, .keep_all = T) %>% 
+    group_by({{ var }}) %>% 
+    summarize(total_num_ads = n()) %>% 
+    drop_na() %>% 
+    mutate(total_num_ads = scales::comma(total_num_ads)) %>%
+    pivot_wider(names_from = {{ var }}, values_from = total_num_ads) %>% 
+    mutate(`Coalizione/Partito` = "Number of Advertisers") %>% 
+    bind_rows(x %>% 
+        distinct(internal_id, .keep_all = T) %>% 
+        group_by({{ var }}) %>% 
+        arrange(desc(total_spend_formatted)) %>% 
+        slice(1:3) %>% 
+        mutate(total_spend_formatted = scales::comma(total_spend_formatted)) %>%
+        mutate(n_words = str_count(page_name, " ")) %>% 
+        # mutate(lab = paste0(word(str_remove(page_name, "-"), 1,ifelse(n_words>=2, 3, 2), sep=" "), "<br>(€", total_spend_formatted, ")")) %>% 
+        mutate(lab = paste0(page_name, " (€", total_spend_formatted, ")")) %>%
+        select({{ var }}, lab) %>% 
+        drop_na() %>% 
+        summarize(lab = paste0("<br>", 1:n(), ". ", lab, collapse = "")) %>% 
+        pivot_wider(names_from = {{ var }}, values_from = lab) %>% 
+        mutate(`Coalizione/Partito` = "Top Spenders"))  %>% 
+    bind_rows(
+        x %>% 
+            distinct(internal_id, .keep_all = T) %>% 
+            group_by({{ var }}) %>% 
+            summarize(total_num_ads = sum(total_num_ads)) %>% 
+            drop_na() %>% 
+            mutate(total_num_ads = scales::comma(total_num_ads)) %>% 
+            pivot_wider(names_from = {{ var }}, values_from = total_num_ads) %>% 
+            mutate(`Coalizione/Partito` = "Number of Ads")) %>% 
+    bind_rows(
+        x %>% 
+            distinct(internal_id, .keep_all = T) %>% 
+            group_by({{ var }}) %>% 
+            summarize(total_spend_formatted = sum(total_spend_formatted)) %>% 
+            mutate(total_spend_formatted = scales::comma(total_spend_formatted)) %>% 
+        mutate(total_spend_formatted = paste0("€", total_spend_formatted)) %>% 
+            drop_na() %>% 
+            pivot_wider(names_from = {{ var }}, values_from = total_spend_formatted) %>% 
+            mutate(`Coalizione/Partito` = "Total Spend") ) %>% 
+    t() %>% 
+    as.data.frame() %>% 
+    rownames_to_column("Coalizione/Partito") %>% 
+    set_names(.[nrow(.),] %>% as.character()) %>% 
+    slice(1:(n()-1)) 
+    
+}
+
+# debugonce(get_table_dat)
+get_table_dat(election_dat30, party) %>% 
+  arrange(desc(parse_number(`Total Spend`))) %>% 
+  gt(
+    rowname_col = "Coalizione/Partito"
+    # groupname_col = "group"
+  ) %>% 
+  fmt_markdown(columns = everything())  %>% 
+  cols_align(
+    align = "center"
+  ) %>% 
+  gtExtras::gt_theme_538() #%>% 
+  # tab_options(table.width = pct(100))  #%>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#ef3e3e",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Coalizione di centro-sinistra"
+  #   )) %>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#0a6be1",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Coalizione di centro-destra"
+  #   ))%>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#0039aa",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Terzo Polo"
+  #   ))%>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("bottom"),
+  #     color = "lightgrey",
+  #     weight = px(0.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = everything(),
+  #     rows = everything()
+  #   ))
+  # 
+
+
+
+```
+
+
+
+
+### `r last7days_string` (Last 7 days)
+
+
+```{r}
+
+get_table_dat(election_dat7, party) %>% 
+  arrange(desc(parse_number(`Total Spend`))) %>% 
+  gt(
+    rowname_col = "Coalizione/Partito"
+    # groupname_col = "group"
+  ) %>% 
+  fmt_markdown(columns = everything())  %>% 
+  cols_align(
+    align = "center"
+  ) %>% 
+  gtExtras::gt_theme_538() %>% 
+  tab_options(table.width = pct(100)) #  %>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#ef3e3e",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Coalizione di centro-sinistra"
+  #   )) %>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#0a6be1",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Coalizione di centro-destra"
+  #   ))%>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("left"),
+  #     color = "#0039aa",
+  #     weight = px(18.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = `Numero di inserzionisti`,
+  #     rows = "Terzo Polo"
+  #   ))%>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("bottom"),
+  #     color = "lightgrey",
+  #     weight = px(0.5),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = everything(),
+  #     rows = everything()
+  #   ))
+```
+
+
+
+
+## Spending per Targeting Criteria {.tabset .tabset-fade .tabset-pills}
+
+How much did campaigns spend on different targeting methods?
+
+### `r last30days_string` (Last 30 days)
+
+
+
+```{r, fig.width=14, fig.height=9, dpi=300}
+
+
+col_each30 <- election_dat30 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(main_currency == "EUR") %>% 
+    group_split(party) %>% 
+    map_dfr(~{
+        calc_targeting(.x) %>% 
+            mutate(#coalition = .x$coalition[1],
+                   party = .x$party[1])
+    })
+
+
+# calc_targeting()
+
+# 
+# spend_on_each_lombardy30 %>% 
+#     ggplot(aes(target, perc)) +
+#     geom_col(aes(fill = coalition)) +
+#     coord_flip() +
+#     facet_wrap(~coalition) +
+#     theme(legend.position = "none")
+
+plot_geography <- function(x) {
+    
+gg <- x %>% 
+  filter(perc >= 0.1) %>%
+  add_count(target) %>% 
+  # filter(n == 3) %>% 
+  mutate(target = case_when(
+    target == "custom_audience" ~ "Custom Audiences",
+    target == "countries" ~ "GEOGRAPHY: Netherlands",
+    target == "regions" ~ "GEOGRAPHY: Regions",
+    target == "lookalike_audience" ~ "Lookalike Audiences",
+    target == "interest" ~ "Interests",
+    target == "age" ~ "Age",
+    target == "zips" ~ "GEOGRAPHY: Postal Code",
+    target == "CITY" ~ "GEOGRAPHY: City",
+    target == "language" ~ "Language",
+    target == "gender" ~ "Gender",
+    target == "COMUNE" ~ "GEOGRAPHY: Municipality",
+    target == "electoral_districts" ~ "GEOGRAPHY: Electoral Districts",
+    target == "COUNTY" ~ "GEOGRAPHY: Counties",
+    str_detect(target, "NEIGHBOR") ~ "GEOGRAPHY: Neighborhood",
+    T ~ target
+  )) %>% 
+    filter(target != "Unknown") %>% 
+    arrange(desc(perc))  #%>% 
+    # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+    #                               "Terzo Polo",
+    #                               "Coalizione di centro-destra")))
+
+the_order <- gg %>% 
+    complete(party, target, fill = list(perc= 0)) %>% 
+    # filter(coalition == "Coalizione di centro-sinistra")  %>% 
+    mutate(target = fct_reorder(target, perc, .desc = F)) %>% 
+    pull(target) %>% levels
+
+gg %>% 
+    mutate(target = fct_relevel(target, the_order)) %>% 
+    ggplot(aes(target, perc)) +
+    geom_col(aes(fill = party)) +
+    coord_flip() +
+    facet_wrap(~party, scales = "free") +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1"))   +
+  geom_text(size = 2.5,
+             aes(y = perc + 9, label = paste0(round(perc, 1), "%"), group = party),
+             position = position_dodge(width = 0.9)) +
+  theme(legend.position = "none", text=element_text(family="mono", face = "bold")) +
+  labs(x = "", y = "\nBudget spent on targeting method (% of Total spend)", caption = "Source: Meta Ad Library. Data Viz: Fabio Votta (@favstats).") +
+    ylim(0, 100)
+
+}
+
+plot_geography(col_each30)
+
+```
+
+
+
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width=14, fig.height=9, dpi=300}
+
+col_each7 <- election_dat7 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(main_currency == "EUR") %>% 
+    group_split(party) %>% 
+    map_dfr(~{
+        calc_targeting(.x) %>% 
+            mutate(#coalition = .x$coalition[1],
+                   party = .x$party[1])
+    })
+
+
+plot_geography(col_each7)
+
+```
+
+## Top Contested Audiences {.tabset .tabset-fade .tabset-pills}
+
+Here, we show the *top most contested audiences*, i.e. where all parties have spent considerable amounts of money competing to reach voters with the same interests. Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width  = 10, fig.height=15}
+# election_dat30 %>% 
+#     count(party, sort = T) %>% 
+#     pull(party) %>% 
+#     dput()
+
+
+
+
+
+
+
+# get_contested_graph <- function(ppp, col_string, col_colors) {
+
+
+
+
+get_contested_graph <- function(ppp) {
+    
+    
+interest_targeting <-  ppp %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(type == "detailed") %>%
+    # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = total_spend * total_spend_pct) %>%
+    filter(main_currency == "EUR")  %>%
+    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
+    # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
+    # drop_na(left_vs_right) %>%
+    mutate(value = paste0(detailed_type,": ", value)) %>% 
+    group_by(party, value, is_exclusion, detailed_type) %>%
+    summarise(total_spend = sum(total_spend)) %>%
+    ungroup() %>%
+    arrange(desc(total_spend)) 
+
+contested_dat <- interest_targeting %>% 
+  filter(!is_exclusion) %>% 
+  # filter(total_spend >= 40000) %>% 
+  filter(total_spend >= 1) %>%
+  add_count(value) %>% 
+  filter(n >= 2) %>% 
+  group_by(value) %>% 
+  mutate(total_spenderino = sum(total_spend)) %>% 
+  mutate(perc = total_spend/total_spenderino) %>%
+  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
+  mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
+
+
+the_order <- contested_dat %>% 
+  filter(party == "VVD") %>%   arrange(desc(perc)) %>% 
+  pull(value) %>% 
+  unique()
+
+lab_dat <- contested_dat %>% 
+  # distinct(value, .keep_all = T) %>% 
+  filter(party == "VVD") %>% 
+  mutate(labb = paste0("€", scales::comma(round(total_spenderino)))) %>% 
+  select(party, value, labb)
+
+
+
+contested_dat %>% #count(party) %>% pull(party) %>% unique() %>% dput()
+  # mutate(the_order = )
+  left_join(lab_dat) %>% 
+  mutate(value = factor(value, the_order)) %>% 
+    drop_na(value) %>% 
+  # mutate(party = factor(party, col_string)) %>%
+  # filter()
+  ggplot(aes(value, perc)) +
+  geom_col(aes(fill = party), position = position_stack(), alpha = 0.8) +
+  coord_flip() +
+  geom_label(aes(label = labb),y=1.225,
+            position = position_stack(vjust = 0.5),
+            hjust = 1, label.size = NA,
+            size = 4) + expand_limits(y = 1.2) +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  scale_y_continuous(labels = scales::percent, breaks = c(0, 0.25, 0.5, 0.75, 1)) +
+  # scale_fill_manual("Page Groups", values = c("#ff2700", "#008fd5")) +
+  ggthemes::theme_hc() +
+  labs(x = "Targeting criteria", y = "% of budget spent on targeting method", #title = "Contested targeted interests (US midterms 2022)", subtitle = " ", 
+       caption = "Source: Meta Ad Library and data compiled by Who Targets Me. Data Viz: Fabio Votta (@favstats).") +
+  theme(legend.position = "bottom", plot.title = element_text(size = 28, face = "bold", hjust = 1.25), text=element_text(family="mono", face = "bold"), plot.caption = element_text(hjust = -1.7)) +
+  guides(fill=guide_legend(nrow=2,byrow=TRUE)) 
+    
+}
+
+
+# c("Terzo Polo", "Coalizione di centro-destra", "Coalizione di centro-sinistra", 
+# "Unione Popolare")
+
+```
+
+
+```{r, fig.width  = 10, fig.height=15}
+# GroenLinks	3235		
+# VVD	972		
+# PvdA	706		
+# CDA	604		
+# SP	388		
+# PvdD	352		
+# PVV	243		
+# D66	214		
+# FvD	177		
+# Ja21	149	
+main_parties <- c("VVD", "FvD", "GroenLinks", "PvdA", "CDA", "SP", "PVV", "D66", "PvdD", "Ja21")
+# debugonce(get_contested_graph)
+election_dat30 %>% 
+    filter(party %in% main_parties) %>% 
+    get_contested_graph()
+
+
+interest_targeting <-  election_dat30 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(type == "detailed") %>%
+    # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = total_spend * total_spend_pct) %>%
+    filter(main_currency == "EUR")  %>%
+    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
+    # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
+    # drop_na(left_vs_right) %>%
+    mutate(value = paste0(detailed_type,": ", value)) %>% 
+    group_by(party, value, is_exclusion, detailed_type) %>%
+    summarise(total_spend = sum(total_spend)) %>%
+    ungroup() %>%
+    arrange(desc(total_spend)) 
+
+# election_dat30 %>% 
+#     filter(!is_exclusion) %>% 
+#     group_by(party)
+#     ggplot(aes())
+    
+contested_dat <- interest_targeting %>% 
+  filter(!is_exclusion) %>% 
+  # filter(total_spend >= 40000) %>% 
+  filter(total_spend >= 1) %>%
+  # add_count(value) %>% 
+  # filter(n >= 5) %>% 
+  group_by(value) %>% 
+  mutate(total_spenderino = sum(total_spend)) %>% 
+  mutate(perc = total_spend/total_spenderino) %>%
+  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
+  mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
+
+contested_dat %>% 
+    group_by(party) %>%
+    arrange(desc(perc)) %>% 
+    slice(1:10) %>% 
+    ggplot(aes(value, total_spend)) +
+    geom_col() +
+    facet_wrap(~party, scales = "free")+
+    coord_flip() 
+```
+
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width  = 10, fig.height=15}
+
+election_dat7 %>% 
+    filter(party %in% main_parties) %>% 
+    get_contested_graph()
+```
+
+## Age Targeting {.tabset .tabset-fade .tabset-pills}
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width= 10, fig.height=7, dpi = 300}
+get_targ_perc <- function(x, var) {
+    
+x <<- x
+total_sppppeen <- x %>% 
+# filter(coalition == "Coalizione di centro-destra") %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  distinct(internal_id, .keep_all = T)  %>%
+  # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  select(internal_id, total_spend) %>% 
+  arrange(desc(total_spend)) %>% 
+  summarize(total_budget = sum(total_spend)) %>% 
+  ungroup()
+
+
+x %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  # filter(coalition == "Coalizione di centro-destra") %>%  
+  filter(type == var) %>%   
+  # filter(total_spend_pct != 0) %>% 
+  # group_by(internal_id) %>%
+  # mutate(n_ages = n()) %>% #count(n_ages, sort = T)
+  # ungroup()%>% 
+  mutate(spend_per = total_spend * total_spend_pct) %>% 
+  group_by(value) %>% 
+  summarize(spend_per = sum(spend_per)) %>% 
+  bind_cols(total_sppppeen) %>% 
+  mutate(perc = spend_per/total_budget) %>% 
+            mutate(coalition = x$coalition[1],
+                   party = x$party[1],
+                   election = x$election[1])
+    
+}
+
+
+age_targeting <- election_dat30 %>% 
+    group_split(party) %>% 
+    map_dfr(get_targ_perc, "age")
+    
+# age_targeting %>% 
+#      mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+#                                   "Terzo Polo",
+#                                   "Coalizione di centro-destra"))) %>% 
+#     filter(!(value %in% 13:17)) %>% 
+#     ggplot(aes(value, perc, fill = coalition)) +
+#     geom_col() +
+#     facet_wrap(~coalition) +
+#     ggthemes::theme_hc() +
+#     scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+#     theme(legend.position = "none") +
+#     scale_y_continuous(labels = scales::percent) +
+#     scale_x_discrete(breaks = c("18", "24",
+#                                 "34", "44",
+#                                 "54", "65+")) +
+#     labs(y = "% Budget Spend on Age")
+
+
+# lombardy30 %>% 
+#     group_split(coalition, election) %>% 
+#     map_dfr(get_targ_perc, "age")
+    
+age_targeting %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    filter(!(value %in% 13:17)) %>% 
+    mutate(age_groups = case_when(
+        value %in% 18:24 ~ "18-24",
+        value %in% 25:34 ~ "25-34",
+        value %in% 35:44 ~ "35-44",
+        value %in% 45:54 ~ "45-54",
+        value %in% 55:64 ~ "55-64",
+        T ~ value
+    )) %>% 
+    group_by(age_groups, party) %>%
+    summarize(spend_per = mean(spend_per),
+              total_budget = unique(total_budget))  %>% 
+  mutate(perc = spend_per/total_budget)  %>% 
+    mutate(age_groups = factor(age_groups,
+                               c("18-24",
+                                 "25-34",
+                                 "35-44",
+                                 "45-54",
+                                 "55-64", "65+") %>% rev)) %>% 
+    ggplot(aes(age_groups, perc, fill = party)) +
+    geom_col(width = 0.5) +
+    facet_wrap(~party) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Age Group") +
+    coord_flip() +
+    labs(x = "Age Groups\n")  +
+  geom_text(size = 3.5, color = "white",
+             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%")))
+    
+```
+
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width= 10, fig.height=7, dpi = 300}
+
+
+age_targeting7 <- election_dat7 %>% 
+    group_split(party) %>% 
+    map_dfr(get_targ_perc, "age")
+    
+age_targeting7 %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    filter(!(value %in% 13:17)) %>% 
+    mutate(age_groups = case_when(
+        value %in% 18:24 ~ "18-24",
+        value %in% 25:34 ~ "25-34",
+        value %in% 35:44 ~ "35-44",
+        value %in% 45:54 ~ "45-54",
+        value %in% 55:64 ~ "55-64",
+        T ~ value
+    )) %>% 
+    group_by(age_groups, party) %>%
+    summarize(spend_per = mean(spend_per),
+              total_budget = unique(total_budget))  %>% 
+  mutate(perc = spend_per/total_budget)  %>% 
+    mutate(age_groups = factor(age_groups,
+                               c("18-24",
+                                 "25-34",
+                                 "35-44",
+                                 "45-54",
+                                 "55-64", "65+") %>% rev)) %>% 
+    ggplot(aes(age_groups, perc, fill = party)) +
+    geom_col(width = 0.5) +
+    facet_wrap(~party) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Age Group") +
+    coord_flip() +
+    labs(x = "Age Groups\n")  +
+  geom_text(size = 3.5, color = "white",
+             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%")))
+    
+```
+
+
+## Gender Targeting {.tabset .tabset-fade .tabset-pills}
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width= 8, fig.height=5, dpi = 300}
+
+
+gender_targeting <- election_dat30 %>% 
+group_split(party) %>% 
+map_dfr(get_targ_perc, "gender")
+
+gender_targeting %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    filter(!(value %in% "All")) %>% 
+    ggplot(aes(value, perc)) +
+    geom_col(width = 0.5, aes(fill = party)) +
+    facet_wrap(~party) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Age Group") +
+    coord_flip() +
+    labs(x = "Age Groups\n")  +
+  geom_label(size = 3.5, color = "black",
+             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+    
+```
+
+### `r last7days_string` (Last 7 days)
+
+```{r}
+
+gender_targeting <- election_dat7 %>% 
+group_split(party) %>% 
+map_dfr(get_targ_perc, "gender")
+
+gender_targeting %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+                                  # "Terzo Polo",
+                                  # "Coalizione di centro-destra"))) %>% 
+    filter(!(value %in% "All")) %>% 
+    ggplot(aes(value, perc)) +
+    geom_col(width = 0.5, aes(fill = party)) +
+    facet_wrap(~party) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Age Group") +
+    coord_flip() +
+    labs(x = "Age Groups\n")  +
+  geom_label(size = 3.5, color = "black", vjust="inward",hjust="inward",
+             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+    
+```
+
+
+## Education Targeting
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width= 8, fig.height=5, dpi = 300}
+
+
+calc_edu_perc <- function(x) {
+    
+total_sppppeen <- x %>% 
+# filter(coalition == "Coalizione di centro-destra") %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  distinct(internal_id, .keep_all = T)  %>%
+  # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  select(internal_id, total_spend) %>% 
+  arrange(desc(total_spend)) %>% 
+  summarize(total_budget = sum(total_spend)) %>% 
+  ungroup()
+
+x %>% 
+    filter(type == "detailed") %>%
+    filter(detailed_type == "DEMOGRAPHICS") %>% 
+    # count(value, sort = T) %>% 
+    filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree")) %>% 
+    filter(str_detect(value, "Wine", negate = T)) %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  # filter(coalition == "Coalizione di centro-destra") %>%  
+  # filter(total_spend_pct != 0) %>% 
+  # group_by(internal_id) %>%
+  # mutate(n_ages = n()) %>% #count(n_ages, sort = T)
+  # ungroup()%>% 
+  mutate(spend_per = total_spend * total_spend_pct) %>% 
+  group_by(value) %>% 
+  summarize(spend_per = sum(spend_per)) %>% 
+  bind_cols(total_sppppeen) %>% 
+  mutate(perc = spend_per/total_budget) %>% 
+            mutate(coalition = x$coalition[1],
+                   party = x$party[1],
+                   election = x$election[1])
+}
+
+election_dat30 %>% 
+    group_split(party) %>% 
+    map_dfr(calc_edu_perc) %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+                                  # "Terzo Polo",
+                                  # "Coalizione di centro-destra"))) %>% 
+    mutate(value = fct_reorder(value, perc)) %>% 
+    ggplot(aes(value, perc, fill = party)) +
+    geom_col(alpha = 0.8) +
+    facet_wrap(~party) +
+    coord_flip() +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Education") +
+    labs(x = "Education\n")   +
+  geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
+             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+    
+
+
+    
+```
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width= 8, fig.height=5, dpi = 300}
+
+election_dat7 %>% 
+    group_split(party) %>% 
+    map_dfr(calc_edu_perc) %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    mutate(value = fct_reorder(value, perc)) %>% 
+    ggplot(aes(value, perc, fill = party)) +
+    geom_col(alpha = 0.8) +
+    facet_wrap(~party) +
+    coord_flip() +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Education") +
+    labs(x = "Education\n")   +
+  geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
+             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+    
+
+
+```
+
+
+## Job Targeting
+
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width= 11, fig.height=8, dpi = 300}
+
+
+calc_jobs_perc <- function(x) {
+    
+total_sppppeen <- x %>% 
+# filter(coalition == "Coalizione di centro-destra") %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  distinct(internal_id, .keep_all = T)  %>%
+  # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  select(internal_id, total_spend) %>% 
+  arrange(desc(total_spend)) %>% 
+  summarize(total_budget = sum(total_spend)) %>% 
+  ungroup()
+
+x %>% 
+    filter(type == "detailed") %>%
+    filter(detailed_type == "DEMOGRAPHICS") %>% 
+    # count(value, sort = T) %>% 
+    filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree", negate = T)) %>% 
+  mutate(total_spend = total_spend_formatted) %>%
+  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  # filter(coalition == "Coalizione di centro-destra") %>%  
+  # filter(total_spend_pct != 0) %>% 
+  # group_by(internal_id) %>%
+  # mutate(n_ages = n()) %>% #count(n_ages, sort = T)
+  # ungroup()%>% 
+  mutate(spend_per = total_spend * total_spend_pct) %>% 
+  group_by(value) %>% 
+  summarize(spend_per = sum(spend_per)) %>% 
+  bind_cols(total_sppppeen) %>% 
+  mutate(perc = spend_per/total_budget) %>% 
+            mutate(coalition = x$coalition[1],
+                   party = x$party[1],
+                   election = x$election[1])
+}
+
+election_dat30 %>% 
+    group_split(party) %>% 
+    map_dfr(calc_jobs_perc) %>% 
+    filter(perc >= 0.015) %>% 
+    filter(str_detect(value, relationshipstuff, negate = T)) %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    mutate(value = fct_reorder(value, perc)) %>% 
+    ggplot(aes(value, perc, fill = party)) +
+    geom_col(alpha = 0.8) +
+    facet_wrap(~party, scales = "free") +
+    coord_flip() +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Jobs") +
+    labs(x = "Job (Sectors)\n")  +
+  geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
+             aes(y = perc, label = paste0(round(perc*100, 1), "%")))  +
+    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22))
+    
+
+
+    
+```
+
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width=14, fig.height=9, dpi=300}
+
+
+election_dat7 %>% 
+    group_split(party) %>% 
+    map_dfr(calc_jobs_perc) %>% 
+    filter(perc >= 0.015) %>% 
+    filter(str_detect(value, relationshipstuff, negate = T)) %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    mutate(value = fct_reorder(value, perc)) %>% 
+    ggplot(aes(value, perc, fill = party)) +
+    geom_col(alpha = 0.8) +
+    facet_wrap(~party, scales = "free") +
+    coord_flip() +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) +
+    theme(legend.position = "none",
+          panel.spacing=unit(1,"lines")) +
+    scale_y_continuous(labels = scales::percent) +
+    # scale_x_discrete(breaks = c("18", "24",
+    #                             "34", "44",
+    #                             "54", "65+")) +
+    labs(y = "% Budget Spend on Jobs") +
+    labs(x = "Job (Sectors)\n")  +
+  geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
+             aes(y = perc, label = paste0(round(perc*100, 1), "%")))  +
+    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22))
+    
+
+
+```
