@@ -116,7 +116,6 @@ To better understand the regional election, we kept only advertisers who:
 
 get_table_dat <- function(x, var) {
     
-    
 
 x %>% 
         distinct(internal_id, .keep_all = T) %>% 
