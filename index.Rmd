@@ -1,5 +1,5 @@
 ---
-title: "Eerste Kamerverkiezingen 2023"
+title: "Provinciale Statenverkiezingen 2023"
 subtitle: "How do political campaigns target voters?"
 author: "Fabio Votta - @favstats"
 date: "`r Sys.Date()`"
@@ -92,7 +92,7 @@ scale_color_parties <- function(...){
 
 ## Methodology
 
-In collaboration with [Who Targets Me](https://whotargets.me/), we monitored over 900 Dutch political advertisers during the 2023 Erste Kamerverkiezingen to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
+In collaboration with [Who Targets Me](https://whotargets.me/), we monitored over 900 Dutch political advertisers during the 2023 Provinciale Statenverkiezingen (Senate elections) to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
 
 To better understand the regional election, we kept only advertisers who:
 
