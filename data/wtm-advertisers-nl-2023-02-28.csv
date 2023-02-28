@@ -1,0 +1,520 @@
+id,name,created_at,advertisers_entities.id,entities.short_name,entities.is_active,entities.is_political,countries.name,countries.alpha2,advertisers_platforms.advertiser_platform_ref,advertisers_platforms.advertiser_platform_name,platforms.name
+1003271e-49d1-4e37-b6c0-3f026d955dc1,FVD Amsterdam,2022-08-16T15:25:38.829Z,21f80983-a6ce-43fd-8eba-95aaf4870350,FvD,true,true,Netherlands,nl,1519997944789254,FVD Amsterdam,Facebook
+3dd589ec-7a43-4d9c-b083-e81f48cca47b,JFVD,2022-08-16T15:25:38.821Z,0a47de2c-e31c-4fff-8c7a-c7a09859297f,FvD,true,true,Netherlands,nl,1310158545730624,JFVD,Facebook
+9499faab-2e18-4745-9c1e-206b2c5891ff,FVD Noord-Brabant,2022-08-16T15:25:38.825Z,82997d73-31cb-4a25-bfd8-a538f3aa2ab9,FvD,true,true,Netherlands,nl,306407210253856,FVD Noord-Brabant,Facebook
+ce992b03-79f2-4488-81c8-b15f78c333ed,Thierry Baudet,2022-08-16T15:25:36.543Z,123c0cd3-2d6f-4cfe-ae87-e261a8198081,FvD,true,true,Netherlands,nl,379837259062033,Thierry Baudet,Facebook
+df2ae552-24ea-416d-a886-b68f36b54c99,Forum voor Democratie Noord-Holland -FVD,2022-08-16T15:25:38.817Z,5ffa1465-6588-48af-9aef-fc3893cff57b,FvD,true,true,Netherlands,nl,309140246675079,Forum voor Democratie Noord-Holland -FVD,Facebook
+fcace198-afa6-4b73-a78a-2ee0b919e9ba,Forum voor Democratie Zeeland,2022-08-16T15:25:38.820Z,d6a1e8d1-fca2-4972-a6a0-bf6abe9c46c9,FvD,true,true,Netherlands,nl,1631684917126244,Forum voor Democratie Zeeland,Facebook
+fe11045d-1641-4656-99f6-fe6be6126b5c,Forum voor Democratie - FvD ,2022-08-16T15:25:36.540Z,bc5a5cf3-3f8d-45fe-aa1c-786ee95c4611,FvD,true,true,Netherlands,nl,609816282477420,Forum voor Democratie - FvD ,Facebook
+014154d9-09e8-4366-8741-e5dbddad58f8,GroenLinks Flevoland,2022-08-16T15:25:39.352Z,3e1fc8a1-18a3-49f7-9e41-f809ba31572a,GL,true,true,Netherlands,nl,227891484046459,GroenLinks Flevoland,Facebook
+03be484b-100f-4e5c-aa53-a41a6526de7d,GroenLinks Oosterhout,2022-08-16T15:25:39.307Z,b2f90c7e-f420-4839-beca-c0bff0c469f5,GL,true,true,Netherlands,nl,434409393299952,GroenLinks Oosterhout,Facebook
+063b35aa-3418-42aa-a3a4-4b8af39365db,"DWARS, GroenLinkse Jongeren",2022-08-16T15:25:38.953Z,fd22e49c-e622-491d-bc1b-880c34bdebc3,GL,true,true,Netherlands,nl,610950552253067,"DWARS, GroenLinkse Jongeren",Facebook
+06fd2ca0-b5d0-4b90-8140-c0589b5b834c,GroenLinks Aa en Hunze,2022-08-16T15:25:39.404Z,5bea92d7-9f15-4aac-a0ca-253ace157c85,GL,true,true,Netherlands,nl,1940934655935968,GroenLinks Aa en Hunze,Facebook
+13c87113-31bd-4e55-b2bc-51bbbb0c8238,Judith Sargentini,2022-08-16T15:25:38.884Z,915db2a0-2b43-41ab-aabb-d07a817c30d7,GL,true,true,Netherlands,nl,296489277060163,Judith Sargentini,Facebook
+1511fb1f-4294-4db0-8ad9-0303826c452f,GroenLinks Sittard-Geleen,2022-08-16T15:25:39.002Z,89687995-f43d-4628-ac59-864efea8de2d,GL,true,true,Netherlands,nl,386396184818902,GroenLinks Sittard-Geleen,Facebook
+15793e48-8038-4105-9636-fd05a18e306d,Tineke Strik,2022-08-16T15:25:38.946Z,5466aad4-8c6b-41ca-9b42-15c557d22803,GL,true,true,Netherlands,nl,783842828375820,Tineke Strik,Facebook
+28b99634-8dd3-4c77-a145-19f31c4777b1,GroenLinks Lutty van den Berg,2022-08-16T15:25:39.112Z,37f77ed1-a637-4194-b0b2-5bcf0e74b68c,GL,true,true,Netherlands,nl,873148779417275,GroenLinks Lutty van den Berg,Facebook
+3434221c-6c70-4242-a827-436b3edef3ee,PAL GroenLinks,2022-08-16T15:25:39.352Z,b5de84ca-73bc-4b95-a9aa-fb7acfa4bba2,GL,true,true,Netherlands,nl,387703957918671,PAL GroenLinks,Facebook
+3ac7d9cf-a41c-4f27-b2ac-65abbf717e31,GroenLinks Drenthe,2022-08-16T15:25:39.083Z,35fa95b6-2d84-4a8f-8305-72b21bab8ce1,GL,true,true,Netherlands,nl,573092316220069,GroenLinks Drenthe,Facebook
+40a01228-464c-469e-bd80-551c0d75da85,GroenLinks Leidschendam-Voorburg,2022-08-16T15:25:39.115Z,05067799-311c-4f30-bb5b-3e31663c00c4,GL,true,true,Netherlands,nl,270050976436396,GroenLinks Leidschendam-Voorburg,Facebook
+40eabbdd-4b44-49f9-bab5-42d30c3ca861,GroenLinks Edam-Volendam,2022-08-16T15:25:39.088Z,2ad34c9c-a4e4-44b5-97a8-150951f5f4f7,GL,true,true,Netherlands,nl,174522982750697,GroenLinks Edam-Volendam,Facebook
+4766f83c-6ccc-4e3c-a43e-5c0e1b962876,GroenLinks Limburg,2023-02-24T10:53:52.218Z,3b2f2841-4daa-4020-bb87-37278c77504b,GL,true,true,Netherlands,nl,277830172423745,GroenLinks Limburg,Facebook
+4aca0e2e-92e4-4b9f-8b39-142b62db965d,Groenlinks Baarn,2022-08-16T15:25:39.404Z,1e7bf7dc-8f4d-49e9-b67d-24af3ff77d05,GL,true,true,Netherlands,nl,698044973586589,Groenlinks Baarn,Facebook
+571cbee2-49fd-4c83-b071-c8f9656ab1af,GroenLinks Weststellingwerf,2022-08-16T15:25:39.280Z,0d75bade-9fbf-4554-aaf3-e6ce483fa19d,GL,true,true,Netherlands,nl,995464427271491,GroenLinks Weststellingwerf,Facebook
+5ca52bd6-444c-455e-8ea8-834cfa8cb485,GroenLinks Helmond,2022-08-16T15:25:39.019Z,b37d7ae7-212e-4f48-9178-f55304c4387d,GL,true,true,Netherlands,nl,1411283215766694,GroenLinks Helmond,Facebook
+64e209da-b53e-4ce2-b982-6df16d69c4a9,Kim van Sparrentak,2022-08-16T15:25:38.857Z,b82f921a-36a2-4857-bbef-9913d2fe99b8,GL,true,true,Netherlands,nl,2326697260991619,Kim van Sparrentak,Facebook
+64f78bf7-d401-45f6-bb35-9abf21caac41,GroenLinks Westerkwartier,2022-08-16T15:25:39.280Z,3d3e38cc-82a1-42ef-a250-24645c89c227,GL,true,true,Netherlands,nl,241078299830628,GroenLinks Westerkwartier,Facebook
+65856cec-8d1b-42b3-9ea7-4adb2bd280a6,GroenLinks Berg en Dal,2022-08-16T15:25:39.211Z,065019a9-1f20-4764-ad2b-91937239d8ca,GL,true,true,Netherlands,nl,153189941370381,GroenLinks Berg en Dal,Facebook
+6ba1e5bc-6264-44d7-a989-3406e2b11e36,GroenLinks Nijmegen,2022-08-16T15:25:39.443Z,d16d4273-c809-4f2c-a18e-a8dfe2776d53,GL,true,true,Netherlands,nl,383355255040336,GroenLinks Nijmegen,Facebook
+6eedaf13-ff15-4f92-9a47-66105acfbd3e,Jesse Klaver,2022-08-16T15:25:36.405Z,74878a45-4458-44b0-b12b-846feb00d311,GL,true,true,Netherlands,nl,687496011309020,Jesse Klaver,Facebook
+76772238-9fa3-4743-b3b2-7e66806e174f,GroenLinks Best,2022-08-16T15:25:38.992Z,81102588-8c18-4903-8413-cdb8f567833a,GL,true,true,Netherlands,nl,906928256312779,GroenLinks Best,Facebook
+7ec4322a-06d9-4c17-be1d-31337a5106a3,Groenlinks Schagen,2022-08-16T15:25:39.407Z,379b80d9-d22b-46ff-81f8-605223def97f,GL,true,true,Netherlands,nl,154736434721703,Groenlinks Schagen,Facebook
+850737a0-42ff-41a2-92da-2d885b3d651c,GroenLinks Sint-Michielsgestel,2022-08-16T15:25:39.445Z,689c3d86-5384-468d-a5ac-7294e49cc399,GL,true,true,Netherlands,nl,275546039601538,GroenLinks Sint-Michielsgestel,Facebook
+9894887a-81df-44f3-a51e-7c74535c2e85,GroenLinks,2022-08-16T15:25:36.406Z,ee2aaccc-ce98-4b43-bf92-b39e70d0401e,GL,true,true,Netherlands,nl,175740570505,GroenLinks,Facebook
+a24dd841-9f70-4b7f-b227-8e4d757a7fbe,GroenLinks Midden-Groningen,2022-08-16T15:25:39.497Z,ecbe3029-7f22-4d32-88f9-b551e16fb73d,GL,true,true,Netherlands,nl,1745762299021142,GroenLinks Midden-Groningen,Facebook
+a2ccbb62-7f10-47a0-89fe-9f3a2d15dacc,GroenLinks s-Hertogenbosch,2022-08-16T15:25:39.083Z,79ab30ed-b0b4-455e-9e3e-0d2c6d43c487,GL,true,true,Netherlands,nl,325974597457192,GroenLinks s-Hertogenbosch,Facebook
+a6728400-b306-445d-8234-6c77324655f9,GroenLinks De Fryske Marren,2023-02-07T15:05:59.894Z,ce09ee3c-e5a3-4d27-b6eb-ce9b0eb43cb6,GL,true,true,Netherlands,nl,228860957246908,GroenLinks De Fryske Marren,Facebook
+a6b40280-fba9-4dad-a3be-8aece3b2bc05,GroenLinks Alkmaar,2022-08-16T15:25:38.972Z,ad69f568-4684-4f56-bdd6-d489a46e0d0e,GL,true,true,Netherlands,nl,1414350562183210,GroenLinks Alkmaar,Facebook
+b05e0445-a743-4f1f-a3ee-050aae2f6430,GroenLinks Veldhoven,2022-08-16T15:25:39.154Z,e9cf1d1f-9a91-419b-99c6-3a406e1b6b6a,GL,true,true,Netherlands,nl,888203524868856,GroenLinks Veldhoven,Facebook
+b54563bc-fbf8-438f-b0a0-efc721069cc0,GroenLinks Den Haag,2022-08-16T15:25:38.945Z,581d0f6f-696d-48c2-bbd1-db8a50ee3820,GL,true,true,Netherlands,nl,133610523380150,GroenLinks Den Haag,Facebook
+b821ceae-4954-4b96-bffe-de66b87362b0,GroenLinks Bloemendaal,2022-08-16T15:25:39.404Z,a78d2cf9-cf57-432a-9f10-91970598815c,GL,true,true,Netherlands,nl,939048969472738,GroenLinks Bloemendaal,Facebook
+bb8f32ef-ffde-44d5-815c-ef73f7ca7824,GroenLinks Arnhem,2022-08-16T15:25:39.445Z,8e408121-d33f-4f6f-a0bb-11ea1c0cf0ee,GL,true,true,Netherlands,nl,250437457508,GroenLinks Arnhem,Facebook
+be3a825e-0821-43b1-aada-d63af0d76810,GroenLinks Groningen,2022-08-16T15:25:38.949Z,17e1bdba-0134-4d2d-8574-5c2e860d4c16,GL,true,true,Netherlands,nl,181031342395,GroenLinks Groningen,Facebook
+c89b17fc-307b-4561-a62b-0692a4bc6e3f,GroenLinks Venlo,2022-08-16T15:25:39.404Z,60763bc3-4026-44fb-8f3e-c029bd32bc8b,GL,true,true,Netherlands,nl,428488197166010,GroenLinks Venlo,Facebook
+d0546220-c444-44bb-9e1c-254e393e7565,GroenLinks Overbetuwe,2022-08-16T15:25:39.223Z,d6e67403-b0f4-44cb-96a9-3f04abadb43e,GL,true,true,Netherlands,nl,1166808893329408,GroenLinks Overbetuwe,Facebook
+d217ca43-fc40-4ebe-ad60-c192960e828e,GroenLinks Renkum,2023-02-13T10:53:56.810Z,31140ee9-644d-4fc3-b8c5-bda930df7320,GL,true,true,Netherlands,nl,162865337242691,GroenLinks Renkum,Facebook
+d5a81c70-49da-45bb-bc42-e4a7a70387f8,Groenlinks Kampen,2022-08-16T15:25:39.083Z,f59d8f02-189c-4adc-bab4-ab940ffe0656,GL,true,true,Netherlands,nl,521898577941258,Groenlinks Kampen,Facebook
+d5e607c7-fa1d-4d3d-b96b-ab0b3d336ba2,GroenLinks Leiden,2022-08-16T15:25:39.213Z,565f0958-d918-4e9d-9572-e5ba3d9fa7d1,GL,true,true,Netherlands,nl,334224188495,GroenLinks Leiden,Facebook
+decadc74-158f-4417-ae35-442c1d3e1f62,GroenLinks Veenendaal,2022-08-16T15:25:39.211Z,54a5927f-944c-4c5e-8fb2-fba17bf559c8,GL,true,true,Netherlands,nl,180322962326,GroenLinks Veenendaal,Facebook
+e1e6def4-a9cf-4429-bcbf-514d8f5bd83e,GroenLinks Rotterdam,2022-08-16T15:25:38.945Z,023d9f09-247f-44bf-9a44-6dcf91c4efe0,GL,true,true,Netherlands,nl,116050085145365,GroenLinks Rotterdam,Facebook
+e2b0d8ee-82d9-4e3d-bcf8-36f227c22fc2,Bas Eickhout,2022-08-16T15:25:38.859Z,b0325e91-20bf-456e-90e6-4cdb888ba1a0,GL,true,true,Netherlands,nl,208578955894331,Bas Eickhout,Facebook
+e82af62d-b70a-482b-a4d5-cf1eab4258c7,GroenLinks Zuid-Holland,2022-08-16T15:25:38.945Z,2e87368e-6db9-4899-9822-fae625c93ad4,GL,true,true,Netherlands,nl,111881632210618,GroenLinks Zuid-Holland,Facebook
+f1416e8e-7358-4806-b452-69d65ac3d983,GroenLinks Oss (This Page has been deleted.),2022-08-16T15:25:39.211Z,59a8c6c2-50c8-420a-a681-ae4502786b10,GL,true,true,Netherlands,nl,550239991805691,GroenLinks Oss (This Page has been deleted.),Facebook
+f1f4bcb3-f192-4d89-a838-a709f2e9ede5,GroenLinks Lochem,2022-08-16T15:25:39.129Z,7f69152b-166b-4ff4-b3ad-ee6cb3179c7c,GL,true,true,Netherlands,nl,661049547329075,GroenLinks Lochem,Facebook
+f4e62c83-cabe-4fe8-9525-090e53bea1df,GroenLinks Brabant,2023-02-27T10:53:50.811Z,be1c8ae2-3555-48b2-9163-1b16deecd381,GL,true,true,Netherlands,nl,157612007615228,GroenLinks Brabant,Facebook
+f59f9a9b-32b1-4780-9722-4b1c755d339a,GroenLinks Zoetermeer,2022-08-16T15:25:39.084Z,ba483c15-8f78-4f98-8d65-bd68c2ed682d,GL,true,true,Netherlands,nl,703877319733931,GroenLinks Zoetermeer,Facebook
+fa7cc292-af77-40ec-b5f8-65c8fa141df6,GroenLinks Dordrecht,2022-08-16T15:25:39.485Z,b63e0b8a-da33-4679-8ca3-1b96dd4bb6c9,GL,true,true,Netherlands,nl,168582430001649,GroenLinks Dordrecht,Facebook
+fc84d1dc-126c-4f28-a15a-54b55eaa23f3,GroenLinks Alphen aan den Rijn,2022-08-16T15:25:39.144Z,23ba16ae-a734-47e2-9581-235f582954bb,GL,true,true,Netherlands,nl,434756543235602,GroenLinks Alphen aan den Rijn,Facebook
+04ef5a8c-3730-4838-8b14-9a92acb0ec86,DENK Den Haag,2022-08-16T15:25:38.815Z,89abbc2f-f1f0-4bcc-b7d3-c835a735f4d8,DENK,true,true,Netherlands,nl,108120604060106,DENK Den Haag,Facebook
+070186be-315a-4162-a73d-0db5a2ecd16b,Tunahan Kuzu,2022-08-16T15:25:36.532Z,4e13bf71-bbc3-4d1c-93a7-2131ae50587a,DENK,true,true,Netherlands,nl,596153377149961,Tunahan Kuzu,Facebook
+419c8973-e7cd-411b-8f9e-bf51052178f0,DENK,2022-08-16T15:25:36.531Z,cfc6b621-2af5-4524-95bb-a2a86bbc9dfa,DENK,true,true,Netherlands,nl,1550088745275913,DENK,Facebook
+92965549-fa28-4e95-9c3c-0901c1615ec5,Limburg Herdenkt,2022-08-16T15:25:38.762Z,cd050c22-8245-486d-918e-fa6d612fa5ec,DENK,true,true,Netherlands,nl,1559449840931289,Limburg Herdenkt,Facebook
+a561ccd6-7245-4e1b-a7f1-a53c135b0375,Mahmut Sungur DENK,2023-02-22T10:54:01.127Z,c2de138a-67e7-44a3-ad4e-5465845426d5,DENK,true,true,Netherlands,nl,106297492362053,Mahmut Sungur DENK,Facebook
+eac9adde-1664-45e8-92f5-1542907a1faa,DENK Eindhoven,2022-08-16T15:25:38.813Z,c1b79127-3c9f-4924-a826-7aa2bf894dfa,DENK,true,true,Netherlands,nl,628535584020989,DENK Eindhoven,Facebook
+261a3e70-cda0-4580-b945-fc0da7715b31,SGP,2022-08-16T15:25:36.532Z,e0ab89be-c97f-4941-9602-6cb5db6e345f,SGP,true,true,Netherlands,nl,433611050005553,SGP,Facebook
+3d89beeb-e593-4f23-bb27-e5cb1aa8d2dd,Lelystad SGP,2022-08-16T15:25:41.031Z,acc095f8-e277-4a72-b51d-d30cb110a4c5,SGP,true,true,Netherlands,nl,1502902726692279,Lelystad SGP,Facebook
+3f3d8f45-b036-4f9f-a1ab-1470b0c236c6,CU - SGP Leiderdorp,2022-08-16T15:25:40.950Z,596d2161-9611-49cf-980d-cf465e3f2f46,SGP,true,true,Netherlands,nl,560364254048737,CU - SGP Leiderdorp,Facebook
+50a660d6-e6db-448d-b195-875c398d2dd9,SGP Staphorst,2022-08-16T15:25:41.004Z,856b7fab-0131-4951-890f-47548578444a,SGP,true,true,Netherlands,nl,319519798445256,SGP Staphorst,Facebook
+5bf45682-a8f7-4685-8e72-cf29481fc3db,SGP-jongeren,2022-08-16T15:25:40.873Z,faf61594-4c80-4913-8635-6955f0a26b6b,SGP,true,true,Netherlands,nl,134898129893433,SGP-jongeren,Facebook
+6a025e85-505d-44b6-8e2a-9769e2dc5d64,Sgp Kampen,2022-08-16T15:25:41.017Z,80c66e07-38d6-4487-9992-d371f98bb434,SGP,true,true,Netherlands,nl,385564664900332,Sgp Kampen,Facebook
+6ffbcc61-4fcf-4c5b-952a-69533aca281a,SGP Goeree-Overflakkee,2022-08-16T15:25:40.910Z,5b45e37c-162f-4f8d-a859-7815810b66ed,SGP,true,true,Netherlands,nl,151766691678928,SGP Goeree-Overflakkee,Facebook
+7b29f02a-c4a3-475b-ae7f-45c892538771,SGP Krimpen aan den IJssel,2022-08-16T15:25:40.994Z,0e6420c8-b2bd-4885-8c9b-5a6faff730f8,SGP,true,true,Netherlands,nl,261891187284177,SGP Krimpen aan den IJssel,Facebook
+7f32d889-a03e-4487-9c6f-b862a029c59a,SGP Utrechtse Heuvelrug,2022-08-16T15:25:41.002Z,1bc4b8f5-f292-4bcf-9350-ac2a6f301f05,SGP,true,true,Netherlands,nl,510879102598586,SGP Utrechtse Heuvelrug,Facebook
+886ea039-4de8-4435-aec4-43dcd4c5a501,Kees van der Staaij,2022-08-16T15:25:36.530Z,cb3cd22c-1ef0-43f3-8c09-e4367d7d9bb9,SGP,true,true,Netherlands,nl,135227606660572,Kees van der Staaij,Facebook
+98fedb38-0d12-42d1-b3a7-707226a62fad,SGP Urk,2022-08-16T15:25:40.880Z,ecb765f9-187d-42c7-8e33-17581d49922d,SGP,true,true,Netherlands,nl,1475272182780528,SGP Urk,Facebook
+a2156bab-230e-45bd-8770-0fe481860a13,SGP Jongeren Vallei & Rijn,2022-08-16T15:25:40.934Z,ff4d8e84-b2de-4de8-aa03-2cc575e7e228,SGP,true,true,Netherlands,nl,251558268238889,SGP Jongeren Vallei & Rijn,Facebook
+ad7a3596-3276-46fa-8c62-798984d50166,SGP provincie Gelderland,2023-02-07T15:05:59.568Z,d3f869e0-1540-4559-983d-7197957217a9,SGP,true,true,Netherlands,nl,425650727582091,SGP provincie Gelderland,Facebook
+d0eed854-4e69-4d4d-a4a1-9b8fa3da7fd7,SGP Zeeland,2022-08-16T15:25:40.923Z,fd7453c9-d1c1-44ad-a0b8-d4a8419f0ade,SGP,true,true,Netherlands,nl,784559828291177,SGP Zeeland,Facebook
+d27b8abd-c8cb-4020-a4b4-2e87e4fe5136,Bert-Jan Ruissen,2022-08-16T15:25:40.871Z,f21687bd-8151-4150-80aa-ac85d5c9c50f,SGP,true,true,Netherlands,nl,108597633942628,Bert-Jan Ruissen,Facebook
+db895426-e07a-46ad-9fa3-2d0c0b516aec,SGP Nunspeet,2022-08-16T15:25:40.915Z,5046e560-9c57-4080-b2d0-c434b8db751a,SGP,true,true,Netherlands,nl,671037142966257,SGP Nunspeet,Facebook
+e598fb21-8367-42d4-992f-26f52953a63d,SGP Tholen,2023-02-26T10:53:56.312Z,a36e21e7-0edc-435f-b3fa-b68ed7449c3b,SGP,true,true,Netherlands,nl,392267247557030,SGP Tholen,Facebook
+fe3e5e41-80c6-4fd4-a594-61eba0e03665,SGP-jongeren CK,2022-08-16T15:25:40.935Z,2b4396dc-bea0-4ab8-af49-43e91a0ecf0c,SGP,true,true,Netherlands,nl,208182482974377,SGP-jongeren CK,Facebook
+ff56af20-a8bc-44bb-b17b-13575f95483c,SGP ChristenUnie Goes,2022-08-16T15:25:41.036Z,9a3cf809-0375-404d-b141-50a1a0fb4e23,SGP,true,true,Netherlands,nl,100881570041931,SGP ChristenUnie Goes,Facebook
+03cc1a93-9545-48ee-9a4e-b2e163e7899d,Geert Wilders,2022-08-16T15:25:36.403Z,fd27b5ea-4476-43d4-b53d-01c82da96219,PVV,true,true,Netherlands,nl,202064936858448,Geert Wilders,Facebook
+287fdb99-cc7d-4f00-ae9e-eb9bbc19f5cd,David Bosch - PVV Utrecht,2022-08-16T15:25:39.534Z,0182424c-7e16-428c-80f8-fcdea56af377,PVV,true,true,Netherlands,nl,190051308416101,David Bosch - PVV Utrecht,Facebook
+2f41a8ae-d20b-4018-9424-6660644344b0,PVV Almelo,2023-02-22T10:54:01.199Z,75a812f7-9284-4deb-99b7-dada7540f867,PVV,true,true,Netherlands,nl,745905415586298,PVV Almelo,Facebook
+31bb6f78-bef4-4e7a-878e-800b6ff6c2f9,PVV Gelderland,2022-08-16T15:25:39.543Z,f3858ee2-cde5-42d4-be7d-8a259f8d6e58,PVV,true,true,Netherlands,nl,449928585192308,PVV Gelderland,Facebook
+40b325c8-3f10-4000-afec-ffae0c1cade1,PVV Utrecht,2022-08-16T15:25:39.533Z,f42f4464-f675-4426-8efe-eb540f451cde,PVV,true,true,Netherlands,nl,385625301862587,PVV Utrecht,Facebook
+8be9dc3c-438f-472f-a17d-924fb733ca3e,PVV Hengelo,2022-08-16T15:25:39.579Z,1282ef36-4752-42f2-8431-00d35aee6b68,PVV,true,true,Netherlands,nl,185988911871870,PVV Hengelo,Facebook
+91eacf4b-d2ef-4dde-8085-11222185751e,PVV Dordrecht,2022-08-16T15:25:39.606Z,9a69f048-7e4e-417d-8c86-a266658f6c86,PVV,true,true,Netherlands,nl,957516271079756,PVV Dordrecht,Facebook
+98b23092-5b38-4ff3-9d14-38ffc9d18455,PVV Den Bosch,2023-02-07T15:05:59.444Z,28fc73c6-144e-4eba-aff4-ebe80fec4c37,PVV,true,true,Netherlands,nl,1885139435031870,PVV Den Bosch,Facebook
+acbdb3ce-968f-410a-becf-b775f6cda1ff,PVV Tweedekamer,2023-02-21T10:53:43.979Z,13060cc0-6ce8-4939-9622-7b7c9d8d363b,PVV,true,true,Netherlands,nl,112043525139543,PVV Tweedekamer,Facebook
+b71f494f-7ba7-47e5-99b3-24afacd2945f,PVV Lelystad,2022-08-16T15:25:39.534Z,e0f75030-c132-4224-a1e7-9e8d141b4386,PVV,true,true,Netherlands,nl,156993281594555,PVV Lelystad,Facebook
+b7c348ba-5cbb-4d11-8378-580f2cb1bdc8,PVV Fryslan,2022-08-16T15:25:39.534Z,271289b5-a6d6-460b-87f3-c573af35ae0d,PVV,true,true,Netherlands,nl,294901587336825,PVV Fryslan,Facebook
+ba3acfd9-a8b4-4814-9a7e-e8414d37f6b6,PVV,2022-08-16T15:25:36.157Z,a74c28fa-1714-41d6-b8bb-7aef7c4b3f7f,PVV,true,true,Netherlands,nl,141639003175865,PVV,Facebook
+c27b9bc3-a7b2-472a-953a-5b5cbea96041,PVV Stichtse Vecht,2022-08-16T15:25:39.575Z,51f25964-8927-4313-ba80-7723503ef70f,PVV,true,true,Netherlands,nl,1967914100151475,PVV Stichtse Vecht,Facebook
+d5740b6f-1317-4f45-8088-c7b0c3c1dbbc,PVV Enschede,2023-02-21T10:53:43.857Z,98481807-85ac-4102-a02c-588b02caa3c8,PVV,true,true,Netherlands,nl,573210659541566,PVV Enschede,Facebook
+ed76475a-fabe-4fb3-af77-910da09b3b9e,Partij voor de vrijheid - Veenendaal,2022-08-16T15:25:39.634Z,8c8057d4-ca4e-4be1-b6ba-3ca8e2dd21c0,PVV,true,true,Netherlands,nl,530225947335941,Partij voor de vrijheid - Veenendaal,Facebook
+fc4b850f-7abc-4b20-b7ba-e49d4bf4e68a,PVV Sittard-Geleen,2022-08-16T15:25:39.560Z,6a0b93a6-0360-473f-b042-638dd7ce5ba1,PVV,true,true,Netherlands,nl,1263240523724892,PVV Sittard-Geleen,Facebook
+14ddee66-0901-4888-9f44-d703c2b3a7bc,Partij voor de Dieren Noord-Holland,2022-08-16T15:25:40.742Z,66317647-ffba-48b3-9ae5-9f33e4e503bf,PvdD,true,true,Netherlands,nl,290134957713451,Partij voor de Dieren Noord-Holland,Facebook
+16837eba-23ab-48ab-874f-3cdbcd4b091f,Partij voor de Dieren Aa en Maas,2023-02-20T10:53:48.447Z,34b7a023-2046-4e86-84cc-b5aff182c5b4,PvdD,true,true,Netherlands,nl,112604644752641,Partij voor de Dieren Aa en Maas,Facebook
+1ace90e2-10d8-4686-b56b-8754d1740210,Partij voor de Dieren,2022-08-16T15:25:36.655Z,a9ba0f5f-d993-483d-8145-b06265f97e1a,PvdD,true,true,Netherlands,nl,102287806490622,Partij voor de Dieren,Facebook
+3ae5b26b-bb01-437d-b8fd-b3b11dbff854,Partij voor de Dieren Den Haag,2022-08-16T15:25:40.788Z,19ff22ff-05b6-449c-931a-129d99e34a8a,PvdD,true,true,Netherlands,nl,122589134531844,Partij voor de Dieren Den Haag,Facebook
+84128864-fa66-4856-91bc-ba9c4849a165,Partij voor de Dieren Dronten,2022-08-16T15:25:40.863Z,2ba293c1-c665-494e-85cf-1c4cb904ea85,PvdD,true,true,Netherlands,nl,522244664875827,Partij voor de Dieren Dronten,Facebook
+8a78166d-322b-4779-a1a8-173ea3ea8a99,Marianne Thieme,2022-08-16T15:25:36.657Z,7eb89696-6954-48ba-a3b8-087c3f03ec86,PvdD,true,true,Netherlands,nl,126389617450422,Marianne Thieme,Facebook
+8f2c2347-d614-4c4c-ba2b-3b55cc038aaa,Partij voor de Dieren Schieland en de Krimpenerwaard,2023-02-13T10:53:56.619Z,c61f38be-e55e-42fb-b8dc-d8c08a5261b1,PvdD,true,true,Netherlands,nl,105999812327759,Partij voor de Dieren Schieland en de Krimpenerwaard,Facebook
+93d44f01-0f63-4b7c-8e16-bede7e716c49,Partij voor de Dieren Alkmaar,2022-08-16T15:25:40.745Z,f5a2b559-4d12-46f9-aaad-3649fae21aa2,PvdD,true,true,Netherlands,nl,1803486813232260,Partij voor de Dieren Alkmaar,Facebook
+9770efa5-d70d-47e8-99c2-c971c5929238,Partij voor de Dieren Almere,2022-08-16T15:25:40.799Z,edf13591-e8b3-4dae-a2bd-5ee69b47c13c,PvdD,true,true,Netherlands,nl,1746352698711497,Partij voor de Dieren Almere,Facebook
+b3845a3c-3f74-4724-854f-381a61e77d9d,Partij voor de Dieren Zeeland,2022-08-16T15:25:40.810Z,87afbf71-0ddf-410a-972f-4fbc6e0230c8,PvdD,true,true,Netherlands,nl,129568950441577,Partij voor de Dieren Zeeland,Facebook
+c5a96a7c-c596-41bb-94bc-e0d1f5adff94,Partij voor de Dieren Limburg,2022-08-16T15:25:40.826Z,bbda729d-f65c-4ac0-b968-337bac3ac336,PvdD,true,true,Netherlands,nl,217567158255542,Partij voor de Dieren Limburg,Facebook
+c7222aa8-6fdd-4b10-94e0-dbbd83553d95,Partij voor de Dieren Flevoland,2022-08-16T15:25:40.796Z,37424b2f-85f6-4063-ad15-7c4724c9dfb3,PvdD,true,true,Netherlands,nl,850253651682648,Partij voor de Dieren Flevoland,Facebook
+caa2018a-0389-4108-abf6-b4fb22860906,Partij voor de Dieren Rijnland,2023-02-23T10:53:46.670Z,c83035ec-790e-4c9c-ac11-f3ac2d72c113,PvdD,true,true,Netherlands,nl,106183841098714,Partij voor de Dieren Rijnland,Facebook
+d44c89dd-ff3c-4f0b-856d-3e89fd5b8c69,Partij voor de Dieren Gemeente Groningen,2023-02-19T10:54:01.485Z,ca7caa9f-b2f2-4a35-a91d-fb23bcff7af3,PvdD,true,true,Netherlands,nl,976825745813543,Partij voor de Dieren Gemeente Groningen,Facebook
+d531bedc-081c-4d10-bf75-04a1e2204a43,Partij voor de Dieren Noord-Brabant,2022-08-16T15:25:40.808Z,cf6b2216-fea0-4aea-9cda-e0fde2991bf3,PvdD,true,true,Netherlands,nl,153434794680208,Partij voor de Dieren Noord-Brabant,Facebook
+ed285286-b974-448f-8135-e89a8a11546d,Partij voor de Dieren Groningen,2023-02-07T15:05:59.694Z,29369ec6-e31a-4a5a-84ca-0b56e6fd402c,PvdD,true,true,Netherlands,nl,105656962844422,Partij voor de Dieren Groningen,Facebook
+01f7522f-b52c-49aa-898b-a6c291ea4ad9,Meerssense VVD,2022-08-16T15:25:42.316Z,334cab91-c679-4747-9001-6e6abaa89704,VVD,true,true,Netherlands,nl,1160701620720058,Meerssense VVD,Facebook
+033cffb9-dc8d-44a4-ab46-29913a77754e,VVD Gennep,2022-08-16T15:25:41.537Z,4b572bb4-5649-4f31-a599-9d2dacde105a,VVD,true,true,Netherlands,nl,157342181127991,VVD Gennep,Facebook
+04a6c913-02a7-4b36-ba01-7bfab549af52,VVD Drenthe,2023-02-07T15:05:59.559Z,596225be-8771-43d8-a090-b71b1028eec0,VVD,true,true,Netherlands,nl,1530277467215488,VVD Drenthe,Facebook
+053ab985-f115-4b0c-bab5-270ba1fd4141,VVD Westerkwartier,2022-08-16T15:25:42.376Z,1d363608-ede4-4b02-b869-902f5efddc1d,VVD,true,true,Netherlands,nl,1011775145585656,VVD Westerkwartier,Facebook
+09c5982b-4b81-431a-ac42-65355726b79f,VVD Wassenaar,2022-08-16T15:25:41.649Z,770fb7ec-50cb-4951-b74f-f0bf56dce740,VVD,true,true,Netherlands,nl,197515056951719,VVD Wassenaar,Facebook
+09dd99d2-a135-4b83-b009-dae74521522b,VVD Oldambt,2022-08-16T15:25:42.493Z,3e0edbf8-3feb-413d-949e-967ac2c43cbe,VVD,true,true,Netherlands,nl,276491789134449,VVD Oldambt,Facebook
+0e6d1abd-1b17-446f-bc77-30a357db1ef6,VVD Gemert-Bakel,2022-08-16T15:25:41.769Z,b5eb02b2-5648-4a4e-a284-c1170fe7018c,VVD,true,true,Netherlands,nl,1228215290628525,VVD Gemert-Bakel,Facebook
+14bc1481-962c-4af3-a4b7-d87146b700af,VVD Goeree-Overflakkee,2022-08-16T15:25:41.404Z,721ba830-d5b3-49f4-b157-8bb5b7ab1456,VVD,true,true,Netherlands,nl,305812906126532,VVD Goeree-Overflakkee,Facebook
+17f84113-019a-417b-a896-5781f4db031f,Alkmaarse VVD,2022-08-16T15:25:41.531Z,48353898-b997-437c-8db2-065b719dbee8,VVD,true,true,Netherlands,nl,174727955895958,Alkmaarse VVD,Facebook
+1868c3c0-4fce-499e-b495-e7f48f6a29a4,VVD Roosendaal,2022-08-16T15:25:41.894Z,17ce0137-59c6-4c51-bdc5-80344053d49a,VVD,true,true,Netherlands,nl,201138969999107,VVD Roosendaal,Facebook
+1ba76df8-b1d3-470b-91e7-81b2a64c5b10,VVD Heerenveen,2022-08-16T15:25:42.167Z,37ade593-36ca-4ea2-80a4-c0cdb7656c94,VVD,true,true,Netherlands,nl,590372277656268,VVD Heerenveen,Facebook
+1cce4094-4e9f-4340-9a3c-e1ba314b6625,Dordtse VVD,2022-08-16T15:25:41.893Z,82c13bd8-9afa-4d37-bdb3-d24148f6db0d,VVD,true,true,Netherlands,nl,101039903379008,Dordtse VVD,Facebook
+1d06a89e-634c-47d5-8016-641082ca7f95,VVD Flevoland,2023-02-07T15:05:59.226Z,dc3187e4-787b-449d-831c-3ce50d3c5d4e,VVD,true,true,Netherlands,nl,421920954609274,VVD Flevoland,Facebook
+1e66eaf8-f671-4740-921f-6a59d1ce7456,VVD Olst-Wijhe,2022-08-16T15:25:42.194Z,b370be00-83cd-47e2-b5b8-9fdb4adbb0f6,VVD,true,true,Netherlands,nl,160488060781842,VVD Olst-Wijhe,Facebook
+201ac910-726b-4460-8422-a9203d074c77,VVD Voerendaal,2022-08-16T15:25:41.809Z,0a3e0e12-aeab-490f-937f-48bf420c8a98,VVD,true,true,Netherlands,nl,852631531480102,VVD Voerendaal,Facebook
+23e2b96c-0a07-460a-8d40-6de8d534cd72,VVD Nijmegen,2022-08-16T15:25:42.014Z,605898a2-328d-495d-a0dc-a8db80349dee,VVD,true,true,Netherlands,nl,225044264301061,VVD Nijmegen,Facebook
+24e873c2-40fa-4d50-837b-224f91138486,VVD De Fryske Marren,2022-08-16T15:25:42.074Z,9ecdeda3-f16d-4734-b50d-8c59db81bfb1,VVD,true,true,Netherlands,nl,204113719762337,VVD De Fryske Marren,Facebook
+2b53819d-fd48-43e0-b932-0343710e7f42,VVD Renswoude,2022-08-16T15:25:41.947Z,3a78301d-feef-4045-b402-9426b5cb812f,VVD,true,true,Netherlands,nl,115029341980720,VVD Renswoude,Facebook
+2dfc6021-5b53-48e5-abff-0b0e382440f2,Gestelse VVD,2022-08-16T15:25:41.930Z,99a49c80-e459-4073-879a-7f2f77e52ef9,VVD,true,true,Netherlands,nl,315095378608398,Gestelse VVD,Facebook
+2e4ff2b5-73a1-46e5-a5f1-54672d070f8a,VVD Smallingerland,2022-08-16T15:25:42.499Z,b8019505-8cc1-4107-b898-c3a07d2f5b35,VVD,true,true,Netherlands,nl,360950014036006,VVD Smallingerland,Facebook
+2f1dad38-a9f9-478a-b8d3-b01e9206b674,De Veldhovense VVD,2022-08-16T15:25:42.599Z,cd4ed7e4-8d22-499a-9a64-df15f47ec6c4,VVD,true,true,Netherlands,nl,920935371318767,De Veldhovense VVD,Facebook
+331b495c-8249-4ea5-9bea-f016b0cf0901,VVD Rijswijk,2022-08-16T15:25:41.582Z,79c5d1ee-ce56-478b-b01e-115460248b43,VVD,true,true,Netherlands,nl,529757857120942,VVD Rijswijk,Facebook
+34de876c-eb50-4a11-a1c0-f78f721bf27a,VVD Europa,2023-02-15T10:53:38.826Z,bb4bfc0c-b09f-4fe9-abe5-1fcb44414f48,VVD,true,true,Netherlands,nl,107074255523711,VVD Europa,Facebook
+35b1a2bb-f4d5-46ef-be57-6f77c96c555d,VVD Nijkerk-Hoevelaken,2022-08-16T15:25:42.528Z,cbb270e3-765f-46fd-bbbc-7a5d76c054df,VVD,true,true,Netherlands,nl,457506067621492,VVD Nijkerk-Hoevelaken,Facebook
+3b131885-650e-40b9-88bc-52b7df750d6d,VVD Waterschap Scheldestromen,2023-02-07T15:05:59.730Z,17ef2348-2181-416e-93c4-117f8c0771fc,VVD,true,true,Netherlands,nl,181667906115731,VVD Waterschap Scheldestromen,Facebook
+3b27eaf1-8c06-4638-9020-3ae666410bc6,VVD Aalsmeer,2022-08-16T15:25:42.622Z,45de68d5-8887-4418-bb67-d57d0dbd8c3e,VVD,true,true,Netherlands,nl,731311010222651,VVD Aalsmeer,Facebook
+3d4d525b-56a0-4a2c-b562-31c1b0985757,VVD-Woudenberg,2022-08-16T15:25:41.946Z,30571d81-cc2a-49a6-a8a5-9cda779a8953,VVD,true,true,Netherlands,nl,183495805173455,VVD-Woudenberg,Facebook
+3d5d7cdd-5c5e-46e5-8aaa-41afdf833325,Maastrichtse VVD,2023-02-07T15:05:59.870Z,524e8c29-7c4b-4445-8d77-575336e040f2,VVD,true,true,Netherlands,nl,815539385128257,Maastrichtse VVD,Facebook
+3f3acc03-fe1c-4958-86b6-319f4fc63fdb,VVD HHNK,2023-02-17T10:53:36.796Z,bda95ea6-cd2e-43d8-915f-d633838f567a,VVD,true,true,Netherlands,nl,115252804799038,VVD HHNK,Facebook
+45787066-2881-4ede-bc96-21b6f6bc7a7c,VVD Tytsjerksteradiel,2022-08-16T15:25:41.810Z,6a7f5222-5600-43dc-91b1-1b283768dc7f,VVD,true,true,Netherlands,nl,971443309666536,VVD Tytsjerksteradiel,Facebook
+4772d61b-0bae-4531-be06-d4751ff54ae6,VVD Scherpenzeel,2022-08-16T15:25:42.466Z,2900ab80-88c7-47e4-a602-f1d40846da7e,VVD,true,true,Netherlands,nl,367174533369302,VVD Scherpenzeel,Facebook
+4af5e06c-7145-4c1c-b385-af832d71a904,VVD De Bilt,2022-08-16T15:25:42.536Z,9e7ab923-1d07-4b38-b5d8-6f76593e6fdf,VVD,true,true,Netherlands,nl,196419123885680,VVD De Bilt,Facebook
+4ce05637-9e27-4169-97f8-03cb75079faa,Rudmer Heerema,2022-08-16T15:25:41.322Z,6bb3a90b-47f4-43da-bf8e-c5498acf1f81,VVD,true,true,Netherlands,nl,1839041743042729,Rudmer Heerema,Facebook
+4d1945bf-860b-4bbf-8068-bc2d7e2f7131,VVD Hilversum,2022-08-16T15:25:41.552Z,0e6ea7d2-fe13-4d06-b5f8-06e47be90ee0,VVD,true,true,Netherlands,nl,423071014421919,VVD Hilversum,Facebook
+4ddff560-27ed-4eaa-b3ef-7545265d6a55,VVD Helmond,2022-08-16T15:25:41.428Z,3637728c-3c38-4db1-8086-ee7a572d50ec,VVD,true,true,Netherlands,nl,167597420073347,VVD Helmond,Facebook
+4fafc2e8-1a14-4bca-913a-65936bc34d7e,VVD Middelburg,2022-08-16T15:25:42.500Z,0ffa3e5b-988d-4cc4-98e7-470b04e4a2f5,VVD,true,true,Netherlands,nl,341298732915644,VVD Middelburg,Facebook
+58b9f56b-c1ab-4721-b3ed-ddf65c063cdf,VVD Losser,2022-08-16T15:25:42.189Z,7265e7c0-09e2-43ab-b4cb-194e1d071135,VVD,true,true,Netherlands,nl,521653237872282,VVD Losser,Facebook
+5e7dc1c1-bb2c-4e19-934d-fa8b6f65a1f9,VVD Landgraaf,2022-08-16T15:25:42.378Z,806b2ccb-a863-413e-8164-f89aff50289a,VVD,true,true,Netherlands,nl,476759392439445,VVD Landgraaf,Facebook
+641ce545-baf1-4fa1-84ff-93176d6dc3d9,Mark Rutte,2022-08-16T15:25:36.130Z,721223d1-642b-4028-ba3a-1bd763dbfe7a,VVD,true,true,Netherlands,nl,34646635859,Mark Rutte,Facebook
+6933fca4-cb92-4450-b3bf-dbff2110c403,VVD Papendrecht,2022-08-16T15:25:42.120Z,15c01063-980f-44e3-8bd6-5644b4429bee,VVD,true,true,Netherlands,nl,806683962693581,VVD Papendrecht,Facebook
+6c8d21b8-56e8-477f-a962-1afe83f9e996,VVD Wijk Bij Duurstede,2022-08-16T15:25:42.627Z,1e396d94-bdc6-48fb-a05c-e3e5d6e144e0,VVD,true,true,Netherlands,nl,828124077223507,VVD Wijk Bij Duurstede,Facebook
+6d216451-5930-46fe-adc3-fa3bb66af707,VVD Provincie Groningen,2023-02-17T10:53:36.819Z,4b00f1d3-533a-4c0e-befd-f21955ed9f16,VVD,true,true,Netherlands,nl,243792449107489,VVD Provincie Groningen,Facebook
+6e04d644-5a1c-4049-8d11-22068802e193,VVD Het Hogeland,2022-08-16T15:25:42.259Z,315adba6-2805-4716-8489-b03c8df78a40,VVD,true,true,Netherlands,nl,542359679187058,VVD Het Hogeland,Facebook
+70271ac1-8335-4514-98fa-16c01a8e61c2,VVD Bunschoten,2022-08-16T15:25:41.407Z,3d944e33-c446-4a3f-ad45-feae6f39ce99,VVD,true,true,Netherlands,nl,346704992122344,VVD Bunschoten,Facebook
+72243be8-be8e-4b3b-bbde-d1a422190ee1,Limburgse VVD,2022-08-16T15:25:41.421Z,59282f86-843e-467f-8234-33f61cdb2834,VVD,true,true,Netherlands,nl,333726830018322,Limburgse VVD,Facebook
+759ae12f-b94f-40e5-afa5-673196be5359,De Rotterdamse VVD,2022-08-16T15:25:41.394Z,7ad3fcaf-46e9-4580-8b7b-c7301b6d27f5,VVD,true,true,Netherlands,nl,154456451319810,De Rotterdamse VVD,Facebook
+77e4fce3-9aa5-42c8-b636-e7f43b30043b,VVD Raalte,2022-08-16T15:25:41.825Z,8e7262f6-fcfd-4fb8-b21b-11df3de1d3f0,VVD,true,true,Netherlands,nl,215048268616589,VVD Raalte,Facebook
+792ea671-e509-486f-9d0b-81399d15afe2,Maik Barten - Raadslid VVD Geldrop-Mierlo,2022-08-16T15:25:41.808Z,fb327933-be82-4dd4-a0aa-15e5e3fe3302,VVD,true,true,Netherlands,nl,103278663447730,Maik Barten - Raadslid VVD Geldrop-Mierlo,Facebook
+7c328770-8850-4e3e-8345-ddd3a5b0ad23,VVD Fryslan,2022-08-16T15:25:41.948Z,82f6a0d8-740e-4459-ae0f-36fedaf8f179,VVD,true,true,Netherlands,nl,818385898182914,VVD Fryslan,Facebook
+7da8d94c-d61d-418b-a956-28714ad96b58,De Nederweerter VVD,2022-08-16T15:25:42.012Z,89149624-8bd6-4751-b148-e23f87ea8129,VVD,true,true,Netherlands,nl,233854086775969,De Nederweerter VVD,Facebook
+8003bbff-cd48-475d-a499-18b4b7becb63,VVD ,2022-08-16T15:25:36.127Z,0ca706bb-c5ae-4cc1-84a3-80d18bc07b5e,VVD,true,true,Netherlands,nl,121264564551002,VVD ,Facebook
+822b96d9-3a2e-4565-9ede-3d30fd6053ea,De Haagse VVD,2022-08-16T15:25:41.662Z,90dd5c52-f0b8-4f81-8875-66dffce35858,VVD,true,true,Netherlands,nl,114631488645360,De Haagse VVD,Facebook
+8266345b-6d81-45eb-9b34-1db1ca688286,VVD Leiden,2022-08-16T15:25:41.449Z,5dcda6fa-5b33-4db6-afe1-326afafe4d62,VVD,true,true,Netherlands,nl,145751698819583,VVD Leiden,Facebook
+8604e050-6100-42f2-bc66-0948a1eff181,Minister-President,2022-08-16T15:25:36.127Z,5bec636f-429e-4d1b-84b5-577becc0c812,VVD,true,true,Netherlands,nl,166039216791132,Minister-President,Facebook
+86bbf2b3-00eb-4001-b797-6ac4659b3ed2,VVD Purmerend,2022-08-16T15:25:41.821Z,968221a3-f96a-4f9c-b84e-b735d37eff4e,VVD,true,true,Netherlands,nl,204112443050641,VVD Purmerend,Facebook
+881ad12d-8d85-4de3-9a19-1ac92e7bea4c,VVD Oisterwijk,2022-08-16T15:25:41.397Z,b3242eef-9b31-45fe-a8de-32a8fb16b1dd,VVD,true,true,Netherlands,nl,155956504541781,VVD Oisterwijk,Facebook
+884d39ed-1583-4002-b896-38998d4b39ff,VVD Zaanstad,2022-08-16T15:25:42.059Z,ee108209-7c2e-45e6-9479-0d07f4a29bfc,VVD,true,true,Netherlands,nl,937513793002837,VVD Zaanstad,Facebook
+886ee22c-0ea9-4bb0-ad6f-86c2771595ee,De Weerter VVD,2022-08-16T15:25:42.393Z,9fe16f1a-43ab-4a5c-8fff-c0fe53e0a7de,VVD,true,true,Netherlands,nl,248861831896013,De Weerter VVD,Facebook
+889c8c5a-bf72-4130-8893-59ae6d661e0c,Jorn Lok - VVD Zutphen,2022-08-16T15:25:41.562Z,9cee459a-ae64-4e0d-92db-20cea3e7144a,VVD,true,true,Netherlands,nl,341800552897219,Jorn Lok - VVD Zutphen,Facebook
+89719173-d86d-4f37-8e43-0b26df26c6ca,VVD Bunnik,2022-08-16T15:25:42.492Z,f263e28e-3ad3-47d2-bc47-c89896af4816,VVD,true,true,Netherlands,nl,169783746552665,VVD Bunnik,Facebook
+91ba4d75-3a74-43e1-916d-a28e2b6cd31f,VVD Gulpen-Wittem,2022-08-16T15:25:42.621Z,32da50dc-86b9-4d02-9eea-313823bf8027,VVD,true,true,Netherlands,nl,107610150609555,VVD Gulpen-Wittem,Facebook
+96751a62-4066-4f7c-808c-8c3f4f861ab1,VVD Venlo,2022-08-16T15:25:42.064Z,0c8fd8c5-03b0-437e-9d21-7fdd646b0399,VVD,true,true,Netherlands,nl,123074804424518,VVD Venlo,Facebook
+971f0d5d-ed04-43e3-b90f-a94f93949f34,VVD Kirchroa,2022-08-16T15:25:41.542Z,b114d987-f1c1-44f0-8a64-4aaa326606ba,VVD,true,true,Netherlands,nl,721812541177719,VVD Kirchroa,Facebook
+9aa39bb9-a24f-4559-9c53-5e5175bf9060,De Boxtelse VVD,2022-08-16T15:25:41.392Z,e6666697-0c4d-4e5e-9c24-2fbeb4e04dcb,VVD,true,true,Netherlands,nl,449240315186621,De Boxtelse VVD,Facebook
+9b2e9d2a-f446-444f-bf53-1b6d6f4e3d0c,VVD Waterland,2022-08-16T15:25:42.331Z,7806bd19-beb6-4c1c-b9bb-fc3339198bfd,VVD,true,true,Netherlands,nl,783192395169199,VVD Waterland,Facebook
+9baf790b-ad0b-42cc-a7bb-9fa990551033,VVD Alphen a/d Rijn,2022-08-16T15:25:41.701Z,28adc03b-b124-4899-ba3e-186ab23e7e6e,VVD,true,true,Netherlands,nl,473422542679870,VVD Alphen a/d Rijn,Facebook
+9ef30a81-5d94-4278-af29-e71d8e6b523a,VVD Utrechtse Heuvelrug,2022-08-16T15:25:41.704Z,7258f61f-a890-449e-a212-21118e94343d,VVD,true,true,Netherlands,nl,243926369062604,VVD Utrechtse Heuvelrug,Facebook
+9f2406e4-73da-4f84-bdfc-87f248663fb8,De Woerdense VVD,2022-08-16T15:25:41.543Z,0af3a463-a9fd-4566-925d-8c92e28cc918,VVD,true,true,Netherlands,nl,197238087060916,De Woerdense VVD,Facebook
+9f60cab3-6945-4709-b51e-d7bbd47a0da9,VVD Voorne,2022-08-16T15:25:42.258Z,608b68c2-8953-4b26-b310-6f6d51f62ac0,VVD,true,true,Netherlands,nl,945761432159312,VVD Voorne,Facebook
+a0711c30-113c-493b-8262-f0c743c3eef5,VVD Waterschap Limburg,2022-08-16T15:25:42.561Z,1b300135-9c44-450b-b471-b2eebbcee384,VVD,true,true,Netherlands,nl,1563699950578926,VVD Waterschap Limburg,Facebook
+a533a15e-9a45-4db4-b0d1-a9abf1384adb,VVD Wormerland,2022-08-16T15:25:41.840Z,b9df7013-8dd8-42c5-9c5d-ee411ecfd574,VVD,true,true,Netherlands,nl,1196350273823975,VVD Wormerland,Facebook
+a6abcb56-1235-4857-ae8f-51d1f5107952,VVD Maasland,2022-08-16T15:25:42.324Z,9f74b5e7-1152-44c9-badc-2afc098cff48,VVD,true,true,Netherlands,nl,1743766155846128,VVD Maasland,Facebook
+ab59e529-d50b-4a34-b276-c42e6bf7a1ae,De Deurnese VVD,2022-08-16T15:25:41.796Z,a9dd4f5a-b5a9-4bcc-b815-501e7cff0edd,VVD,true,true,Netherlands,nl,1422274718011012,De Deurnese VVD,Facebook
+ac1464bd-1f28-4385-82aa-b29004c7480e,VVD Breda,2022-08-16T15:25:42.196Z,381f5c40-7711-4c57-89dd-4e20495e2a5e,VVD,true,true,Netherlands,nl,394219543964508,VVD Breda,Facebook
+ad83f991-f9d1-453a-a306-b5fd1b7349e5,De Utrechtse VVD,2022-08-16T15:25:41.921Z,e515c071-38b8-4486-ae31-5c2257bcbe3d,VVD,true,true,Netherlands,nl,128640250574683,De Utrechtse VVD,Facebook
+adc757fc-15cc-4716-8f0b-999030b62832,Almeerse VVD,2022-08-16T15:25:42.310Z,33ed582f-82a6-4267-b829-c5d6a062d9fe,VVD,true,true,Netherlands,nl,183538275059926,Almeerse VVD,Facebook
+afd8c77a-b95d-4ef6-ab69-ad8bddd0c905,VVD Schiedam,2022-08-16T15:25:42.412Z,89b90e8d-f002-46f3-9bc3-65f12ee4ce69,VVD,true,true,Netherlands,nl,342564449464162,VVD Schiedam,Facebook
+b2c6eb1c-fd49-49c7-be34-80867845f9c5,VVD Montfoort,2022-08-16T15:25:41.306Z,1ac161c7-8b7a-42bc-8c53-4098f938d054,VVD,true,true,Netherlands,nl,233207220184530,VVD Montfoort,Facebook
+b44ee37a-3315-45b9-b025-b6787e47e1b5,Bossche VVD,2022-08-16T15:25:41.530Z,5588f42c-8859-4672-ac9f-c762d47435e4,VVD,true,true,Netherlands,nl,194900893890599,Bossche VVD,Facebook
+b4db3741-04d2-40e8-b136-0d8441ec4551,VVD Haarlem,2022-08-16T15:25:42.072Z,8633896c-91dd-43e7-be09-2568b96141fc,VVD,true,true,Netherlands,nl,169065999840857,VVD Haarlem,Facebook
+b6809fda-d057-4abb-ab4f-f83e5d2813d5,VVD Wijdemeren,2022-08-16T15:25:42.451Z,5b60b8c0-889b-44e9-8802-6caabf50b080,VVD,true,true,Netherlands,nl,604919512865485,VVD Wijdemeren,Facebook
+b8c24be3-cc81-4bb2-a546-7ef8cd83398f,VVD Halderberge,2022-08-16T15:25:41.673Z,36882b47-a5be-4388-8bc8-f62771bef9a4,VVD,true,true,Netherlands,nl,117128052210675,VVD Halderberge,Facebook
+bb572f89-105a-4988-b9a9-9e03ce5978d1,VVD IJsselstein,2022-08-16T15:25:42.197Z,c1ce0b77-aec5-448e-8f6f-f6a9087319f9,VVD,true,true,Netherlands,nl,114055275385794,VVD IJsselstein,Facebook
+bb9f6ca9-f867-4693-98b4-aa2a04b915d6,VVD Emmen,2022-08-16T15:25:41.680Z,73274177-e6f3-4917-a9d8-505e9d2d172b,VVD,true,true,Netherlands,nl,346093205489554,VVD Emmen,Facebook
+bd1df712-f343-4c15-92c9-f3b85c4fe9f8,VVD Vught-Helvoirt-Cromvoirt,2022-08-16T15:25:41.771Z,c9fe384e-136d-4b59-862f-edef7b155bf0,VVD,true,true,Netherlands,nl,117095328492297,VVD Vught-Helvoirt-Cromvoirt,Facebook
+c22412ad-3060-4c2d-82fb-34c511abd219,VVD Tilburg,2022-08-16T15:25:41.693Z,b7e243a7-1712-4944-8060-ecc590d2e01c,VVD,true,true,Netherlands,nl,272230419490546,VVD Tilburg,Facebook
+c3e93df9-aa63-478f-bc4a-f3a729e90b8e,Vlaardingse VVD,2022-08-16T15:25:42.575Z,abb70393-220a-4bb8-9246-462f9a8429c1,VVD,true,true,Netherlands,nl,358414441297967,Vlaardingse VVD,Facebook
+c4c1d65f-838a-4058-816d-41f6b01d7f18,De Statenfractie VVD Zeeland,2023-02-09T06:28:16.620Z,4a074de5-a1b9-4b58-85d2-2d669f40ce38,VVD,true,true,Netherlands,nl,138562149512752,De Statenfractie VVD Zeeland,Facebook
+c7e19257-d9da-4c31-9fb8-fefc8b741a6a,Jeroen van Dijken - VVD,2023-02-19T10:54:01.485Z,4db579e4-53c4-40d1-9bbe-9113636e0af2,VVD,true,true,Netherlands,nl,1904283853212282,Jeroen van Dijken - VVD,Facebook
+cd24cafa-d882-4519-876c-7be86d0ea276,VVD Soest/Soesterberg,2022-08-16T15:25:42.356Z,a535e407-03d7-4632-b6cb-600d6e5c233e,VVD,true,true,Netherlands,nl,318840268197219,VVD Soest/Soesterberg,Facebook
+cefd0f8f-e4bc-4695-b52e-c0ca548fb82c,Pieter Dijkman VVD kandidaat Provinciale Staten van Noord-Holland,2023-02-27T10:53:50.953Z,907e1992-2205-448b-ab54-2371543fd3af,VVD,true,true,Netherlands,nl,105660295711388,Pieter Dijkman VVD kandidaat Provinciale Staten van Noord-Holland,Facebook
+cf256e48-4d76-4348-939f-f8433c7f1e68,VVD Geldrop-Mierlo,2022-08-16T15:25:41.430Z,ba427ff4-7d08-4b5c-ab6d-b78a1767f13e,VVD,true,true,Netherlands,nl,325990707510508,VVD Geldrop-Mierlo,Facebook
+cff4ffaf-c399-4940-8e72-f67382df7d5d,VVD Leidschendam-Voorburg,2022-08-16T15:25:42.086Z,dfa16fae-40df-4b08-9f72-d61a066964f8,VVD,true,true,Netherlands,nl,498944610134140,VVD Leidschendam-Voorburg,Facebook
+d115c64f-49c3-47ff-a8b4-380ed2494282,VVD Apeldoorn,2022-08-16T15:25:41.933Z,62660565-7bba-4650-9de8-607b8c7e55b6,VVD,true,true,Netherlands,nl,218454524993606,VVD Apeldoorn,Facebook
+d2013c61-a3ba-4226-af50-cfd5e7ba0754,Koggenlandse VVD,2022-08-16T15:25:42.220Z,1a0ea49a-c8f6-4146-8089-0fef47205ae8,VVD,true,true,Netherlands,nl,170320339747730,Koggenlandse VVD,Facebook
+d4383b3d-bac0-4c0b-a374-77619160f957,VVD Opsterland,2022-08-16T15:25:42.436Z,de43c22c-8921-42dd-b802-01b9210c1512,VVD,true,true,Netherlands,nl,244357102562650,VVD Opsterland,Facebook
+d4f72235-874e-4358-bc67-c5ebbf5d4aa9,Alexander Kreule VVD,2022-08-16T15:25:41.800Z,ed45e331-3acd-4f77-893f-912b8a177a68,VVD,true,true,Netherlands,nl,553284941850879,Alexander Kreule VVD,Facebook
+d6a38157-beae-4f79-a9ef-8bd5f3a38ce7,VVD Zoetermeer,2022-08-16T15:25:41.948Z,529c296a-e842-46a0-8990-1255bce1f7e8,VVD,true,true,Netherlands,nl,162212757160066,VVD Zoetermeer,Facebook
+d7baae76-94c0-48cd-ab60-827fb225051f,VVD Almelo,2022-08-16T15:25:41.564Z,eb9be167-302f-4582-8f8d-33e96333ae57,VVD,true,true,Netherlands,nl,222078441181157,VVD Almelo,Facebook
+d9ab12c2-5799-4880-a508-a62c27b0f529,VVD Drimmelen,2022-08-16T15:25:42.439Z,f800269b-8581-4978-a77e-6663d65366cd,VVD,true,true,Netherlands,nl,853228418123320,VVD Drimmelen,Facebook
+d9fc48dc-74e1-4778-8b4f-fb0b3b760cad,VVD Altena,2022-08-16T15:25:42.357Z,df78a2b5-0dbb-4207-9ae9-7469420c6e6b,VVD,true,true,Netherlands,nl,1543542572602854,VVD Altena,Facebook
+daaee25f-cc35-4bcf-9bae-f6a91fddd246,VVD Rhenen,2022-08-16T15:25:42.221Z,01cf4a71-9d65-4929-b77b-aa23ceb4d380,VVD,true,true,Netherlands,nl,1788767758074479,VVD Rhenen,Facebook
+daf57869-60e0-4b79-99d4-d491fd279f02,VVD Zwolle,2022-08-16T15:25:42.138Z,2f6e210e-10ba-463d-bea4-f9955fafded6,VVD,true,true,Netherlands,nl,194216524014233,VVD Zwolle,Facebook
+db0caa1d-3a07-4f6e-93cc-dfbeca4cfc47,VVD Lochem,2022-08-16T15:25:42.256Z,436307ad-74f0-4afc-9adc-75eebc77903e,VVD,true,true,Netherlands,nl,689730844383927,VVD Lochem,Facebook
+dda8594c-317b-4e79-af60-998351bb6450,VVD Noord-Holland,2022-08-16T15:25:42.288Z,a6834acc-dd04-46d7-9b82-e4a43c6016e1,VVD,true,true,Netherlands,nl,286480434837730,VVD Noord-Holland,Facebook
+de3433d6-069d-4758-b6d8-73e684d18d34,De Heerhugowaardse VVD,2022-08-16T15:25:41.684Z,9c38b465-adb1-4d4a-87ea-3fc2e9827ca4,VVD,true,true,Netherlands,nl,261116077361193,De Heerhugowaardse VVD,Facebook
+e30cb01b-1937-4ba3-91cb-73e4df41b214,Klaas Dijkhoff ,2022-08-16T15:25:36.151Z,aaa6ebde-6a91-48da-ad17-6fdd76759624,VVD,true,true,Netherlands,nl,124282324250399,Klaas Dijkhoff ,Facebook
+e5efa2af-99f5-446f-bbcb-e54f0237b8fc,VVD Harderwijk-Hierden,2022-08-16T15:25:41.977Z,d9f25645-b6ec-47bb-b967-e3f048b7d01e,VVD,true,true,Netherlands,nl,135925936464418,VVD Harderwijk-Hierden,Facebook
+ec7eb140-9184-4e36-ac56-6b32ca1bd9da,VVD Heumen,2022-08-16T15:25:42.561Z,fe2a3f58-48b2-405b-bc9f-ba1204e47401,VVD,true,true,Netherlands,nl,197435423736962,VVD Heumen,Facebook
+efb7f6bf-7033-4f59-9551-dc2f0c2c9967,Dennis Wiersma,2022-08-16T15:25:41.391Z,03c225f4-4f20-4f79-8a3a-0a599a8e00f5,VVD,true,true,Netherlands,nl,344926199223477,Dennis Wiersma,Facebook
+f0d9732b-d724-48fe-b093-208911867e05,VVD Eemsdelta,2022-08-16T15:25:41.651Z,aaf47d14-5a45-4840-b34d-200f39da6beb,VVD,true,true,Netherlands,nl,930099740342915,VVD Eemsdelta,Facebook
+f343f314-8eee-457c-9a32-91e24b535704,VVD Lokaal Netwerk Brussel,2022-08-16T15:25:42.084Z,df5e3cf6-c226-4e53-bf08-a6801026ca7a,VVD,true,true,Netherlands,nl,117346168281139,VVD Lokaal Netwerk Brussel,Facebook
+f564b960-1b7c-4cd9-9127-17d9fe3aa2c2,VVD Culemborg,2022-08-16T15:25:42.044Z,85340fcc-cbf2-4338-9267-b8e82f67bb27,VVD,true,true,Netherlands,nl,254680748075982,VVD Culemborg,Facebook
+f58ff45d-2fbc-430e-8a97-4ed3de01b93f,VVD Stede Broec,2022-08-16T15:25:41.665Z,e15ff953-aec9-4e5c-8283-224f4b2660bb,VVD,true,true,Netherlands,nl,504176193038156,VVD Stede Broec,Facebook
+f677c3e6-8c5a-4282-99f1-382825dc9c0d,De Oldenzaalse VVD,2022-08-16T15:25:42.136Z,f9ec2567-4c4a-4a26-b331-05eb5d469c95,VVD,true,true,Netherlands,nl,257508240969596,De Oldenzaalse VVD,Facebook
+f80854e5-ad42-4646-b298-7bd8cd87d603,De Amsterdamse VVD,2022-08-16T15:25:41.569Z,1174bd48-a776-405a-b4aa-c3fd5e9fc01e,VVD,true,true,Netherlands,nl,152313778157632,De Amsterdamse VVD,Facebook
+051ee4f4-cabe-4f47-addc-514525d70838,ChristenUnie Provincie Utrecht,2023-02-27T10:53:50.871Z,dc51b56b-ba57-45df-8060-6ed8a8a21c99,CU,true,true,Netherlands,nl,544720052310663,ChristenUnie Provincie Utrecht,Facebook
+1c5c0e11-957b-4441-9be3-82c4ca47bb01,ChristenUnie Urk,2022-08-16T15:25:37.940Z,ddadad1a-9d51-48f2-be68-b9373a73ba02,CU,true,true,Netherlands,nl,107794439556152,ChristenUnie Urk,Facebook
+22c2bcb6-6f14-4b30-8988-c91d13c446e1,ChristenUnie Fryslân,2023-02-14T10:53:49.788Z,d1a04d45-7f6b-4516-bd79-9f5a90423ebe,CU,true,true,Netherlands,nl,174501385922296,ChristenUnie Fryslân,Facebook
+2efa5d40-aa42-4102-9d94-ec362589c845,ChristenUnie Amsterdam,2022-08-16T15:25:37.884Z,734095b1-4f93-46fc-91ec-5a07b4494e54,CU,true,true,Netherlands,nl,282108071911694,ChristenUnie Amsterdam,Facebook
+31ad3653-6f18-4de3-9ccf-91d4b664d010,ChristenUnie Molenlanden,2022-08-16T15:25:38.065Z,1b030bb1-134f-424a-bc3d-b4c3eb577135,CU,true,true,Netherlands,nl,1938971373084052,ChristenUnie Molenlanden,Facebook
+34d1f0b4-34aa-4ee0-a796-b8af17f7c4a5,ChristenUnie Ommen,2022-08-16T15:25:37.944Z,f996dbe2-8980-4e52-84ad-520be9e83805,CU,true,true,Netherlands,nl,384737181678824,ChristenUnie Ommen,Facebook
+49cbd476-75c6-4055-bd14-3b5e8bc1532a,ChristenUnie Flevoland,2022-08-16T15:25:38.067Z,23b53afb-560d-4669-8bcf-339a2270ff85,CU,true,true,Netherlands,nl,403943403087425,ChristenUnie Flevoland,Facebook
+4c041da7-dc3c-42ab-ae7d-21f59fc060ff,ChristenUnie Apeldoorn,2022-08-16T15:25:38.031Z,153710b6-c36d-4f0b-adbc-198ddf6c6055,CU,true,true,Netherlands,nl,562357297179689,ChristenUnie Apeldoorn,Facebook
+526051ba-cdcb-456b-8bcb-de053a21c2ab,ChristenUnie Limburg,2023-02-25T10:53:53.445Z,abbdea46-2726-4a0b-a5d0-c7d25375d69c,CU,true,true,Netherlands,nl,207470586040705,ChristenUnie Limburg,Facebook
+605c3b97-7dce-4603-8db3-15b5806c5f4e,ChristenUnie Barneveld,2023-02-20T10:53:48.517Z,3de0f5a3-3a42-47f3-bb22-a3006cb9cae4,CU,true,true,Netherlands,nl,388745857906285,ChristenUnie Barneveld,Facebook
+6a00a7c3-69e7-4969-bcd3-55394947a9f3,ChristenUnie Amersfoort,2022-08-16T15:25:38.004Z,3dc67391-2f34-402c-8223-2589487b98de,CU,true,true,Netherlands,nl,317349971611583,ChristenUnie Amersfoort,Facebook
+7830595f-e85e-4d51-927e-4b690cb8614d,ChristenUnie Noord-Holland,2023-02-12T10:53:37.677Z,dbb5d389-f22e-40fe-859f-c72f165c98c6,CU,true,true,Netherlands,nl,1513719122247725,ChristenUnie Noord-Holland,Facebook
+7e99c63f-38cd-4176-8983-979185dffcb0,ChristenUnie,2022-08-16T15:25:36.642Z,4369bda1-716b-469b-b99f-10373bea020c,CU,true,true,Netherlands,nl,211661062254003,ChristenUnie,Facebook
+8bba1709-fa32-4d47-a6b2-3221651eb75e,ChristenUnie Eemsdelta,2022-08-16T15:25:38.138Z,6f1fbbc8-ee7d-4d52-81fc-714f5ae2cecd,CU,true,true,Netherlands,nl,394558224722257,ChristenUnie Eemsdelta,Facebook
+8ef54446-8a14-476b-8c7c-116434f32ddc,Joël Voordewind,2022-08-16T15:25:37.892Z,75ee7ee1-4cfb-4753-a778-028f74a4e571,CU,true,true,Netherlands,nl,1142077739171588,Joël Voordewind,Facebook
+942d2629-a5a2-4114-8798-0ff5c687ac38,ChristenUnie-SGP Haarlemmermeer,2022-08-16T15:25:37.937Z,387ee2d8-2848-4b99-909f-9cce90c1c976,CU,true,true,Netherlands,nl,1962270687342032,ChristenUnie-SGP Haarlemmermeer,Facebook
+9798f1aa-7020-4543-9752-f89b7f731896,ChristenUnie West Betuwe,2022-08-16T15:25:38.021Z,39cdcd16-2d5d-4a97-af80-b2cd07f93ddd,CU,true,true,Netherlands,nl,205242676331332,ChristenUnie West Betuwe,Facebook
+a65a1ae7-0764-4e72-bda1-74f798d315bc,ChristenUnie-SGP Oudewater,2022-08-16T15:25:38.063Z,58f6e556-f55b-47b3-a520-a0ca41da4e5b,CU,true,true,Netherlands,nl,1438634716368426,ChristenUnie-SGP Oudewater,Facebook
+ab3f965c-d371-4b32-a1d9-f359ba1e2a4f,ChristenUnie provincie Groningen,2023-02-09T06:28:16.629Z,ee02a563-52de-4da3-b32c-af52710114a7,CU,true,true,Netherlands,nl,1386401111662274,ChristenUnie provincie Groningen,Facebook
+ae5a85d9-0d64-47e0-93e8-df175128e8c0,ChristenUnie Ede,2022-08-16T15:25:38.030Z,d702b432-9f86-490a-be1d-fb8721b2f344,CU,true,true,Netherlands,nl,242128959237930,ChristenUnie Ede,Facebook
+bb773188-9035-401c-998c-b9bc4754c600,ChristenUnie SGP Rotterdam,2022-08-16T15:25:38.025Z,a3702338-77ce-461b-881a-c446610a9935,CU,true,true,Netherlands,nl,243148232487383,ChristenUnie SGP Rotterdam,Facebook
+bfc7aa0b-8641-4b37-a7d2-e80dedc73e89,"PerspectieF, ChristenUnie-jongeren",2022-08-16T15:25:37.897Z,803b67d5-7495-4e7a-9c17-67aac80ccaf2,CU,true,true,Netherlands,nl,209648345740233,"PerspectieF, ChristenUnie-jongeren",Facebook
+c2059559-de5c-411f-8a71-9697e8753b8a,ChristenUnie Rijssen-Holten,2022-08-16T15:25:38.065Z,097cf9aa-0709-4eaa-94cf-dffa28ad08f0,CU,true,true,Netherlands,nl,169693763207431,ChristenUnie Rijssen-Holten,Facebook
+c5853ef4-0bdd-4482-9911-6b8dbb46499b,Eppo Bruins,2022-08-16T15:25:37.899Z,319808d9-48c3-4401-ad58-416236563e5b,CU,true,true,Netherlands,nl,100321288229672,Eppo Bruins,Facebook
+c61cc2ce-cd04-43a6-86d7-4b563be6aeff,Wetenschappelijk Instituut ChristenUnie,2022-08-16T15:25:37.937Z,a7985633-4004-4c34-b779-3e93fc2f3482,CU,true,true,Netherlands,nl,152432188110990,Wetenschappelijk Instituut ChristenUnie,Facebook
+c668890d-37f7-4365-aae2-28398993416c,ChristenUnie Hoeksche Waard,2022-08-16T15:25:38.121Z,76fd0459-1e6a-4b1e-a874-0a7094eaab9b,CU,true,true,Netherlands,nl,1000182456818319,ChristenUnie Hoeksche Waard,Facebook
+cc4eeab8-c9f5-4f9d-b028-30481d6d0942,ChristenUnie Harderwijk/Hierden,2022-08-16T15:25:37.894Z,011606a8-a495-45dc-91e9-4ca3b76af0f4,CU,true,true,Netherlands,nl,219046481529214,ChristenUnie Harderwijk/Hierden,Facebook
+df99c7fa-96d0-43c5-884e-6c7a00136b2c,Arjan Langen - ChristenUnie,2023-02-26T10:53:56.189Z,4d1a11da-6a2c-4907-8758-7441ec0b6599,CU,true,true,Netherlands,nl,100237759674715,Arjan Langen - ChristenUnie,Facebook
+e171f3fe-d007-4beb-b83b-1fd7eb09cce0,ChristenUnie Zwolle,2022-08-16T15:25:37.817Z,958e2788-2977-4115-b1e4-fb685a8a0d64,CU,true,true,Netherlands,nl,402039413225497,ChristenUnie Zwolle,Facebook
+ee722199-149b-476e-9d7a-8a74cdd28092,Christenunie Hardenberg,2022-08-16T15:25:38.015Z,a7622d75-67df-48cb-bef3-5d158473a26f,CU,true,true,Netherlands,nl,1407071029524552,Christenunie Hardenberg,Facebook
+f830d7ef-29c2-45ad-9882-0796be0a8c78,ChristenUnie Zeeland,2022-08-16T15:25:37.894Z,5b44f2ea-5819-4db2-b2cd-66a6b4ecc47a,CU,true,true,Netherlands,nl,157671251089913,ChristenUnie Zeeland,Facebook
+f83b5bc1-4484-4f4d-b98f-de40f848cc89,Gert-Jan Segers,2022-08-16T15:25:36.653Z,4c98e89a-c2d7-42df-839b-705c684be2b8,CU,true,true,Netherlands,nl,147772805659767,Gert-Jan Segers,Facebook
+01a659cd-c795-4d16-8629-ebd6e537f315,Henk Krol,2022-08-16T15:25:36.527Z,a6f3a0da-5613-4482-af38-9bda1c54235b,50Plus,true,true,Netherlands,nl,1120197621364564,Henk Krol,Facebook
+563c251e-aecd-4cbb-9c15-ab9c1cf730d6,50PLUSpartij,2022-08-16T15:25:36.524Z,d20308b0-59b6-4319-81b8-3fc3270602f0,50Plus,true,true,Netherlands,nl,347623668624706,50PLUSpartij,Facebook
+68ce1bf5-8756-43ed-9cf9-e0b8bafb3cb2,50plus Zuid-Holland,2023-02-26T10:53:56.309Z,c8008e60-e7a1-4256-ba9a-c5b7374f01a8,50Plus,true,true,Netherlands,nl,105228219094910,50plus Zuid-Holland,Facebook
+6fa34d6e-9053-4481-ba83-3cfeb1491d9a,50PLUS-Overijssel,2023-02-07T15:05:59.413Z,de1177fe-4041-425b-b823-900758e292d3,50Plus,true,true,Netherlands,nl,108387285493926,50PLUS-Overijssel,Facebook
+8c4e6637-de0e-45bd-83d1-be25589f582d,50PLUSFlevoland,2023-02-22T10:54:01.044Z,4b9f8963-dcaa-4c3c-9f28-9ed34a9a876b,50Plus,true,true,Netherlands,nl,478982942635390,50PLUSFlevoland,Facebook
+a378bfa4-dc2c-4085-8180-d26d68ee9c7f,50plus Tilburg,2022-08-16T15:25:36.675Z,165b317a-bfd8-44c7-bef6-f1e58e07bd52,50Plus,true,true,Netherlands,nl,1069373879746516,50plus Tilburg,Facebook
+b17ce57a-d2b3-4d86-aafe-57ebc3386a09,50PLUS Gelderland,2022-08-16T15:25:36.670Z,7ac5b3dc-cef4-4f8e-b834-6c189741fe42,50Plus,true,true,Netherlands,nl,218046225000851,50PLUS Gelderland,Facebook
+b7d7e7c7-254a-4533-9c70-660a9fc1afab,50plus Noord Brabant,2022-08-16T15:25:36.670Z,1cce821b-081a-4a98-9cc7-379dfd723dc2,50Plus,true,true,Netherlands,nl,808087532599076,50plus Noord Brabant,Facebook
+089ca062-1a18-43e9-afd7-c769c1c37c0e,Rotterdam BIJ1,2022-08-16T15:25:36.681Z,5cf21071-6cde-4244-890d-ddc1a5119bbc,BiJ,true,true,Netherlands,nl,170469190212212,Rotterdam BIJ1,Facebook
+4a0d8575-7127-4914-b548-b839b18a5cb3,BiJ1,2022-08-16T15:25:36.661Z,4423cda5-8e80-4c65-aaa9-4c85104a0a8b,BiJ,true,true,Netherlands,nl,717249231795539,BiJ1,Facebook
+02553789-7f56-4aef-a2d0-5da9cf7ad30d,SP Groningen,2022-08-16T15:25:41.045Z,c58c485e-fb21-470a-975a-757c9aab6aca,SP,true,true,Netherlands,nl,125382950819455,SP Groningen,Facebook
+08e4f9e1-22ca-4df7-adcd-fca8028c085c,SP Enschede,2022-08-16T15:25:41.273Z,82346b65-bfc8-4c1a-b626-0c17b78ec902,SP,true,true,Netherlands,nl,644446145669723,SP Enschede,Facebook
+0a7dd9b9-4306-4ab9-9eb0-f012ab1695ea,Lilian Marijnissen,2022-08-16T15:25:36.406Z,8ba9ba47-881c-4a3c-87a4-5cd7627a2e70,SP,true,true,Netherlands,nl,844559615710915,Lilian Marijnissen,Facebook
+0d85736c-4e99-4f16-b44f-f268862d7bc3,SP Noord-Holland,2022-08-16T15:25:41.123Z,dea07172-1183-4480-bc2d-a809a99f4d75,SP,true,true,Netherlands,nl,699014280188216,SP Noord-Holland,Facebook
+13da9ca7-fcc5-4a09-ae1b-7ea47ccb8d10,SP Goirle,2022-08-16T15:25:41.284Z,9fdf92ec-8227-4d20-9c33-37a24f11284e,SP,true,true,Netherlands,nl,497053027078764,SP Goirle,Facebook
+206c0e87-f982-44d2-a009-12ea3116439a,SP Roermond,2022-08-16T15:25:41.149Z,213af343-20fc-4799-86cc-9153925f66a1,SP,true,true,Netherlands,nl,330274643781669,SP Roermond,Facebook
+31ae082a-c4d4-4c83-acd1-7549b3283bc1,SP Den Haag,2022-08-16T15:25:41.278Z,afb40fa3-39f5-4594-bc11-2441a3bdaeb8,SP,true,true,Netherlands,nl,305271288472,SP Den Haag,Facebook
+32e918db-5010-4cfc-8c74-5dd5ddbea103,SP Amsterdam,2022-08-16T15:25:41.059Z,88c1e387-9aeb-4573-acd7-3631b73d15bd,SP,true,true,Netherlands,nl,100345376686972,SP Amsterdam,Facebook
+4a80a284-b677-4230-9f68-a5c7552f08c2,SP Vlaardingen,2022-08-16T15:25:41.183Z,6201a67d-2e12-4e69-a7a1-c613cf53d4a0,SP,true,true,Netherlands,nl,490557484330937,SP Vlaardingen,Facebook
+4b0b79bb-2f1e-40c1-88c1-c72d6b90209e,SP Winterswijk,2022-08-16T15:25:41.285Z,1930384d-08fd-4237-8fae-cba657f30ca9,SP,true,true,Netherlands,nl,166722416859309,SP Winterswijk,Facebook
+5aa4d9db-2738-443f-8e6b-856f5edbef96,SP Haarlem,2022-08-16T15:25:41.139Z,3f5e0bcf-31fd-4797-ab78-f2bc45488ee6,SP,true,true,Netherlands,nl,1441662002729821,SP Haarlem,Facebook
+740aa23a-a9c8-46be-a941-94f9cb65117e,SP Doesburg,2022-08-16T15:25:41.305Z,5a4b7995-7649-4807-9a64-ae403579a773,SP,true,true,Netherlands,nl,454775281239898,SP Doesburg,Facebook
+79e616fc-5e5e-4fb2-8e4a-b0cea3df1de6,SP Deventer,2022-08-16T15:25:41.272Z,4d2b0aa9-8c79-4a4f-9f77-f8321fb874fd,SP,true,true,Netherlands,nl,252299414886741,SP Deventer,Facebook
+7cde1867-8ee9-42fd-a53e-b43a63e899b7,SP Noord-Brabant,2023-02-09T06:28:16.644Z,736f5f73-9d0d-483e-9131-29831565c52c,SP,true,true,Netherlands,nl,1525295717743886,SP Noord-Brabant,Facebook
+893708eb-cdca-43a7-9af3-0705a2d1362d,SP Arnhem,2022-08-16T15:25:41.072Z,16cb1e88-db88-48cd-b00c-7485c6036945,SP,true,true,Netherlands,nl,408987755826785,SP Arnhem,Facebook
+936f3280-8429-40c2-b7f5-d0246408dd3f,"ROOD, jong in de SP",2022-08-16T15:25:41.057Z,ccff8688-8cf5-4aa2-aa0a-3f09a3a043f3,SP,true,true,Netherlands,nl,219315465900,"ROOD, jong in de SP",Facebook
+a4b404ae-66c0-446e-b450-08938984767c,SP Rotterdam,2022-08-16T15:25:41.264Z,d37150cc-fcd7-492b-a7b9-2d3787c057cd,SP,true,true,Netherlands,nl,136653320218,SP Rotterdam,Facebook
+b02a83e7-7776-431a-8d2e-ea06abf4aa90,SP,2022-08-16T15:25:36.406Z,cad66fdc-a794-4618-a524-aa9b1eab9b5e,SP,true,true,Netherlands,nl,128393027527,SP,Facebook
+b36a16b7-31ea-46af-a2e9-638c180d2f50,SP Leiden,2022-08-16T15:25:41.185Z,5c052fd5-629e-430f-87cb-31e89b9ed220,SP,true,true,Netherlands,nl,277015828628,SP Leiden,Facebook
+be3cbc94-0cf7-4db6-b293-16a3d11da2fb,SP Bernheze,2022-08-16T15:25:41.193Z,84c0d701-f919-4227-a792-70d3a4b43e4f,SP,true,true,Netherlands,nl,555679867783372,SP Bernheze,Facebook
+dddd4a95-f39c-40fc-862b-a35545b7e6da,SP Breda,2022-08-16T15:25:41.259Z,e52d2186-28d3-48b8-9b7e-597b50e5d39e,SP,true,true,Netherlands,nl,289522761094912,SP Breda,Facebook
+efb61398-2018-40d9-bd89-b39c996a0f6b,SP Zutphen/Warnsveld,2022-08-16T15:25:41.152Z,fa16c570-20ed-4925-9742-9e6f11488cff,SP,true,true,Netherlands,nl,1207987872568660,SP Zutphen/Warnsveld,Facebook
+f33646cc-d59c-4d23-ac83-dcc3cab61d74,SP Purmerend (This Page has been deleted.),2022-08-16T15:25:41.159Z,4f85558f-2765-4e14-8a4c-36d71323f703,SP,true,true,Netherlands,nl,571432623341874,SP Purmerend (This Page has been deleted.),Facebook
+f56b4932-32ce-4946-9821-560350ff1dbc,SP Jongeren,2023-02-07T15:05:59.373Z,d7700198-018a-4351-b3a1-4199bc019898,SP,true,true,Netherlands,nl,110333761471734,SP Jongeren,Facebook
+f8fc0b1e-7a60-4cd6-903a-fe17935a7779,SP Veenendaal,2022-08-16T15:25:41.133Z,3fee82e9-9eee-4c41-913f-802aaad6fe0e,SP,true,true,Netherlands,nl,339241753098101,SP Veenendaal,Facebook
+fa9694db-167a-4f87-ade8-2c7bb9fa927e,SP Kerkrade,2022-08-16T15:25:41.165Z,c03d361f-4add-4221-99d5-7ef0c575a24c,SP,true,true,Netherlands,nl,120767601437627,SP Kerkrade,Facebook
+0668f5b6-335d-4fae-be1a-2dc1b83777a8,D66 Aalten-Dinxperlo,2022-08-16T15:25:38.573Z,9dbc8223-2f87-4025-9227-16fa9fa6e195,D66,true,true,Netherlands,nl,1248801595203744,D66 Aalten-Dinxperlo,Facebook
+11429c33-bc3a-46c0-a254-bf8584c833dc,D66 Amersfoort,2022-08-16T15:25:38.689Z,d22f2092-52dc-4dd4-9cd5-3ede2801db18,D66,true,true,Netherlands,nl,77106680798,D66 Amersfoort,Facebook
+11b65287-eb09-40bf-9414-043a34a4318b,D66 Dijk en Waard,2022-08-16T15:25:38.436Z,d08a1ac8-a9c3-4740-a791-9e216ac3cb9c,D66,true,true,Netherlands,nl,458832407560387,D66 Dijk en Waard,Facebook
+120e230e-3454-4854-8abe-96e7aaf640a3,D66 Haarlem,2022-08-16T15:25:38.416Z,7c435fbe-e2f1-4ae5-bcb1-64f3e0814115,D66,true,true,Netherlands,nl,235718236590845,D66 Haarlem,Facebook
+130b9f30-5c2d-4beb-89c6-62ee097ec481,D66 Delft,2022-08-16T15:25:38.315Z,de1b23dc-01bb-4228-8a3b-c0dd10d83f59,D66,true,true,Netherlands,nl,171999852960244,D66 Delft,Facebook
+22c5abf0-7ae3-4bc9-a008-fb25e94fff6f,D66 Enschede,2022-08-16T15:25:38.192Z,bfb35df9-e954-43df-8fc9-fbb801982133,D66,true,true,Netherlands,nl,123661660977745,D66 Enschede,Facebook
+25eb453c-c3f0-4fe7-9976-6d0da003c835,D66 Waalre,2022-08-16T15:25:38.435Z,7df88429-67df-45c7-90b8-5259d2e15f48,D66,true,true,Netherlands,nl,201821126683232,D66 Waalre,Facebook
+2cabcad2-1754-46bf-a6ff-e4b2a40fcd79,Thom de Vries D66,2022-08-16T15:25:38.442Z,ce44db6d-e0b5-40d9-bdc8-059f25cf03bf,D66,true,true,Netherlands,nl,138401470173379,Thom de Vries D66,Facebook
+2fea3c65-fe49-40ba-9cbc-09f84608e6a2,D66 Almere,2022-08-16T15:25:38.293Z,68c9a30d-b74d-4d7c-8ee5-8916862b473a,D66,true,true,Netherlands,nl,186370224739032,D66 Almere,Facebook
+303a414e-2c6d-4937-bdf4-440b2bb9c1f5,D66 Utrecht,2022-08-16T15:25:38.283Z,024c41a5-7509-4f0b-a4bd-750cc5b40628,D66,true,true,Netherlands,nl,272033265993,D66 Utrecht,Facebook
+3d3992ab-0af0-408b-b8b4-e1e55e101a21,D66 Steenwijkerland,2022-08-16T15:25:38.190Z,17d778b4-055c-4c40-89da-907b250bda92,D66,true,true,Netherlands,nl,669907336364750,D66 Steenwijkerland,Facebook
+3f8c0900-0a9d-40b2-8341-49757eb5f675,Anne-Marijke Podt Kandidaat Tweede Kamer D66,2022-08-16T15:25:38.692Z,b53b3898-c334-4776-9194-099cc9532a68,D66,true,true,Netherlands,nl,515445868547714,Anne-Marijke Podt Kandidaat Tweede Kamer D66,Facebook
+42bf6929-c47e-4713-9057-480b4622400d,D66 Lingewaard,2022-08-16T15:25:38.691Z,95b778f9-9cdc-46db-929e-7f4a665c5c24,D66,true,true,Netherlands,nl,1377280262539840,D66 Lingewaard,Facebook
+4e34501e-ffb1-41ce-924e-5a5fd73ec136,D66 Nederweert,2022-08-16T15:25:38.584Z,5868ec79-eb33-4f55-86f8-dbffefefcd2c,D66,true,true,Netherlands,nl,201175180237864,D66 Nederweert,Facebook
+510665ec-a3a8-414a-a875-bfe18dfcf55f,D66 Uitgeest,2022-08-16T15:25:38.695Z,d0dee510-c791-41e5-9e41-8f708fdc0e86,D66,true,true,Netherlands,nl,209381922872,D66 Uitgeest,Facebook
+5475a2a4-ae86-4ef4-bdcf-2e2939a52d01,D66,2022-08-16T15:25:36.403Z,9f99d93f-fcb0-4bb9-87c4-8686f7d16e33,D66,true,true,Netherlands,nl,52985377549,D66,Facebook
+61b6e447-f67a-4780-9d51-db4e1e11dcf2,D66Voerendaal,2022-08-16T15:25:38.500Z,1fde2321-082f-4ca4-afa5-1bf3be8665a8,D66,true,true,Netherlands,nl,209004852638957,D66Voerendaal,Facebook
+6599ac36-f922-4928-a626-1c4955f906ea,D66 Harderwijk/Hierden,2022-08-16T15:25:38.380Z,70cc206e-3b68-4dab-a89d-178b69cd0534,D66,true,true,Netherlands,nl,617251821650596,D66 Harderwijk/Hierden,Facebook
+69239550-91bc-44f4-8ed1-21284ab2c467,D66 Bommelerwaard,2022-08-16T15:25:38.434Z,9cd0f52c-e6b5-4b53-9486-40acf39b4ce9,D66,true,true,Netherlands,nl,359300587500364,D66 Bommelerwaard,Facebook
+6a714453-1d76-4a21-b209-58b6567dbf07,D66 s-Hertogenbosch,2022-08-16T15:25:38.299Z,9a6ae5f7-8426-4dfa-bfc0-f6b6215d503f,D66,true,true,Netherlands,nl,131158970298702,D66 s-Hertogenbosch,Facebook
+73c25bca-3eae-44b4-9225-e3fc6eec902a,D66 Losser,2022-08-16T15:25:38.556Z,55945611-8adf-4990-ba46-f6b241015e11,D66,true,true,Netherlands,nl,323187547697177,D66 Losser,Facebook
+74b1f069-64f4-41d7-805f-71b624af0fa5,D66 Boxtel,2022-08-16T15:25:38.160Z,81c4acdd-e26d-48bb-8285-40aaa009be5c,D66,true,true,Netherlands,nl,628289240576959,D66 Boxtel,Facebook
+768d9bd7-3423-472b-9d29-e8e4fe526e29,D66 Leiden,2022-08-16T15:25:38.287Z,f3045c56-26b7-474e-854c-d022365de2d9,D66,true,true,Netherlands,nl,147722648491,D66 Leiden,Facebook
+799d5c6a-7929-4737-bd2a-b8bd36563a90,D66 Den Haag,2022-08-16T15:25:38.726Z,3926b809-6fc3-48a0-8d47-0aec60dc15c0,D66,true,true,Netherlands,nl,155758593317,D66 Den Haag,Facebook
+7bae8951-b23f-4aa0-a677-8a0c61c84f9e,D66 Rotterdam,2022-08-16T15:25:38.574Z,dbe87a39-81ce-400c-b994-f32d8afe145f,D66,true,true,Netherlands,nl,197240740326073,D66 Rotterdam,Facebook
+83ef5b03-d127-4807-b49e-b7a90e2dd518,D66 Goes,2022-08-16T15:25:38.364Z,46c06a22-85a3-47cf-ad19-4a5ebc21d652,D66,true,true,Netherlands,nl,1750415495212074,D66 Goes,Facebook
+85760232-b089-4bf4-84bf-8edef48ec7f0,D66Velsen,2022-08-16T15:25:38.571Z,5c7757bf-2d95-438a-aaf0-c95e0402830c,D66,true,true,Netherlands,nl,167333296705784,D66Velsen,Facebook
+860d883a-2e02-444d-b4f8-c4f48cf754b7,D66 Eemsdelta,2022-08-16T15:25:38.163Z,394fae97-808f-4fd0-b2bf-73871b434a11,D66,true,true,Netherlands,nl,130487254323668,D66 Eemsdelta,Facebook
+875bb7f6-8904-40a6-8083-1ed1ecb67b4b,D66 Venlo,2022-08-16T15:25:38.312Z,03bd6fd9-496b-40c5-b4ad-dd2482f2d171,D66,true,true,Netherlands,nl,293145967399764,D66 Venlo,Facebook
+882c6be6-1d61-4d2b-83a0-56a4b9bb7bb4,D66 Bloemendaal,2022-08-16T15:25:38.564Z,3ba261e7-f6d8-419d-bd7e-6c049fe579ec,D66,true,true,Netherlands,nl,466120763493964,D66 Bloemendaal,Facebook
+91dfabeb-7239-4b0b-8add-eb60ad69a9ff,D66 Dalfsen,2023-02-21T10:53:43.988Z,d0c6d92d-21a0-495f-8022-7c3a5ab677ee,D66,true,true,Netherlands,nl,415242511939767,D66 Dalfsen,Facebook
+9555ae07-d470-4732-b239-2952be4c924c,D66 Heusden,2022-08-16T15:25:38.738Z,d8f725dc-1650-4412-b272-ac1c88788e61,D66,true,true,Netherlands,nl,208483356011488,D66 Heusden,Facebook
+98c2b8d4-4562-4313-aa64-141d6a810f7f,D66 Zeeland,2022-08-16T15:25:38.438Z,a9580eb6-15f6-4ae0-a887-e3c9b0392165,D66,true,true,Netherlands,nl,146790238829202,D66 Zeeland,Facebook
+b272f648-e802-4cf2-8cbd-0a2d848e3e20,Anita Pannebakker D66,2022-08-16T15:25:38.423Z,54ba7195-cecd-4468-8554-a1d1bfae815d,D66,true,true,Netherlands,nl,581269312322294,Anita Pannebakker D66,Facebook
+b9ba05a3-f598-41d5-8704-eaf2e773d30d,D66 Son en Breugel,2022-08-16T15:25:38.694Z,40bd6906-40ac-409c-bb88-f31f4f01c49b,D66,true,true,Netherlands,nl,795630170492563,D66 Son en Breugel,Facebook
+be4fef49-ff4c-46ca-87b3-572065e40a53,D66 Noord-Beveland,2022-08-16T15:25:38.620Z,a799a883-d4e4-4a69-85ee-f40dcf9f4dd4,D66,true,true,Netherlands,nl,1729913110668532,D66 Noord-Beveland,Facebook
+cadb93de-ed5c-4ea1-a4d8-b79368dc7082,D66 Oisterwijk,2022-08-16T15:25:38.156Z,1ab50f6b-5438-4849-9014-d74f2d053b36,D66,true,true,Netherlands,nl,1345685305522860,D66 Oisterwijk,Facebook
+cd25ec01-068d-4a14-9bcf-942f46799550,D66 Haarlemmermeer,2022-08-16T15:25:38.564Z,6f14e11c-b282-473a-9302-ec34f5987a8d,D66,true,true,Netherlands,nl,160222337386850,D66 Haarlemmermeer,Facebook
+d00d44f7-d658-4410-93aa-f2c9200db9b3,D66 Groningen,2022-08-16T15:25:38.556Z,93f4d8f3-11ff-4b28-ba01-e3ff31fb3fdb,D66,true,true,Netherlands,nl,225922380838567,D66 Groningen,Facebook
+d18cbdd7-8e4a-4435-a0b3-36460aa1cfb8,D66 Tilburg,2022-08-16T15:25:38.312Z,47814dc5-04d8-43db-ac64-1f66102588b7,D66,true,true,Netherlands,nl,259119013936,D66 Tilburg,Facebook
+d1daa17f-aab9-4576-9aa4-50aeca304e68,D66 Soest-Soesterberg,2022-08-16T15:25:38.521Z,ffaf8254-4970-4966-bff3-1e622e1382ed,D66,true,true,Netherlands,nl,1129208503774916,D66 Soest-Soesterberg,Facebook
+d6665795-38dd-4919-9549-7af8af73c85f,D66 Internationaal,2022-08-16T15:25:36.403Z,9ee37811-f6c7-4f1e-940b-91ae26a414d6,D66,true,true,Netherlands,nl,642930529119017,D66 Internationaal,Facebook
+d6aa7374-fb2b-413f-aca1-539deb7fa81d,Mr. Hans van Mierlo Stichting,2022-08-16T15:25:38.151Z,495f2808-7212-4daa-85d3-c219b5effad6,D66,true,true,Netherlands,nl,571333213225618,Mr. Hans van Mierlo Stichting,Facebook
+d6f5576e-c307-491d-9fb9-f80a0235f659,D66 Westfriesland,2022-08-16T15:25:38.316Z,87367ca0-dbb5-4832-9f12-9ee5d8d4983a,D66,true,true,Netherlands,nl,267847256626886,D66 Westfriesland,Facebook
+d87514da-378b-4c5f-93d4-593ff4d23fc5,D66 Woerden,2022-08-16T15:25:38.419Z,89ef57cf-0cb6-48aa-b6fc-54368bacb802,D66,true,true,Netherlands,nl,117481438306203,D66 Woerden,Facebook
+e669a99a-7dc7-4f3e-82da-20d54020ecd8,D66 Heerlen,2022-08-16T15:25:38.697Z,058ad69f-40f9-4437-bcf6-5a9cff6a2c8e,D66,true,true,Netherlands,nl,509188269199628,D66 Heerlen,Facebook
+e9d723ea-b0fb-4be9-9528-5709f9314f8f,D66 Beekdaelen,2022-08-16T15:25:38.642Z,17f7059d-0ebb-4c5f-ba95-6f6df7a10f30,D66,true,true,Netherlands,nl,1970145503263766,D66 Beekdaelen,Facebook
+ea862c7c-c9d4-47b6-852d-d2dcf95aa4b3,Rob Jetten - D66,2022-08-16T15:25:36.404Z,da474ba3-fb7c-4385-9469-a37dc6b4f4e5,D66,true,true,Netherlands,nl,684205995075734,Rob Jetten - D66,Facebook
+eccc4632-8857-4903-b7cc-6e3708dbb628,D66 Gennep,2022-08-16T15:25:38.189Z,ff80fe96-dbc3-4293-9adc-f942b5577183,D66,true,true,Netherlands,nl,483088901801643,D66 Gennep,Facebook
+f09a21c0-8b91-44da-8e44-ff826d0dffbf,D66 Overijssel,2022-08-16T15:25:38.260Z,ca12e20c-383e-4623-8972-5c7c28eadb5e,D66,true,true,Netherlands,nl,153430294762818,D66 Overijssel,Facebook
+f286e430-4b68-4523-b025-7eeb48690b62,D66 Amsterdam,2022-08-16T15:25:38.187Z,4d76951d-5a72-4c17-b3e8-90d1b584df9e,D66,true,true,Netherlands,nl,290810577595982,D66 Amsterdam,Facebook
+fc86f529-ae9e-4b0a-9fbf-c25d2d2dbd87,D66 Vught-Helvoirt-Cromvoirt,2022-08-16T15:25:38.243Z,4817a7ab-11c7-4d27-ba60-3e6345bf0d22,D66,true,true,Netherlands,nl,305998839508251,D66 Vught-Helvoirt-Cromvoirt,Facebook
+fef3fbf4-6e49-4c4a-a938-a78340696824,D66 Middelburg,2022-08-16T15:25:38.695Z,9b0c8458-84cb-4506-9207-70352986186a,D66,true,true,Netherlands,nl,551955401505079,D66 Middelburg,Facebook
+074f9037-393b-40e6-9f0f-cf26b88c5c88,CDAAchtkarspelen,2023-02-16T10:53:45.628Z,2525b255-aa73-440f-9ef1-f7d5078595ef,CDA,true,true,Netherlands,nl,498631290179145,CDAAchtkarspelen,Facebook
+1754dbb5-3e32-4d91-84b2-4a735495d0ba,"CDJA, CDA-jongeren",2022-08-16T15:25:37.017Z,3b1e70be-eb50-4dbb-838e-a66b0488b0ab,CDA,true,true,Netherlands,nl,135642563196256,"CDJA, CDA-jongeren",Facebook
+18183411-1f54-4cce-b56f-39435f0cf4ec,CDA Zoeterwoude,2022-08-16T15:25:37.556Z,4c552fa2-d43d-4477-bda9-bacd012c9112,CDA,true,true,Netherlands,nl,495077074013552,CDA Zoeterwoude,Facebook
+19aa372d-2356-4fab-af81-16ffd236b663,Harry van der Molen,2022-08-16T15:25:36.782Z,dff5d6ab-4de9-4616-8d12-cc98176c31fb,CDA,true,true,Netherlands,nl,1598361623791979,Harry van der Molen,Facebook
+1a4779ff-7ee3-4280-9825-bd41bbe7abfb,CDA Overijssel,2022-08-16T15:25:37.204Z,4f7ad4ae-6f67-4f96-b6d6-5c115dda248c,CDA,true,true,Netherlands,nl,206932742776182,CDA Overijssel,Facebook
+1a964213-d388-42b5-9f36-d44c260c73f6,CDA Vught Helvoirt Cromvoirt,2022-08-16T15:25:36.911Z,a939aa2e-cbb5-4858-b9fe-3da468d91f25,CDA,true,true,Netherlands,nl,430597160607656,CDA Vught Helvoirt Cromvoirt,Facebook
+21bd7441-5475-4c2d-8e10-41f9b34c38cb,CDA Valkenburg a/d Geul,2022-08-16T15:25:37.440Z,6fa36554-ed90-44fa-aa4c-1dd49e9e160d,CDA,true,true,Netherlands,nl,630170627073175,CDA Valkenburg a/d Geul,Facebook
+24f90ffa-d23e-4aa9-874a-af392476fad3,CDA Maastricht,2022-08-16T15:25:37.376Z,afdcdffe-5e32-42c3-9365-134eee7e1635,CDA,true,true,Netherlands,nl,305525042814385,CDA Maastricht,Facebook
+2562d538-9ef8-4747-a0fc-73df78514b0d,Michel Rog,2022-08-16T15:25:36.886Z,3ccb220d-e17e-405d-b22f-5664146f506c,CDA,true,true,Netherlands,nl,1701977273392331,Michel Rog,Facebook
+266abf62-eb91-4526-968c-cc5c13844e21,CDA Harderwijk Hierden,2022-08-16T15:25:37.495Z,7d7c2d33-b7c5-487a-b7a9-86485b7f8169,CDA,true,true,Netherlands,nl,1595248250741419,CDA Harderwijk Hierden,Facebook
+2afe8397-574a-4daf-8352-002919063225,CDA Asten,2022-08-16T15:25:37.531Z,d5237ae3-61fc-4e40-85f4-0b82548b2719,CDA,true,true,Netherlands,nl,238075096364508,CDA Asten,Facebook
+2d9389c9-9945-4db3-aaea-b9f7099cd6c6,CDA Krimpenerwaard,2023-02-07T15:05:59.572Z,baa97a41-cd4c-4412-a8b7-db85afdc8ea4,CDA,true,true,Netherlands,nl,924019610958351,CDA Krimpenerwaard,Facebook
+2fae8c9f-4d36-4114-85a2-d32296c65b87,CDA Harlingen,2022-08-16T15:25:37.204Z,1832de67-cb97-4c3c-b037-0acecfdd8042,CDA,true,true,Netherlands,nl,192600774817587,CDA Harlingen,Facebook
+3071dc25-eb07-4084-a706-26db1430855b,CDA Neder-Betuwe,2022-08-16T15:25:37.491Z,0441d0b1-5b31-4374-afb8-f42ff66a4fe7,CDA,true,true,Netherlands,nl,193223164173865,CDA Neder-Betuwe,Facebook
+314eed5d-8cb1-43b4-8826-5a6a3fa0b637,CDA Heemskerk,2022-08-16T15:25:37.440Z,38aa2d6e-3d35-4b64-a837-6e162b490c4f,CDA,true,true,Netherlands,nl,1512067898874085,CDA Heemskerk,Facebook
+3481bf12-41d0-4ef7-8865-187932c5b6b1,CDA Uithoorn - De Kwakel,2022-08-16T15:25:37.095Z,bd7eaa19-c643-491f-9560-c026af2c38d3,CDA,true,true,Netherlands,nl,209971895842485,CDA Uithoorn - De Kwakel,Facebook
+3b0e2ccf-eeb6-4283-bdb1-6dd952591311,CDA West Maas en Waal,2023-02-15T10:53:38.927Z,89ed98fb-c736-49d3-ab8d-dc5d6a76edd1,CDA,true,true,Netherlands,nl,686529124720085,CDA West Maas en Waal,Facebook
+3cdcf5e5-7495-4839-b995-de407a0bf2b3,CDA Veenendaal,2022-08-16T15:25:37.264Z,88406113-192a-4506-bcee-111b6380d290,CDA,true,true,Netherlands,nl,343995085744200,CDA Veenendaal,Facebook
+4160c7ff-7f04-4183-943d-c7665c5ea7ea,CDA Midden-Groningen,2022-08-16T15:25:37.687Z,36922de9-c848-43c5-9a6b-f6ad55eb25f1,CDA,true,true,Netherlands,nl,1649013595380040,CDA Midden-Groningen,Facebook
+42e6a668-d2e6-4262-a897-4719074c4dbe,CDA Mill en Sint Hubert,2022-08-16T15:25:37.516Z,873272c8-b52e-4f75-91e8-bfeae8a96e2a,CDA,true,true,Netherlands,nl,610561445683906,CDA Mill en Sint Hubert,Facebook
+4ad995b0-8a87-4e08-b8fa-95e90d177110,CDA Drents Overijsselse Delta,2023-02-26T10:53:56.329Z,2ed56d6b-eeb8-4a7e-9e84-f84b1acbb60c,CDA,true,true,Netherlands,nl,104781687807849,CDA Drents Overijsselse Delta,Facebook
+5068628e-89a0-4d93-8ffa-1e3bd3f81012,CDA Woudenberg,2022-08-16T15:25:37.681Z,906235ae-1f7a-4b10-a526-ea4b37c81e13,CDA,true,true,Netherlands,nl,196310430554710,CDA Woudenberg,Facebook
+51adedef-cfcb-416b-8f31-b2ebb0c43ed3,CDA Goirle Riel,2022-08-16T15:25:37.808Z,ca85f0fb-1bcc-4d31-a54a-48c66fb89073,CDA,true,true,Netherlands,nl,339932172815655,CDA Goirle Riel,Facebook
+51d7c44a-9b60-4697-8a67-0307a73ee9f6,CDA Terneuzen,2022-08-16T15:25:37.256Z,4f43ba24-d0ed-4f9e-a9f0-ae4f672b8f97,CDA,true,true,Netherlands,nl,134845486657988,CDA Terneuzen,Facebook
+5328690b-041a-4d97-8304-b479808d3cac,CDA Doetinchem,2022-08-16T15:25:37.754Z,8e45ce57-63a7-45b4-bd6f-69401b00e1a8,CDA,true,true,Netherlands,nl,199385600271549,CDA Doetinchem,Facebook
+53a406e1-448f-40e7-9349-4bb40732552d,Madeleine van Toorenburg,2022-08-16T15:25:36.787Z,1983f26e-cf28-4ee5-a1a7-acaf4defbee0,CDA,true,true,Netherlands,nl,404443543059212,Madeleine van Toorenburg,Facebook
+56888914-0a40-4e55-ac46-65258054f91b,CDA Amsterdam,2022-08-16T15:25:36.895Z,0dcce9d4-3482-48d4-86c1-ef2e8a9daae3,CDA,true,true,Netherlands,nl,535450106537661,CDA Amsterdam,Facebook
+5806a221-bad2-46b7-85de-83149223b217,CDA Aalten-Dinxperlo,2022-08-16T15:25:37.080Z,02d6f91e-7dc4-4848-9b91-272dbb67e0c2,CDA,true,true,Netherlands,nl,418727481496257,CDA Aalten-Dinxperlo,Facebook
+5a41bdc3-3f60-44a9-a5ad-aeec9fb89739,CDA Den Haag,2022-08-16T15:25:36.804Z,4263cc00-e8a6-456f-8024-d089db36ab92,CDA,true,true,Netherlands,nl,175658419295023,CDA Den Haag,Facebook
+5d55f920-1dfc-4262-8857-ee4017e4ef98,CDA Provincie Utrecht,2022-08-16T15:25:36.940Z,c8414ff3-113a-41fd-ac44-0565f684ca10,CDA,true,true,Netherlands,nl,1559225897625340,CDA Provincie Utrecht,Facebook
+6255794c-be7c-4424-91db-98e49094536a,CDA Eemsdelta,2022-08-16T15:25:37.050Z,12bbb8be-e2d1-43aa-8543-4fa7e5b3c3d5,CDA,true,true,Netherlands,nl,321817418536017,CDA Eemsdelta,Facebook
+63efaed4-fde9-4464-ac86-4c74547ff5c9,CDA Groningen,2023-02-12T10:53:37.546Z,ee9bf669-c41c-4ea0-b462-6d2b0cbd8a44,CDA,true,true,Netherlands,nl,546440435446924,CDA Groningen,Facebook
+65942f0e-bdc7-4db1-8b7d-ed336f0d48db,CDA Wijchen,2022-08-16T15:25:37.090Z,1e47789d-4334-481f-afd4-66b796a3fc80,CDA,true,true,Netherlands,nl,262802337226392,CDA Wijchen,Facebook
+6ae7cf04-723c-478d-a584-32fcb8c41e83,CDA Sint-Michielsgestel,2022-08-16T15:25:37.622Z,ff8328b8-a09f-418e-8f84-69345c38d5c8,CDA,true,true,Netherlands,nl,151541561675000,CDA Sint-Michielsgestel,Facebook
+6c05f558-afb3-4e87-9a84-1c0096b9bb7d,CDA Urk,2022-08-16T15:25:37.814Z,4143377c-8cac-497d-9487-eabcc8f81bab,CDA,true,true,Netherlands,nl,195220513824326,CDA Urk,Facebook
+6c7c7257-3f72-4f33-a88d-6f23d23a1eee,Wopke Hoekstra,2022-08-16T15:25:36.908Z,ce035012-e8bf-432b-885f-8de036e26d14,CDA,true,true,Netherlands,nl,2018408465106868,Wopke Hoekstra,Facebook
+78ef4963-3295-40ae-b259-4ed8be18b1d7,Joba van den Berg,2022-08-16T15:25:37.011Z,4a419328-c088-4be6-85b8-54bc1a63170a,CDA,true,true,Netherlands,nl,1844392342447692,Joba van den Berg,Facebook
+7aa640d4-2d0b-4e3d-9909-a2f34fad9e75,CDA Zeeland,2022-08-16T15:25:37.328Z,42a60de5-96eb-4641-98c5-28eeeb3666e8,CDA,true,true,Netherlands,nl,327605354041024,CDA Zeeland,Facebook
+7c4fed52-bb0d-4e98-b4b4-8ec1c85219ed,Maurits von Martels CDA,2022-08-16T15:25:36.906Z,e282c1c8-7b89-4386-92fb-0b3a078228fd,CDA,true,true,Netherlands,nl,1727815447535716,Maurits von Martels CDA,Facebook
+84845885-2005-441f-94db-ebecdeeb802d,CDA Zwijndrecht,2022-08-16T15:25:37.765Z,80b8456f-8eae-4c95-a3d6-7b211ca71e30,CDA,true,true,Netherlands,nl,760125597332468,CDA Zwijndrecht,Facebook
+8979ec1c-de9a-4dde-b33b-a2e54aedf4ef,CDA Barneveld,2022-08-16T15:25:37.051Z,d3827948-836c-4a32-92bb-915825d8ff13,CDA,true,true,Netherlands,nl,409371815837560,CDA Barneveld,Facebook
+8bfc6e64-0f1b-4085-a99d-899584371ad1,CDA Utrecht,2022-08-16T15:25:37.430Z,8f95c149-716d-4c7d-a38d-17e8e0906f98,CDA,true,true,Netherlands,nl,348600985220459,CDA Utrecht,Facebook
+8e51cf54-cc17-400e-9f83-5258d1780c12,Henk Jan Ormel,2022-08-16T15:25:36.761Z,9239dcab-aa39-4bce-a161-02942f6ff457,CDA,true,true,Netherlands,nl,823537391322678,Henk Jan Ormel,Facebook
+8fc869d4-80e3-4910-a6c5-23a641f688c4,CDA Smallingerland,2022-08-16T15:25:37.635Z,ea41c73a-5896-40b9-82aa-1b751d358483,CDA,true,true,Netherlands,nl,1787602688161421,CDA Smallingerland,Facebook
+9839294e-c33b-47cd-a1b0-eca67124fcbd,CDA Hoeksche Waard,2022-08-16T15:25:37.763Z,8ab812dc-4a6d-4455-8996-d680892318b8,CDA,true,true,Netherlands,nl,184189882389473,CDA Hoeksche Waard,Facebook
+9b1f2f5c-5a6e-40c6-b4de-6b3218dc8594,CDA Zwolle,2022-08-16T15:25:36.941Z,b21d97b8-1785-4764-ba26-87873345d9f7,CDA,true,true,Netherlands,nl,890769134318110,CDA Zwolle,Facebook
+9ca3d2b4-6371-4e12-9004-25130ef42727,CDA Opsterland,2022-08-16T15:25:37.316Z,9f55ff09-29a3-4fc5-b045-48ebbe2fa47c,CDA,true,true,Netherlands,nl,260653317801997,CDA Opsterland,Facebook
+9de68c1b-5948-4482-8d75-6dfc64f0a9cf,CDA,2022-08-16T15:25:36.403Z,b079cbbc-4668-4ec8-8f6f-2c1e8a045c23,CDA,true,true,Netherlands,nl,320374518118,CDA,Facebook
+ac7a4f55-f669-4784-82c6-550d4309d159,CDA Drimmelen,2022-08-16T15:25:37.756Z,ee557e50-e62d-45cd-b758-bea8bef6b567,CDA,true,true,Netherlands,nl,618699471497068,CDA Drimmelen,Facebook
+ac9aba56-33b0-4e1c-9e37-c2746310dcc6,Lokaal CDA gemeente Epe,2022-08-16T15:25:37.569Z,b721dbd7-10e2-468a-8bff-36c62156caab,CDA,true,true,Netherlands,nl,259622384190321,Lokaal CDA gemeente Epe,Facebook
+b3229148-e752-475e-b858-304c2120592e,Martijn van Helvert,2022-08-16T15:25:36.777Z,ccd9af5c-2920-4944-b7bb-f5bfc61d327e,CDA,true,true,Netherlands,nl,825800654145354,Martijn van Helvert,Facebook
+b4e3f0ec-f0bc-41a1-8c81-7066087b6c15,CDA Bergen op Zoom,2022-08-16T15:25:37.649Z,04c42cff-ae56-4a19-88e4-84a3ce50e5d3,CDA,true,true,Netherlands,nl,771521899540181,CDA Bergen op Zoom,Facebook
+b73039df-ba78-4326-bf82-726ba6845ea4,CDA Boxtel,2022-08-16T15:25:37.092Z,b3ead284-14f7-464b-93ec-de750a66925c,CDA,true,true,Netherlands,nl,748985915209148,CDA Boxtel,Facebook
+b77156c7-4464-4387-9d76-6e45cc22b5b3,Mustafa Amhaouch,2022-08-16T15:25:36.908Z,fa4adf3e-6560-405b-a471-63a9c514caab,CDA,true,true,Netherlands,nl,1862580210628899,Mustafa Amhaouch,Facebook
+b9a7069e-2967-4189-bd5c-250ef05cc1e6,CDA Noordwijk-Noordwijkerhout-De Zilk,2022-08-16T15:25:37.051Z,5eedde3e-7369-4cee-bcc9-180bb55812b7,CDA,true,true,Netherlands,nl,698451706850384,CDA Noordwijk-Noordwijkerhout-De Zilk,Facebook
+bb05a431-ca6f-4ce4-86ea-fbdf45fdf0a1,Hugo de Jonge,2022-08-16T15:25:36.816Z,9bc2867b-7a1f-47d2-8b28-2fcf2ccba2ad,CDA,true,true,Netherlands,nl,337991513008675,Hugo de Jonge,Facebook
+c258c398-d698-4b16-8966-c2ffe1e4cda9,CDA Purmerend,2022-08-16T15:25:37.761Z,316b4c41-85bc-48dc-b185-18f3bad173f6,CDA,true,true,Netherlands,nl,626270210729407,CDA Purmerend,Facebook
+c5704db2-90b0-4e1f-9697-209c5c183c34,CDA Gouda,2022-08-16T15:25:37.693Z,560a602d-90ba-49ed-ad9e-d4b99c850023,CDA,true,true,Netherlands,nl,441341285986856,CDA Gouda,Facebook
+c6e1c091-338c-4fcf-8111-1cc96e92d1e7,CDA Vijfheerenlanden,2022-08-16T15:25:37.570Z,3ac450cf-58f5-4ae6-9050-7396b8e99f2a,CDA,true,true,Netherlands,nl,397283743670490,CDA Vijfheerenlanden,Facebook
+c817bc6f-5c9d-4938-a4cf-ae29d6386442,CDA Katwijk,2022-08-16T15:25:36.942Z,5ee31fb4-4298-4be5-bfbc-30d6afa7e8c1,CDA,true,true,Netherlands,nl,135376383177889,CDA Katwijk,Facebook
+c8fd67f9-a8b8-4302-8080-713ea14e5ee4,CDA.sonenbreugel,2022-08-16T15:25:37.400Z,2a9192b2-bbe1-40c2-9bab-853290c2df3d,CDA,true,true,Netherlands,nl,211527752371216,CDA.sonenbreugel,Facebook
+c919b03a-8927-4abe-b000-f694ff283b24,Agnes Mulder,2022-08-16T15:25:36.953Z,7178c97a-8c5b-4309-a684-72758ad5b7d6,CDA,true,true,Netherlands,nl,138208102983774,Agnes Mulder,Facebook
+cc8b1f00-120c-44a1-8f5d-a0ca4cf52d3d,CDA Kerkrade,2022-08-16T15:25:37.494Z,3f67ed42-78bc-4ed8-b3c6-76840f1b032d,CDA,true,true,Netherlands,nl,599313950125078,CDA Kerkrade,Facebook
+ccbf8464-bdb1-44ff-a770-0ee9f3c0d333,CDA Zuid-Holland,2022-08-16T15:25:36.779Z,f24dd7d5-3d2f-4139-bc2d-787c68bf4222,CDA,true,true,Netherlands,nl,1523833891223465,CDA Zuid-Holland,Facebook
+cfdeec44-1e13-40cf-9f07-ec47e27b46a0,CDA Ermelo,2022-08-16T15:25:37.809Z,2435a6d6-fd7f-4c3b-8bca-ab484175e8ac,CDA,true,true,Netherlands,nl,1417520661873955,CDA Ermelo,Facebook
+d81485cf-0b38-4c56-8fbd-a3f9a1165445,CDA Lisse,2022-08-16T15:25:37.051Z,f3cade70-a134-4b76-8c46-2691a4a12b17,CDA,true,true,Netherlands,nl,449134611796644,CDA Lisse,Facebook
+da650e44-2c07-42cd-a46d-5a4372b49ade,Sybrand Buma,2022-08-16T15:25:36.404Z,39029f03-44c8-4487-b582-2918a141cea5,CDA,true,true,Netherlands,nl,1111353662231954,Sybrand Buma,Facebook
+db02147b-3a98-4f29-a2a2-421395f6af50,CDA Provincie Groningen,2022-08-16T15:25:37.440Z,a2989422-1f2c-4773-9cb0-bf4b266f92c1,CDA,true,true,Netherlands,nl,773700796038689,CDA Provincie Groningen,Facebook
+dc8d6c2b-a219-4ec1-bac1-c789d98acb94,CDA Haarlem,2022-08-16T15:25:37.497Z,0c582f07-06bd-4ca6-b1c7-8581dd81534f,CDA,true,true,Netherlands,nl,616257468385419,CDA Haarlem,Facebook
+df0cd092-12d0-44c8-831e-01cc604d35b1,CDA Zaanstad,2022-08-16T15:25:37.320Z,cc09fe4e-2d49-4f9b-ac85-b20500283bf1,CDA,true,true,Netherlands,nl,1557210341199535,CDA Zaanstad,Facebook
+e17fa9b2-9ed5-4da7-8a36-d4bf978ed12c,CDA Den Helder,2022-08-16T15:25:37.328Z,d9a606bc-264c-4604-86e0-57bf331e0e16,CDA,true,true,Netherlands,nl,920592431361475,CDA Den Helder,Facebook
+e323d36e-6ca1-46f6-94a0-71578ee718a2,Raymond Knops,2022-08-16T15:25:36.773Z,dbfb6a24-c6e5-49ac-8f4f-0c577a36b1ae,CDA,true,true,Netherlands,nl,1705660683039799,Raymond Knops,Facebook
+e70f10bf-6204-4d26-ad50-64645ce3541b,CDA Goeree-Overflakkee,2023-02-11T10:53:32.271Z,f0ed016e-4699-4f16-9a66-ec1f7e1bfbee,CDA,true,true,Netherlands,nl,299553243443758,CDA Goeree-Overflakkee,Facebook
+e9f5f338-66fe-4229-bc3c-d898adc7c38b,CDA Ommen,2022-08-16T15:25:37.565Z,faeba035-3571-41d1-8601-73b9f25adcec,CDA,true,true,Netherlands,nl,1107043432765171,CDA Ommen,Facebook
+eb495868-ec6a-4bd6-8bec-b7d7a194ed87,CDA Hattem,2022-08-16T15:25:37.630Z,55409629-d38c-47d5-a226-1430b399df80,CDA,true,true,Netherlands,nl,202773499768178,CDA Hattem,Facebook
+ebf7031a-8078-4702-bdf1-f2eba11ec2d7,René Peters,2022-08-16T15:25:36.802Z,c8cd45f1-cb77-48eb-9966-800c2f71ab8e,CDA,true,true,Netherlands,nl,1791229601140644,René Peters,Facebook
+ec6d2aab-0308-45ea-8fc3-42106478054c,CDA Lansingerland,2022-08-16T15:25:37.628Z,9fbbb8ce-98b4-455e-80e3-d793fa9deee9,CDA,true,true,Netherlands,nl,429679917098992,CDA Lansingerland,Facebook
+f31e13de-f364-488d-883c-353972b599eb,Zùmmers Belang CDA,2022-08-16T15:25:37.773Z,fa14c2d4-9d3e-4d58-ade3-1eb23b95ace9,CDA,true,true,Netherlands,nl,445945465509986,Zùmmers Belang CDA,Facebook
+f58820bf-93fa-4e10-9e6d-a32a247ffd4b,CDA Barendrecht,2022-08-16T15:25:37.628Z,0083372e-5220-4c5d-a9c0-61148bdd33e2,CDA,true,true,Netherlands,nl,483478691758983,CDA Barendrecht,Facebook
+f7b8cf04-b2b2-4ad8-aa5a-b8715ffacb21,CDA Sluis,2022-08-16T15:25:37.265Z,6cd3fe0d-fb81-41c6-a7b3-1a6ca0268497,CDA,true,true,Netherlands,nl,220440588148776,CDA Sluis,Facebook
+fcdb22e3-5751-40c9-8e71-558b187d10f5,Chris van Dam,2022-08-16T15:25:36.803Z,85f55fb7-1e74-4775-b0ad-a007d09ab13a,CDA,true,true,Netherlands,nl,237429380031891,Chris van Dam,Facebook
+fe454748-9243-49e5-b66b-a3f106e43dfd,CDA-Hilversum,2022-08-16T15:25:37.256Z,ee5ed0e0-914e-4984-bcc5-5f33b4eae21b,CDA,true,true,Netherlands,nl,251158461698171,CDA-Hilversum,Facebook
+ff01d335-b2de-4053-b035-d39be1d694c0,CDA Doesburg,2022-08-16T15:25:37.692Z,c25d8abb-d3e1-4638-919a-dbede9086883,CDA,true,true,Netherlands,nl,323069454456751,CDA Doesburg,Facebook
+0020305b-4947-427e-a2c3-f9540e9ee785,Pvda Alkmaar,2022-08-16T15:25:40.190Z,61dbf41b-78d2-4d80-a3db-ba4c39a2b95f,PvdA,true,true,Netherlands,nl,667585943263634,Pvda Alkmaar,Facebook
+03d96896-86b9-4f33-98a6-639fb1a55658,PvdA Haarlem,2022-08-16T15:25:39.657Z,d1c002aa-9940-42cc-ac4b-0f4b17bfa27c,PvdA,true,true,Netherlands,nl,374461422625101,PvdA Haarlem,Facebook
+06dc0361-0955-4a0c-94b5-c844c873ee82,PvdA Winterswijk,2022-08-16T15:25:40.732Z,e32bf872-4564-40ce-bc77-8eb0b854d0b4,PvdA,true,true,Netherlands,nl,1393972554182063,PvdA Winterswijk,Facebook
+0b0ac969-2526-4c62-bb94-1cefe9090bf8,Pvda Montferland,2022-08-16T15:25:40.689Z,8b13d790-6093-46fd-9c5e-ebf8dd645e51,PvdA,true,true,Netherlands,nl,613711391989275,Pvda Montferland,Facebook
+0d6b9b5c-4e49-45c4-9722-0aea07e350a7,PvdA Geldrop-Mierlo,2022-08-16T15:25:40.337Z,312737c4-6cb0-49a4-ac19-1dd9d8bf5276,PvdA,true,true,Netherlands,nl,476345199077535,PvdA Geldrop-Mierlo,Facebook
+0ee2ca33-61eb-4622-b04e-782331e10ca2,PvdA Reusel De Mierden,2022-08-16T15:25:40.678Z,b272708f-e097-4d95-a407-97e2e07b66bd,PvdA,true,true,Netherlands,nl,306810719374111,PvdA Reusel De Mierden,Facebook
+1dba6d8b-e6ae-4f1b-9d20-9dc05e35d1e5,PvdA Nijmegen,2022-08-16T15:25:40.316Z,17bc8639-8b5d-42af-beb2-b7de59f2f271,PvdA,true,true,Netherlands,nl,1393529407559073,PvdA Nijmegen,Facebook
+22155866-af91-4e68-a8fe-c4b78970d8af,PvdA Zeeland,2022-08-16T15:25:40.185Z,60ba9f9f-c502-4566-a8bf-89191b9fc2ae,PvdA,true,true,Netherlands,nl,759417477428801,PvdA Zeeland,Facebook
+240793a2-1df3-4f9d-849b-1b6cf7cda3fa,PvdA Smallingerland,2022-08-16T15:25:40.475Z,60a5cae7-da79-4c60-bcce-2af73f7611e8,PvdA,true,true,Netherlands,nl,630864096938801,PvdA Smallingerland,Facebook
+26cddb0e-56ac-4964-8062-c5288d7fac83,Vera Tax,2022-08-16T15:25:39.683Z,f221a332-38d7-44b3-9932-898c5b608adb,PvdA,true,true,Netherlands,nl,104024417686758,Vera Tax,Facebook
+336b2b63-c58f-4eee-a65f-8b60ffa6f407,PvdA Zwijndrecht.,2023-02-19T10:54:01.555Z,bad3ffa4-6b15-4cea-9882-7a1caf4c86b9,PvdA,true,true,Netherlands,nl,540144089412228,PvdA Zwijndrecht.,Facebook
+3bcbc47f-7ec0-4215-867c-4c62224c0f00,Partij van de Arbeid (PvdA),2022-08-16T15:25:36.659Z,cf278c71-5b54-4b04-8492-7d370c545fc9,PvdA,true,true,Netherlands,nl,113895885305052,Partij van de Arbeid (PvdA),Facebook
+3cec01a2-9900-43fa-bc20-322464cf02e9,PvdA Almelo,2022-08-16T15:25:40.329Z,60a6c641-8eb9-429b-85a3-638f3ca73268,PvdA,true,true,Netherlands,nl,508079819307153,PvdA Almelo,Facebook
+421813d4-ae72-413f-b339-125d8e8dd3fc,PvdA Vlaardingen,2022-08-16T15:25:40.308Z,cfc62677-9dfd-46a7-8e0d-1d6b751a6295,PvdA,true,true,Netherlands,nl,1383104228576987,PvdA Vlaardingen,Facebook
+42aca010-f079-48ad-884b-30d637ddbe00,PvdA-Drenthe,2023-02-19T10:54:01.575Z,81d16195-494f-451a-9c8a-31a309e3a4ac,PvdA,true,true,Netherlands,nl,103025673101606,PvdA-Drenthe,Facebook
+45e7297f-0136-4cfd-98f6-4d536d9b4958,PvdA Medemblik,2022-08-16T15:25:40.470Z,8c78a943-a08e-4b85-9cea-05171726d0b7,PvdA,true,true,Netherlands,nl,616490005068036,PvdA Medemblik,Facebook
+4628ab43-4948-442b-8d37-3875ec6dcecf,PvdA Zuid-Holland,2023-02-26T10:53:55.955Z,74e63a17-3037-4c8c-892f-f87f5490aa14,PvdA,true,true,Netherlands,nl,526682507436451,PvdA Zuid-Holland,Facebook
+483994fa-9ce4-46eb-9250-f56178d65208,PvdA Valkenswaard,2022-08-16T15:25:40.208Z,99a8ce52-da51-4de4-ba36-163de19ecaf1,PvdA,true,true,Netherlands,nl,1422889834673368,PvdA Valkenswaard,Facebook
+4a41caa9-3afe-4463-8234-c193cdf3713b,Agnes Jongerius,2022-08-16T15:25:39.659Z,67a8bf0f-22f0-4f96-b75e-69a6a48fa559,PvdA,true,true,Netherlands,nl,764061133777036,Agnes Jongerius,Facebook
+4b935be3-c3a1-4520-8517-d9c465f1aabc,Pvda Den Bosch,2022-08-16T15:25:40.048Z,00ddf74c-8287-4569-a164-d7b03414ea62,PvdA,true,true,Netherlands,nl,627201893971363,Pvda Den Bosch,Facebook
+4ea00317-fd86-467d-a9a2-d193e2170425,Jonge Socialisten in de PvdA,2022-08-16T15:25:40.048Z,48c0ed3c-0b9e-4fbc-befd-891eea0660bc,PvdA,true,true,Netherlands,nl,112246298811452,Jonge Socialisten in de PvdA,Facebook
+54e94780-6451-4d8d-a595-32ad8f644e7b,Partij van de Arbeid Zaanstad,2022-08-16T15:25:39.786Z,e053b2f7-8281-4c55-ae3d-0ac5831a65b1,PvdA,true,true,Netherlands,nl,476388839115117,Partij van de Arbeid Zaanstad,Facebook
+5787abe1-fceb-4a3b-a843-7efbd3c8ab7c,Arnout van den Bosch - Raadslid PvdA Amstelveen,2022-08-16T15:25:40.044Z,dc29d859-0e88-4f69-9730-7825c25b304c,PvdA,true,true,Netherlands,nl,135501903830947,Arnout van den Bosch - Raadslid PvdA Amstelveen,Facebook
+57f874fb-afde-46d5-a034-fbb3b98cfc73,PvdA Sluis,2022-08-16T15:25:40.551Z,6407a742-67ee-48ec-abe8-c05458956616,PvdA,true,true,Netherlands,nl,1995851374019790,PvdA Sluis,Facebook
+5d4e6054-0be4-40dc-9711-22c44ecf2753,Pvda Rijswijk,2022-08-16T15:25:40.445Z,b06c1f79-98f3-4423-b9ef-fc691de4c93c,PvdA,true,true,Netherlands,nl,140205082843346,Pvda Rijswijk,Facebook
+5e195442-f352-424e-aa77-d10bddd9c4fb,PvdA Kerkrade,2022-08-16T15:25:40.427Z,60b0408f-6d3a-471d-a889-b4efd3e6391f,PvdA,true,true,Netherlands,nl,220138834728873,PvdA Kerkrade,Facebook
+64aef912-c0ff-434d-95bd-a295373d874f,Paul Tang,2022-08-16T15:25:39.729Z,b9784a0f-1ed4-434b-8b82-9edbf2131d33,PvdA,true,true,Netherlands,nl,208020512703248,Paul Tang,Facebook
+6882b4df-8738-4f36-9479-d38d939989c1,PvdA Utrecht,2022-08-16T15:25:40.434Z,8daeaff1-3ff3-4883-86b9-d27e3cb50533,PvdA,true,true,Netherlands,nl,451407014874001,PvdA Utrecht,Facebook
+6b31c84a-c989-4735-b97f-6d639351a2ca,Stan Peters PvdA,2022-08-16T15:25:40.343Z,43b7e537-9af7-4409-b638-9192329b5f78,PvdA,true,true,Netherlands,nl,560182477659896,Stan Peters PvdA,Facebook
+7161bd14-be89-4ff9-8251-85bf315f48e7,PvdA Hollands Kroon,2022-08-16T15:25:40.567Z,ba18733b-f927-4db5-83db-2020ea48cdf5,PvdA,true,true,Netherlands,nl,230610190325538,PvdA Hollands Kroon,Facebook
+72c62430-b2f3-48ec-8fe1-4b4a08c5f7a9,PvdA Haarlemmermeer,2022-08-16T15:25:40.608Z,ced85b34-f213-4d41-aba5-95cf1292a217,PvdA,true,true,Netherlands,nl,190173454467936,PvdA Haarlemmermeer,Facebook
+766bf5b4-f320-4ee6-9284-1b7439617ff7,PvdA Amsterdam,2022-08-16T15:25:39.659Z,46796cfd-c7c9-47f2-9257-fd2c9c43d195,PvdA,true,true,Netherlands,nl,170060616402275,PvdA Amsterdam,Facebook
+80576f4a-e0c5-4228-b77c-032fc64bdcbb,Partij van de Arbeid Woensdrecht,2022-08-16T15:25:40.044Z,ae2758f6-64f8-44bc-9953-4b0b8cfb639d,PvdA,true,true,Netherlands,nl,547661161996857,Partij van de Arbeid Woensdrecht,Facebook
+8c1c414d-b407-4fc8-8a78-2a37c089d9db,PvdA Almere,2022-08-16T15:25:40.441Z,c334b214-5650-4877-aaee-1e4ca80de94d,PvdA,true,true,Netherlands,nl,522603781144544,PvdA Almere,Facebook
+8d130097-1b63-4b66-a872-f9915e719f85,Jolanda van Gool PvdA073,2022-08-16T15:25:40.208Z,c7112ec7-2e0b-40e5-9b0a-3c169a7cc701,PvdA,true,true,Netherlands,nl,1734008883285300,Jolanda van Gool PvdA073,Facebook
+93eba195-3936-4112-8c11-81a6a29a4459,PvdA Rotterdam,2022-08-16T15:25:40.186Z,493df74d-3d78-45e2-9faa-acfc698a02d3,PvdA,true,true,Netherlands,nl,340871992590484,PvdA Rotterdam,Facebook
+9a6de94b-8823-4c13-8e88-e407ca9b196c,PvdA Roosendaal,2022-08-16T15:25:40.469Z,5d0c1a43-f368-4703-badf-1fd016947695,PvdA,true,true,Netherlands,nl,115241245317898,PvdA Roosendaal,Facebook
+9ab64d9e-3278-42a9-b8d3-9aeeb7f39685,Partij van de Arbeid PvdA Midden-Groningen,2022-08-16T15:25:40.044Z,7a642bc8-e121-4cd8-bbd3-01ef66de2084,PvdA,true,true,Netherlands,nl,1510532972292654,Partij van de Arbeid PvdA Midden-Groningen,Facebook
+9d5ed3f9-4109-4102-8aa6-d93f7a9cf95a,PvdA Westland,2022-08-16T15:25:40.312Z,38c5d7f5-5ca7-4c0d-9cdf-04317db43db8,PvdA,true,true,Netherlands,nl,862823187132723,PvdA Westland,Facebook
+a057a5e0-d643-41e4-9f17-d5755a547277,PvdA Amstelveen,2022-08-16T15:25:40.670Z,6f66e92c-179f-41b3-aea5-5a46158eb846,PvdA,true,true,Netherlands,nl,516828615098303,PvdA Amstelveen,Facebook
+a39b4664-6c84-4b41-9a9b-6f7f58652b12,PvdA-Harderwijk,2022-08-16T15:25:40.203Z,f064b72d-0de2-45bc-b0c1-8bcd4d199a33,PvdA,true,true,Netherlands,nl,583900934989488,PvdA-Harderwijk,Facebook
+a3df5899-5b66-401b-a107-a43b32d4f344,PvdA Tilburg,2022-08-16T15:25:40.451Z,510569a6-f09c-4f1a-b6b0-7a5d0dbde000,PvdA,true,true,Netherlands,nl,1389317844656912,PvdA Tilburg,Facebook
+a9140da6-a767-4489-8367-4e5dac8ef207,PvdA Heumen,2022-08-16T15:25:40.311Z,cc80943f-c2ab-4e9c-964c-e0cf57f0046d,PvdA,true,true,Netherlands,nl,366349027034383,PvdA Heumen,Facebook
+b1d03bc0-422f-49ee-9564-47bf15364675,PvdA Maassluis,2022-08-16T15:25:40.679Z,a496fdc4-6b73-4b4d-b195-ebb5fd0c16b2,PvdA,true,true,Netherlands,nl,564725660245239,PvdA Maassluis,Facebook
+b2600aeb-0393-45e8-b768-19213650d919,Lodewijk Asscher,2022-08-16T15:25:36.542Z,159b7439-ce34-4037-a6c3-3396484fc409,PvdA,true,true,Netherlands,nl,254918764596191,Lodewijk Asscher,Facebook
+b76a6f79-7ab7-46cf-a12d-9182e89ee964,PvdA Goes,2022-08-16T15:25:40.044Z,fe2cd8e7-7c22-4b46-8314-8a14a13263dd,PvdA,true,true,Netherlands,nl,1412530858983763,PvdA Goes,Facebook
+b7e37c2e-1889-42e0-a430-07841bc4967b,PvdA Stichtse Vecht,2022-08-16T15:25:40.336Z,347424c0-a386-4a4d-9118-56f4668e6955,PvdA,true,true,Netherlands,nl,1715340175444649,PvdA Stichtse Vecht,Facebook
+b9fbb94c-2f91-44cb-b16c-27e8b7dcdd9a,Mohammed Chahim,2022-08-16T15:25:39.782Z,85849290-2fa7-4ed3-ae68-0248c18417ce,PvdA,true,true,Netherlands,nl,290597421719639,Mohammed Chahim,Facebook
+ba37afbb-b1e7-429a-9466-4a725967eae3,Pvda Beesel-Reuver,2022-08-16T15:25:40.576Z,43de9b15-f11b-43e6-9be4-9212e872b281,PvdA,true,true,Netherlands,nl,186407568165708,Pvda Beesel-Reuver,Facebook
+bd2ea427-893c-4b68-a9b3-7cb03b5c1b65,PvdA Midden-Delfland,2022-08-16T15:25:40.601Z,c6100969-234b-4c48-a71f-54a3c210dabd,PvdA,true,true,Netherlands,nl,206998282815876,PvdA Midden-Delfland,Facebook
+bebf5e47-c668-4f3b-96ad-592966654801,Pvda Hof van Twente,2022-08-16T15:25:40.561Z,3845fbbb-813c-4af0-96d8-1947269d2472,PvdA,true,true,Netherlands,nl,187885148045634,Pvda Hof van Twente,Facebook
+bfbdf3a5-4ea8-4c19-9cd7-cdf7ec448014,Pvda Krimpen,2022-08-16T15:25:40.471Z,a1bf9305-a8b9-40c3-b5ce-76fd04907321,PvdA,true,true,Netherlands,nl,320593364806627,Pvda Krimpen,Facebook
+c4cabb92-4ffe-4bc9-a8bf-921b64d991b8,PvdA Coevorden,2023-02-21T10:53:43.933Z,f96d3c32-a2d7-4358-92e4-5171e36c2a4a,PvdA,true,true,Netherlands,nl,270919709744419,PvdA Coevorden,Facebook
+c58dba7a-f4d4-45fc-82a6-e1456aeff55f,PvdA Provincie Groningen,2022-08-16T15:25:40.340Z,a3ab8266-3e34-482f-8fc5-15aee7ae92ef,PvdA,true,true,Netherlands,nl,330384780486845,PvdA Provincie Groningen,Facebook
+c6a2f2a6-5f0f-4591-adea-b423be6d2cdb,PvdA Haren,2022-08-16T15:25:40.686Z,3f0c31da-ec72-40ad-b95d-ff34781673c3,PvdA,true,true,Netherlands,nl,234858363335659,PvdA Haren,Facebook
+c8516190-fd84-429a-987a-050c304c8f12,PvdA Provincie Utrecht,2023-02-07T15:05:59.047Z,37b2101f-1538-47ac-9e24-60b76af398c8,PvdA,true,true,Netherlands,nl,377484722432934,PvdA Provincie Utrecht,Facebook
+cba4c526-e92b-4868-9ecf-aae18f3363e2,John Kerstens PvdA,2022-08-16T15:25:39.716Z,cfaee2bb-b1bd-45af-9192-fb0e1bb42725,PvdA,true,true,Netherlands,nl,355829394541247,John Kerstens PvdA,Facebook
+cf571768-e2c8-4330-861e-2fe5d6a2d7db,PvdA Waalwijk (This Page has been deleted.),2022-08-16T15:25:40.704Z,a2f24264-d3c3-438d-9f8e-afd9b932fc46,PvdA,true,true,Netherlands,nl,1551637291831665,PvdA Waalwijk (This Page has been deleted.),Facebook
+d27c0536-a33b-4046-a90b-295b3ed54f55,Pieter Paul Slikker - PvdA 073,2022-08-16T15:25:40.048Z,b7481084-1787-4326-8ee7-05b298bd7fce,PvdA,true,true,Netherlands,nl,509675125832784,Pieter Paul Slikker - PvdA 073,Facebook
+d76d83a8-8d6f-439a-9f93-0db117def497,PvdA Zwolle,2022-08-16T15:25:40.206Z,b32e3a8c-ef31-4ab2-b380-e6a3cf1851b0,PvdA,true,true,Netherlands,nl,102760393111399,PvdA Zwolle,Facebook
+d776dd77-e22c-449c-94d4-0c0634f1e18d,Lara Wolters,2022-08-16T15:25:39.769Z,531bce8c-029e-49e3-944c-69263f36ed6b,PvdA,true,true,Netherlands,nl,412036619614117,Lara Wolters,Facebook
+d8810e37-76ac-418a-a265-d7d956ed0afd,PvdA-Hoorn,2022-08-16T15:25:40.434Z,31abbf14-4546-4549-8812-7a2b04ca4d8e,PvdA,true,true,Netherlands,nl,418227798205443,PvdA-Hoorn,Facebook
+db3e293a-bd03-4bca-b795-dbddd3759ee4,PvdA Limburg,2023-02-07T15:05:59.616Z,752c3d3e-a2bc-4931-989b-7c37971078ef,PvdA,true,true,Netherlands,nl,165914046762784,PvdA Limburg,Facebook
+db745ab2-b061-4ab6-9cc8-9a018bf2141e,PvdA Borger-Odoorn,2022-08-16T15:25:40.554Z,a0c383c8-2606-4193-ae77-37a91ec1b445,PvdA,true,true,Netherlands,nl,316719818346344,PvdA Borger-Odoorn,Facebook
+e1c17369-920e-4621-a17d-5e6d5131e9b5,PvdA Breda,2023-02-07T15:05:59.885Z,5bd3806f-ce1d-4600-a00a-dc03aebdd3dd,PvdA,true,true,Netherlands,nl,110883405741664,PvdA Breda,Facebook
+e4453e84-a74c-40d8-89e1-d26bd6d189fb,Pvda Lingewaard,2022-08-16T15:25:40.324Z,837863d0-146c-4ad0-ad72-68e4db643f08,PvdA,true,true,Netherlands,nl,1380763172182215,Pvda Lingewaard,Facebook
+ea2d41ce-f352-4a8e-a001-f86f91145b7e,PvdA Groningen,2022-08-16T15:25:40.044Z,c561dcdc-3a0a-4786-a053-0ef0327728c9,PvdA,true,true,Netherlands,nl,208032132579030,PvdA Groningen,Facebook
+eb8780eb-40f0-4b73-be32-12fb444a4cdf,PvdA Krimpenerwaard,2022-08-16T15:25:40.554Z,822f342b-a8c0-421b-bf7f-68b0c4f8b525,PvdA,true,true,Netherlands,nl,366912353386282,PvdA Krimpenerwaard,Facebook
+ed15039a-8500-4acd-8d31-182d9a4c99ad,Kati Piri,2022-08-16T15:25:40.044Z,01b50d6f-55d5-421d-a010-6bf0429e0d42,PvdA,true,true,Netherlands,nl,254626848046622,Kati Piri,Facebook
+f102b311-2287-4440-949a-bec61a93eb6f,PvdA Europa,2022-08-16T15:25:36.546Z,b3fc0e50-ba44-45f2-87b5-bd103b71cbf6,PvdA,true,true,Netherlands,nl,199340240080632,PvdA Europa,Facebook
+f1a0c342-9499-4311-9a92-2a70576c7308,PvdA Zoetermeer,2022-08-16T15:25:40.196Z,dd395630-bcf2-4829-bd13-b59d17196c1c,PvdA,true,true,Netherlands,nl,589938234422084,PvdA Zoetermeer,Facebook
+f259fb91-bda1-412e-bc13-b8328e077e36,Omdat ik het verdien,2022-08-16T15:25:39.658Z,3f55e953-6b42-4e8b-bd8f-9df73d0376b1,PvdA,true,true,Netherlands,nl,112341377212761,Omdat ik het verdien,Facebook
+f2cf26b7-992c-44af-8828-b3a9d7e2776d,Gijs van Dijk,2022-08-16T15:25:39.673Z,a14eebc2-f9f8-47d9-9f5e-6179125b7ce5,PvdA,true,true,Netherlands,nl,100291500469490,Gijs van Dijk,Facebook
+f3cd01c6-3d24-4be1-94a7-6f91c6f1604e,PvdA Nissewaard,2022-08-16T15:25:40.608Z,65773004-6678-44a5-afe3-a4079958a9e6,PvdA,true,true,Netherlands,nl,423624667726498,PvdA Nissewaard,Facebook
+f48ceed6-047e-4d6c-8ad9-a15a62cbf3c3,PvdA Noord Holland,2023-02-10T10:53:53.965Z,f3cd132a-b89e-401a-89fe-c639ea117c6a,PvdA,true,true,Netherlands,nl,226310417539522,PvdA Noord Holland,Facebook
+f55719b5-5bc6-46b3-a050-cbf3a46e1a80,PvdA Amersfoort,2022-08-16T15:25:40.607Z,8959a849-0b15-4db4-8a93-547e125b1398,PvdA,true,true,Netherlands,nl,144728552295443,PvdA Amersfoort,Facebook
+f599eb3a-1b5a-46f5-ab0c-023334808a14,PvdA Noordoostpolder,2022-08-16T15:25:40.739Z,3b973110-d7e1-4232-ab76-3d7465b5dcce,PvdA,true,true,Netherlands,nl,1218520171552619,PvdA Noordoostpolder,Facebook
+f620a717-94b4-42cf-9ebe-aba3e6016442,PvdA Den Haag,2022-08-16T15:25:39.710Z,2ee90aaa-8dee-45dd-b605-596391a90bc4,PvdA,true,true,Netherlands,nl,190869220945975,PvdA Den Haag,Facebook
+f8e9dca8-a752-4a78-891a-621746e3d8d8,PvdA Enschede,2022-08-16T15:25:40.207Z,aecfea66-8d21-40d0-b236-9fb4025770ad,PvdA,true,true,Netherlands,nl,436001856449324,PvdA Enschede,Facebook
+fb087900-4a41-4b5c-b6b9-551a672c1f12,PvdA Leiden,2022-08-16T15:25:40.207Z,33247701-c3ff-4f41-a469-48f4eab1ef96,PvdA,true,true,Netherlands,nl,286855144753205,PvdA Leiden,Facebook
+fc89810c-1d6a-4f70-b4dd-1c9dcbaf8687,PvdA Brabant,2022-08-16T15:25:40.044Z,3584c65a-ac55-4e19-9589-d729f3bdd801,PvdA,true,true,Netherlands,nl,123604241074923,PvdA Brabant,Facebook
+fe4bcdb8-95a5-4a15-aa15-4e7df4f3a50d,PvdA Zevenaar,2023-02-07T15:05:59.902Z,7e4a4010-8377-4d65-948f-469db013c105,PvdA,true,true,Netherlands,nl,385731594812535,PvdA Zevenaar,Facebook
+47fa1bde-72fb-40a0-a776-604c5f4f4915,Alliantie,2023-02-16T10:53:45.612Z,ec377244-6e2b-456e-b6cf-d4662e8c0a33,And,true,true,Netherlands,nl,109519805323713,Alliantie,Facebook
+73d95c84-e0a2-4ea0-a810-6086c4a84676,Henriette van Hedel - Alliantie,2023-02-27T10:53:50.777Z,b7163e36-7542-47a1-9949-34ff3ae54e31,And,true,true,Netherlands,nl,103838582646296,Henriette van Hedel - Alliantie,Facebook
+f1c90c0e-c4db-49cf-a2a1-19c0441c293b,Volt Nederland,2023-02-27T10:53:50.563Z,653b47ae-79a4-45d9-9e94-8fbf4338796f,V,true,true,Netherlands,nl,146644665960101,Volt Nederland,Facebook
+2450ec7b-746f-450b-8a58-c893e44c73fc,JA21,2023-02-07T15:05:59.320Z,f5c041e4-016a-4055-9a8b-1a3229304de7,JA21,true,true,Netherlands,nl,106020448037192,JA21,Facebook

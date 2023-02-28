@@ -36,6 +36,43 @@ source("utils.R")
 
 internal_page_ids <- read_csv("data/nl_advertisers.csv") %>%
   mutate(page_id = as.character(page_id))
+
+# internal_page_ids %>%
+#     count(party, sort = T) %>% View
+
+wtm_data <- read_csv("data/wtm-advertisers-nl-2023-02-28.csv") %>% #names
+    select(page_id = advertisers_platforms.advertiser_platform_ref,
+           page_name = name, party = entities.short_name)  %>%
+    mutate(page_id = as.character(page_id)) %>%
+    # filter(party == "And") %>% #View
+    # count(party, sort = T)  %>%
+  mutate(party = case_when(
+    str_detect(party, "VVD") ~ "VVD",
+    str_detect(party, "\\bCDA\\b") ~ "CDA",
+    str_detect(party, "PvdA|Jonge Socialisten") ~ "PvdA",
+    str_detect(party, "D66|Jonge Democraten") ~ "D66",
+    str_detect(party, "GroenLinks|GL") ~ "GroenLinks",
+    str_detect(party, "ChristenUnie|CU") ~ "ChristenUnie",
+    str_detect(party, "\\bSP\\b") ~ "SP",
+    str_detect(party, "FvD|FVD|Forum voor Democratie") ~ "FvD",
+    str_detect(party, "50Plus|50PLUS") ~ "50PLUS",
+    str_detect(party, "\\bSGP\\b") ~ "SGP",
+    str_detect(party, "PvdD|Partij voor de Dieren") ~ "PvdD",
+    str_detect(party, "PVV") ~ "PVV",
+    str_detect(party, "DENK") ~ "DENK",
+    str_detect(party, "Volt|VOLT") ~ "Volt Nederland",
+    str_detect(party, "BIJ1|BiJ") ~ "BIJ1",
+    str_detect(party, "BVNL") ~ "BVNL",
+    str_detect(party, "Ja21") ~ "JA21",
+    str_detect(page_name, "Alliantie") ~ "Alliantie",
+    T ~ party
+  )) #%>% #View
+    # count(party, sort = T)
+
+all_dat <- internal_page_ids %>%
+    bind_rows(wtm_data) %>%
+    distinct(page_id, .keep_all = T)
+
 # janitor::clean_names() %>%
 # arrange(desc(amount_spent_usd)) %>%
 # mutate(spend_upper = amount_spent_usd %>% as.numeric()) %>%
@@ -118,26 +155,38 @@ scraper <- function(.x, time = "7") {
 scraper <- possibly(scraper, otherwise = NULL, quiet = F)
 
 
+# if(F){
+#     # dir("provincies/7", full.names
+# }
+
 ### save seperately
-yo <- internal_page_ids %>% #count(cntry, sort  =T) %>%
+yo <- all_dat %>% #count(cntry, sort  =T) %>%
   # filter(!(page_id %in% already_there)) %>%
   # filter(cntry == "GB") %>%
   # slice(1:10) %>%
   split(1:nrow(.)) %>%
-  map_dfr_progress(scraper, 30)
+  map_dfr_progress(scraper, 7)
 
-saveRDS(yo, file = )
+yo <- all_dat %>% #count(cntry, sort  =T) %>%
+    # filter(!(page_id %in% already_there)) %>%
+    # filter(cntry == "GB") %>%
+    # slice(1:10) %>%
+    split(1:nrow(.)) %>%
+    map_dfr_progress(scraper, 30)
+
+# saveRDS(yo, file = )
 library(tidyverse)
 da30  <- dir("provincies/30", full.names = T) %>%
   map_dfr_progress(readRDS)  %>%
     mutate(total_spend_formatted = parse_number(total_spend_formatted)) %>%
     rename(page_id = internal_id) %>%
-    left_join(internal_page_ids)
+    left_join(all_dat)
+da30 %>% count(party)
 da7  <- dir("provincies/7", full.names = T) %>%
     map_dfr_progress(readRDS) %>%
     mutate(total_spend_formatted = parse_number(total_spend_formatted)) %>%
     rename(page_id = internal_id) %>%
-    left_join(internal_page_ids)
+    left_join(all_dat)
 
 saveRDS(da30, "data/election_dat30.rds")
 saveRDS(da7, "data/election_dat7.rds")

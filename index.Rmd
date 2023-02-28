@@ -56,8 +56,8 @@ election_dat7 <- readRDS("data/election_dat7.rds") %>%
     rename(internal_id = page_id)
 #     count(coalition)
 
-last7days_string <- "18th February - 24 February 2023"
-last30days_string <- "26th January - 24 February 2023"
+last7days_string <- "19th February - 25 February 2023"
+last30days_string <- "27th January - 25 February 2023"
 
 # January 26 to Febrary 24
 source("utils.R")
@@ -67,13 +67,32 @@ source("utils.R")
 # election_dat30 %>%
 # count(party,sort = T)
 
+color_dat <- tibble(
+  colors = c("#00b13d", "#80c31c", "#cd503e", "#008067", "#e01003", "#e3101c", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
+  party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland"))
+
+
+scale_fill_parties <- function(...){
+    ggplot2:::manual_scale(
+        'fill', 
+        values = setNames(color_dat$colors, color_dat$party), 
+        ...
+    )
+}
+scale_color_parties <- function(...){
+    ggplot2:::manual_scale(
+        'color', 
+        values = setNames(color_dat$colors, color_dat$party), 
+        ...
+    )
+}
 
 ```
 
 
 ## Methodology
 
-We monitored over 800 Dutch political advertisers during the 2023 Erste Kamerverkiezingen to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
+In collaboration with [Who Targets Me](https://whotargets.me/), we monitored over 900 Dutch political advertisers during the 2023 Erste Kamerverkiezingen to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
 
 To better understand the regional election, we kept only advertisers who:
 
@@ -288,7 +307,7 @@ How much did campaigns spend on different targeting methods?
 
 
 
-```{r, fig.width=14, fig.height=9, dpi=300}
+```{r, fig.width=14, fig.height=12, dpi=300}
 
 
 col_each30 <- election_dat30 %>% 
@@ -315,7 +334,7 @@ col_each30 <- election_dat30 %>%
 plot_geography <- function(x) {
     
 gg <- x %>% 
-  filter(perc >= 0.1) %>%
+  filter(perc >= 0.01) %>%
   add_count(target) %>% 
   # filter(n == 3) %>% 
   mutate(target = case_when(
@@ -348,11 +367,13 @@ the_order <- gg %>%
     pull(target) %>% levels
 
 gg %>% 
-    mutate(target = fct_relevel(target, the_order)) %>% 
+    # mutate(target = fct_relevel(target, the_order)) %>%
+    mutate(target = reorder_within(target, perc, party)) %>% 
     ggplot(aes(target, perc)) +
     geom_col(aes(fill = party)) +
+    scale_x_reordered() +
     coord_flip() +
-    facet_wrap(~party, scales = "free") +
+    facet_wrap(~party, scales = "free", ncol = 3) +
     ggthemes::theme_hc() +
     # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1"))   +
   geom_text(size = 2.5,
@@ -364,8 +385,12 @@ gg %>%
 
 }
 
-plot_geography(col_each30)
+library(tidytext)
+plot_geography(col_each30) +
+    scale_fill_parties()
 
+# col_each30 %>%
+#     mutate(target = reorder_within(target, perc, party))
 ```
 
 
@@ -373,7 +398,7 @@ plot_geography(col_each30)
 
 ### `r last7days_string` (Last 7 days)
 
-```{r, fig.width=14, fig.height=9, dpi=300}
+```{r, fig.width=14, fig.height=12, dpi=300}
 
 col_each7 <- election_dat7 %>% 
     mutate(total_spend = total_spend_formatted) %>% 
@@ -386,9 +411,131 @@ col_each7 <- election_dat7 %>%
     })
 
 
-plot_geography(col_each7)
+plot_geography(col_each7) +
+    scale_fill_parties()
 
 ```
+
+## Top Targeted Audiences {.tabset .tabset-fade .tabset-pills}
+
+Here, we show the *top targeted audiences* for each party (ranked by amount of Euro spend). Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.
+
+```{r}
+
+interest_targeting30 <-  election_dat30 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(type == "detailed") %>%
+    # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = total_spend * total_spend_pct) %>%
+    filter(main_currency == "EUR")  %>%
+    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
+    # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
+    # drop_na(left_vs_right) %>%
+    mutate(value = paste0(detailed_type,": ", value)) %>% 
+    group_by(party, value, is_exclusion, detailed_type) %>%
+    summarise(total_spend = sum(total_spend)) %>%
+    ungroup() %>%
+    arrange(desc(total_spend)) 
+
+# election_dat30 %>% 
+#     filter(!is_exclusion) %>% 
+#     group_by(party)
+#     ggplot(aes())
+    
+contested_dat30 <- interest_targeting30 %>% 
+  filter(!is_exclusion) %>% 
+  # filter(total_spend >= 40000) %>% 
+  filter(total_spend >= 1) %>%
+  # add_count(value) %>% 
+  # filter(n >= 5) %>% 
+  group_by(value) %>% 
+  mutate(total_spenderino = sum(total_spend)) %>% 
+  mutate(perc = total_spend/total_spenderino) %>%
+  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
+  mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
+
+
+
+interest_targeting7 <-  election_dat7 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(type == "detailed") %>%
+    # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = total_spend * total_spend_pct) %>%
+    filter(main_currency == "EUR")  %>%
+    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
+    # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
+    # drop_na(left_vs_right) %>%
+    mutate(value = paste0(detailed_type,": ", value)) %>% 
+    group_by(party, value, is_exclusion, detailed_type) %>%
+    summarise(total_spend = sum(total_spend)) %>%
+    ungroup() %>%
+    arrange(desc(total_spend)) 
+
+# election_dat30 %>% 
+#     filter(!is_exclusion) %>% 
+#     group_by(party)
+#     ggplot(aes())
+    
+contested_dat7 <- interest_targeting7 %>% 
+  filter(!is_exclusion) %>% 
+  # filter(total_spend >= 40000) %>% 
+  filter(total_spend >= 1) %>%
+  # add_count(value) %>% 
+  # filter(n >= 5) %>% 
+  group_by(value) %>% 
+  mutate(total_spenderino = sum(total_spend)) %>% 
+  mutate(perc = total_spend/total_spenderino) %>%
+  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
+  mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
+
+```
+
+
+### `r last30days_string` (Last 30 days)
+
+```{r, fig.width=14, fig.height=9, dpi=300}
+contested_dat30 %>% 
+    group_by(party) %>%
+    arrange(desc(perc)) %>% 
+    slice(1:10) %>%
+    mutate(value = reorder_within(value, total_spend, party)) %>% 
+    ggplot(aes(value, total_spend, fill = party)) +
+    geom_col() +
+    facet_wrap(~party, scales = "free")+
+    coord_flip()  +
+    scale_x_reordered() +
+    scale_fill_parties() +
+  ggthemes::theme_hc() +
+  labs(x = "Targeting criteria", y = "Budget spent on targeting method (in Euro)", #title = "Contested targeted interests (US midterms 2022)", subtitle = " ", 
+       caption = "Source: Meta Ad Library and data compiled by Who Targets Me. Data Viz: Fabio Votta (@favstats).") +
+  theme(legend.position = "bottom", plot.title = element_text(size = 28, face = "bold", hjust = 1.25), text=element_text(family="mono", face = "bold"), plot.caption = element_text(hjust = -1.7)) +
+  guides(fill=guide_legend(nrow=2,byrow=TRUE)) 
+```
+
+
+### `r last7days_string` (Last 7 days)
+
+```{r, fig.width=14, fig.height=9, dpi=300}
+contested_dat7 %>% 
+    group_by(party) %>%
+    arrange(desc(perc)) %>% 
+    slice(1:10) %>%
+    mutate(value = reorder_within(value, total_spend, party)) %>% 
+    ggplot(aes(value, total_spend, fill = party)) +
+    geom_col() +
+    facet_wrap(~party, scales = "free")+
+    coord_flip()  +
+    scale_x_reordered() +
+    scale_fill_parties() +
+  ggthemes::theme_hc() +
+  labs(x = "Targeting criteria", y = "Budget spent on targeting method (in Euro)", #title = "Contested targeted interests (US midterms 2022)", subtitle = " ", 
+       caption = "Source: Meta Ad Library and data compiled by Who Targets Me. Data Viz: Fabio Votta (@favstats).") +
+  theme(legend.position = "bottom", plot.title = element_text(size = 28, face = "bold", hjust = 1.25), text=element_text(family="mono", face = "bold"), plot.caption = element_text(hjust = -1.7)) +
+  guides(fill=guide_legend(nrow=2,byrow=TRUE)) 
+```
+
 
 ## Top Contested Audiences {.tabset .tabset-fade .tabset-pills}
 
@@ -435,7 +582,7 @@ interest_targeting <-  ppp %>%
 contested_dat <- interest_targeting %>% 
   filter(!is_exclusion) %>% 
   # filter(total_spend >= 40000) %>% 
-  filter(total_spend >= 1) %>%
+  filter(total_spend >= 10) %>%
   add_count(value) %>% 
   filter(n >= 2) %>% 
   group_by(value) %>% 
@@ -505,50 +652,10 @@ main_parties <- c("VVD", "FvD", "GroenLinks", "PvdA", "CDA", "SP", "PVV", "D66",
 # debugonce(get_contested_graph)
 election_dat30 %>% 
     filter(party %in% main_parties) %>% 
-    get_contested_graph()
+    get_contested_graph()  +
+    scale_fill_parties()
 
 
-interest_targeting <-  election_dat30 %>% 
-    mutate(total_spend = total_spend_formatted) %>% 
-    filter(type == "detailed") %>%
-    # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
-    mutate(total_spend = total_spend * total_spend_pct) %>%
-    filter(main_currency == "EUR")  %>%
-    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
-    # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
-    # drop_na(left_vs_right) %>%
-    mutate(value = paste0(detailed_type,": ", value)) %>% 
-    group_by(party, value, is_exclusion, detailed_type) %>%
-    summarise(total_spend = sum(total_spend)) %>%
-    ungroup() %>%
-    arrange(desc(total_spend)) 
-
-# election_dat30 %>% 
-#     filter(!is_exclusion) %>% 
-#     group_by(party)
-#     ggplot(aes())
-    
-contested_dat <- interest_targeting %>% 
-  filter(!is_exclusion) %>% 
-  # filter(total_spend >= 40000) %>% 
-  filter(total_spend >= 1) %>%
-  # add_count(value) %>% 
-  # filter(n >= 5) %>% 
-  group_by(value) %>% 
-  mutate(total_spenderino = sum(total_spend)) %>% 
-  mutate(perc = total_spend/total_spenderino) %>%
-  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
-  mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
-
-contested_dat %>% 
-    group_by(party) %>%
-    arrange(desc(perc)) %>% 
-    slice(1:10) %>% 
-    ggplot(aes(value, total_spend)) +
-    geom_col() +
-    facet_wrap(~party, scales = "free")+
-    coord_flip() 
 ```
 
 
@@ -558,8 +665,11 @@ contested_dat %>%
 
 election_dat7 %>% 
     filter(party %in% main_parties) %>% 
-    get_contested_graph()
+    get_contested_graph() +
+    scale_fill_parties()
 ```
+
+
 
 ## Age Targeting {.tabset .tabset-fade .tabset-pills}
 
@@ -666,7 +776,8 @@ age_targeting %>%
     coord_flip() +
     labs(x = "Age Groups\n")  +
   geom_text(size = 3.5, color = "white",
-             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%")))
+             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%"))) +
+    scale_fill_parties()
     
 ```
 
@@ -718,7 +829,8 @@ age_targeting7 %>%
     coord_flip() +
     labs(x = "Age Groups\n")  +
   geom_text(size = 3.5, color = "white",
-             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%")))
+             aes(y = perc - 0.19, label = paste0(round(perc*100, 1), "%"))) +
+    scale_fill_parties()
     
 ```
 
@@ -750,11 +862,12 @@ gender_targeting %>%
     # scale_x_discrete(breaks = c("18", "24",
     #                             "34", "44",
     #                             "54", "65+")) +
-    labs(y = "% Budget Spend on Age Group") +
+    labs(y = "% Budget Spend on Gender") +
     coord_flip() +
-    labs(x = "Age Groups\n")  +
+    labs(x = "Gender\n")  +
   geom_label(size = 3.5, color = "black",
-             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+             aes(y = perc, label = paste0(round(perc*100, 2), "%"))) +
+    scale_fill_parties()
     
 ```
 
@@ -782,16 +895,17 @@ gender_targeting %>%
     # scale_x_discrete(breaks = c("18", "24",
     #                             "34", "44",
     #                             "54", "65+")) +
-    labs(y = "% Budget Spend on Age Group") +
+    labs(y = "% Budget Spend on Gender") +
     coord_flip() +
-    labs(x = "Age Groups\n")  +
+    labs(x = "Gender\n")  +
   geom_label(size = 3.5, color = "black", vjust="inward",hjust="inward",
-             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+             aes(y = perc, label = paste0(round(perc*100, 2), "%"))) +
+    scale_fill_parties()
     
 ```
 
 
-## Education Targeting
+## Education Targeting {.tabset .tabset-fade .tabset-pills}
 
 ### `r last30days_string` (Last 30 days)
 
@@ -856,7 +970,8 @@ election_dat30 %>%
     labs(y = "% Budget Spend on Education") +
     labs(x = "Education\n")   +
   geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
-             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+             aes(y = perc, label = paste0(round(perc*100, 2), "%"))) +
+    scale_fill_parties()
     
 
 
@@ -889,14 +1004,15 @@ election_dat7 %>%
     labs(y = "% Budget Spend on Education") +
     labs(x = "Education\n")   +
   geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
-             aes(y = perc, label = paste0(round(perc*100, 2), "%")))
+             aes(y = perc, label = paste0(round(perc*100, 2), "%"))) +
+    scale_fill_parties()
     
 
 
 ```
 
 
-## Job Targeting
+## Job Targeting {.tabset .tabset-fade .tabset-pills}
 
 
 ### `r last30days_string` (Last 30 days)
@@ -964,7 +1080,8 @@ election_dat30 %>%
     labs(x = "Job (Sectors)\n")  +
   geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
              aes(y = perc, label = paste0(round(perc*100, 1), "%")))  +
-    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22))
+    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22)) +
+    scale_fill_parties()
     
 
 
@@ -1002,7 +1119,8 @@ election_dat7 %>%
     labs(x = "Job (Sectors)\n")  +
   geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward",
              aes(y = perc, label = paste0(round(perc*100, 1), "%")))  +
-    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22))
+    scale_x_discrete(label = function(x) stringr::str_trunc(x, 22)) +
+    scale_fill_parties()
     
 
 
