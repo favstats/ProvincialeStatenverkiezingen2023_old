@@ -73,6 +73,8 @@ all_dat <- internal_page_ids %>%
     bind_rows(wtm_data) %>%
     distinct(page_id, .keep_all = T)
 
+# write_csv(all_dat, file = "nl_advertisers.csv")
+
 # janitor::clean_names() %>%
 # arrange(desc(amount_spent_usd)) %>%
 # mutate(spend_upper = amount_spent_usd %>% as.numeric()) %>%

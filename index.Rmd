@@ -56,11 +56,42 @@ election_dat7 <- readRDS("data/election_dat7.rds") %>%
     rename(internal_id = page_id)
 #     count(coalition)
 
-last7days_string <- "19th February - 25 February 2023"
-last30days_string <- "27th January - 25 February 2023"
+
+fin <- (as.Date(election_dat30$ds[1])-lubridate::days(1))
+begin7 <- fin-lubridate::days(6)
+begin30 <- fin-lubridate::days(29)
+
+append_date_suffix <- function(dates){
+  dayy <- lubridate::day(dates)
+  suff <- case_when(dayy %in% c(11,12,13) ~ "th",
+                    dayy %% 10 == 1 ~ 'st',
+                    dayy %% 10 == 2 ~ 'nd',
+                    dayy %% 10 == 3 ~'rd',
+                    TRUE ~ "th")
+  paste0(dayy, suff)
+}
+
+create_date <- function(x) {
+    str_replace(format(x, "%B %d"), 
+                as.character(lubridate::day(x)), 
+                append_date_suffix(x))
+}
+
+
+
+last7days_string <- paste0(create_date(begin7), " - ", paste(create_date(fin), lubridate::year(fin)))
+last30days_string <- paste0(create_date(begin30), " - ", paste(create_date(fin), lubridate::year(fin)))
 
 # January 26 to Febrary 24
 source("utils.R")
+
+
+# election_dat30 %>%# count(party)
+#     filter(party == "PvdD") %>% 
+#     distinct(internal_id, .keep_all = T) %>% 
+#     mutate(yo = sum(total_spend_formatted))
+#     filter(str_detect(value, "Butch"))
+#     arrange(desc(total_spend_pct))
 ```
 
 ```{r}
@@ -489,6 +520,13 @@ contested_dat7 <- interest_targeting7 %>%
   mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
   mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
 
+```
+
+```{r}
+# contested_dat30 %>% 
+#     filter(party == "PvdD") %>%
+#     filter(str_detect(value, "Butch"))
+#     arrange(desc(perc))
 ```
 
 
@@ -927,6 +965,7 @@ total_sppppeen <- x %>%
 x %>% 
     filter(type == "detailed") %>%
     filter(detailed_type == "DEMOGRAPHICS") %>% 
+  filter(!is_exclusion) %>% 
     # count(value, sort = T) %>% 
     filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree")) %>% 
     filter(str_detect(value, "Wine", negate = T)) %>% 
@@ -1035,6 +1074,7 @@ total_sppppeen <- x %>%
 x %>% 
     filter(type == "detailed") %>%
     filter(detailed_type == "DEMOGRAPHICS") %>% 
+  filter(!is_exclusion) %>% 
     # count(value, sort = T) %>% 
     filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree", negate = T)) %>% 
   mutate(total_spend = total_spend_formatted) %>%
