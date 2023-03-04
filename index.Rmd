@@ -72,7 +72,11 @@ append_date_suffix <- function(dates){
 }
 
 create_date <- function(x) {
-    str_replace(format(x, "%B %d"), 
+    the_date <- format(x, "%B %d")
+    the_date <- ifelse(str_detect(the_date, " 0"),
+           str_remove(the_date, "0"),
+           the_date)
+    str_replace(the_date, 
                 as.character(lubridate::day(x)), 
                 append_date_suffix(x))
 }
@@ -92,6 +96,25 @@ source("utils.R")
 #     mutate(yo = sum(total_spend_formatted))
 #     filter(str_detect(value, "Butch"))
 #     arrange(desc(total_spend_pct))
+
+
+# election_dat30 %>% 
+#     filter(party == "PvdA") %>% 
+#     count(page_name, sort = T)
+
+# fbl <- read_csv("data/FacebookAdLibraryReport_2023-02-28_NL_last_30_days_Noord-Holland.csv") %>% 
+#     janitor::clean_names()
+# 
+# 
+# yo <- all_dat %>% 
+#     distinct(page_id, party)
+
+# fbl %>% 
+#     mutate(page_id = as.character(page_id)) %>% 
+#     left_join(yo) %>% 
+#     select(page_name, party, everything()) %>% 
+#     drop_na(party) %>% 
+#     openxlsx::write.xlsx("topspenders28thFeb.xlsx")
 ```
 
 ```{r}
@@ -99,7 +122,7 @@ source("utils.R")
 # count(party,sort = T)
 
 color_dat <- tibble(
-  colors = c("#00b13d", "#80c31c", "#cd503e", "#008067", "#e01003", "#e3101c", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
+  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
   party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland"))
 
 
@@ -136,11 +159,40 @@ To better understand the regional election, we kept only advertisers who:
 
 ## Topline Statistics  {.tabset .tabset-fade .tabset-pills}
 
-### `r last30days_string` (Last 30 days)
 
 ```{r}
-# runoff %>% count(ds)
+sum30 <- election_dat30 %>% 
+    distinct(internal_id, .keep_all = T) %>% 
+    summarize(total_spend_formatted = sum(total_spend_formatted),
+              total_num_ads = sum(total_num_ads))
+
+sum7 <- election_dat7 %>% 
+    distinct(internal_id, .keep_all = T) %>% 
+    summarize(total_spend_formatted = sum(total_spend_formatted),
+              total_num_ads = sum(total_num_ads))
+
+add_ribbons <- function(x, adv, col) {
+   x %>% 
+  # tab_options(table.width = pct(100)) %>%
+  tab_style(
+    style = cell_borders(
+      sides = c("left"),
+      color = col,
+      weight = px(18.5),
+      style = "solid"
+    ),
+    locations = cells_body(
+      columns = `Number of Advertisers`,
+      rows = adv
+    ))
+}
+
 ```
+
+### `r last30days_string` (Last 30 days)
+
+
+In total, political parties spend €`r scales::comma_format()(sum30$total_spend_formatted)` and ran `r sum30$total_num_ads` ad copies on Meta in this timeframe.
 
 
 ```{r}
@@ -208,7 +260,24 @@ get_table_dat(election_dat30, party) %>%
   cols_align(
     align = "center"
   ) %>% 
-  gtExtras::gt_theme_538() #%>% 
+  gtExtras::gt_theme_538() %>%
+    add_ribbons("D66", "#00b13d") %>%
+    add_ribbons("GroenLinks", "#80c31c") %>%
+    add_ribbons("VVD", "#0a2cca") %>%
+    add_ribbons("CDA", "#008067") %>%
+    add_ribbons("SP", "#770100") %>%
+    add_ribbons("PvdA", "#ff0000") %>%
+    add_ribbons("FvD", "#6f2421") %>%
+    add_ribbons("ChristenUnie", "#02a6e9") %>%
+    add_ribbons("50PLUS", "#92107d") %>%
+    add_ribbons("Alliantie", "#04d3d4") %>%
+    add_ribbons("BVNL", "#242b57") %>%
+    add_ribbons("DENK", "#66cdaa") %>%
+    add_ribbons("Ja21", "#242b57") %>%
+    add_ribbons("PvdD", "#006b28") %>%
+    add_ribbons("PVV", "#012758") %>%
+    add_ribbons("SGP", "#ea5b0b") %>%
+    add_ribbons("Volt Nederland", "#582c83")
   # tab_options(table.width = pct(100))  #%>%
   # tab_style(
   #   style = cell_borders(
@@ -265,6 +334,9 @@ get_table_dat(election_dat30, party) %>%
 
 ### `r last7days_string` (Last 7 days)
 
+In total, political parties spend €`r scales::comma_format()(sum7$total_spend_formatted)` and ran `r sum7$total_num_ads` ad copies on Meta in this timeframe.
+
+
 
 ```{r}
 
@@ -279,51 +351,25 @@ get_table_dat(election_dat7, party) %>%
     align = "center"
   ) %>% 
   gtExtras::gt_theme_538() %>% 
-  tab_options(table.width = pct(100)) #  %>%
-  # tab_style(
-  #   style = cell_borders(
-  #     sides = c("left"),
-  #     color = "#ef3e3e",
-  #     weight = px(18.5),
-  #     style = "solid"
-  #   ),
-  #   locations = cells_body(
-  #     columns = `Numero di inserzionisti`,
-  #     rows = "Coalizione di centro-sinistra"
-  #   )) %>%
-  # tab_style(
-  #   style = cell_borders(
-  #     sides = c("left"),
-  #     color = "#0a6be1",
-  #     weight = px(18.5),
-  #     style = "solid"
-  #   ),
-  #   locations = cells_body(
-  #     columns = `Numero di inserzionisti`,
-  #     rows = "Coalizione di centro-destra"
-  #   ))%>%
-  # tab_style(
-  #   style = cell_borders(
-  #     sides = c("left"),
-  #     color = "#0039aa",
-  #     weight = px(18.5),
-  #     style = "solid"
-  #   ),
-  #   locations = cells_body(
-  #     columns = `Numero di inserzionisti`,
-  #     rows = "Terzo Polo"
-  #   ))%>%
-  # tab_style(
-  #   style = cell_borders(
-  #     sides = c("bottom"),
-  #     color = "lightgrey",
-  #     weight = px(0.5),
-  #     style = "solid"
-  #   ),
-  #   locations = cells_body(
-  #     columns = everything(),
-  #     rows = everything()
-  #   ))
+  tab_options(table.width = pct(100))  %>%
+    add_ribbons("D66", "#00b13d") %>%
+    add_ribbons("GroenLinks", "#80c31c") %>%
+    add_ribbons("VVD", "#0a2cca") %>%
+    add_ribbons("CDA", "#008067") %>%
+    add_ribbons("SP", "#770100") %>%
+    add_ribbons("PvdA", "#ff0000") %>%
+    add_ribbons("FvD", "#6f2421") %>%
+    add_ribbons("ChristenUnie", "#02a6e9") %>%
+    add_ribbons("50PLUS", "#92107d") %>%
+    add_ribbons("Alliantie", "#04d3d4") %>%
+    add_ribbons("BVNL", "#242b57") %>%
+    add_ribbons("DENK", "#66cdaa") %>%
+    add_ribbons("Ja21", "#242b57") %>%
+    add_ribbons("PvdD", "#006b28") %>%
+    add_ribbons("PVV", "#012758") %>%
+    add_ribbons("SGP", "#ea5b0b") %>%
+    add_ribbons("Volt Nederland", "#582c83")
+
 ```
 
 
@@ -479,7 +525,7 @@ contested_dat30 <- interest_targeting30 %>%
   filter(total_spend >= 1) %>%
   # add_count(value) %>% 
   # filter(n >= 5) %>% 
-  group_by(value) %>% 
+  group_by(party) %>% 
   mutate(total_spenderino = sum(total_spend)) %>% 
   mutate(perc = total_spend/total_spenderino) %>%
   mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
@@ -514,7 +560,7 @@ contested_dat7 <- interest_targeting7 %>%
   filter(total_spend >= 1) %>%
   # add_count(value) %>% 
   # filter(n >= 5) %>% 
-  group_by(value) %>% 
+  group_by(party) %>% 
   mutate(total_spenderino = sum(total_spend)) %>% 
   mutate(perc = total_spend/total_spenderino) %>%
   mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
@@ -531,6 +577,19 @@ contested_dat7 <- interest_targeting7 %>%
 
 
 ### `r last30days_string` (Last 30 days)
+
+```{r, eval = F}
+contested_dat30 %>% 
+    filter(party == "VVD")
+
+contested_dat30  %>% 
+    filter(party == "VVD") %>% 
+    group_by(party) %>%
+    arrange(desc(perc)) %>% 
+    slice(1:10) %>% 
+    ungroup()
+```
+
 
 ```{r, fig.width=14, fig.height=9, dpi=300}
 contested_dat30 %>% 
