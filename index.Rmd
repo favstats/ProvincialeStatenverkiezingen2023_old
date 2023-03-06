@@ -43,6 +43,35 @@ options(scipen = 999)
 # source("utils.R")
 ```
 
+
+```{r}
+# election_dat30 %>%
+# count(party,sort = T)
+
+color_dat <- tibble(
+  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
+  party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland"))
+
+
+scale_fill_parties <- function(...){
+    ggplot2:::manual_scale(
+        'fill', 
+        values = setNames(color_dat$colors, color_dat$party), 
+        ...
+    )
+}
+scale_color_parties <- function(...){
+    ggplot2:::manual_scale(
+        'color', 
+        values = setNames(color_dat$colors, color_dat$party), 
+        ...
+    )
+}
+
+```
+
+
+
 ```{r}
 
 # lab_dat <- readRDS("data/lab_dat.rds")
@@ -117,33 +146,6 @@ source("utils.R")
 #     openxlsx::write.xlsx("topspenders28thFeb.xlsx")
 ```
 
-```{r}
-# election_dat30 %>%
-# count(party,sort = T)
-
-color_dat <- tibble(
-  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
-  party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland"))
-
-
-scale_fill_parties <- function(...){
-    ggplot2:::manual_scale(
-        'fill', 
-        values = setNames(color_dat$colors, color_dat$party), 
-        ...
-    )
-}
-scale_color_parties <- function(...){
-    ggplot2:::manual_scale(
-        'color', 
-        values = setNames(color_dat$colors, color_dat$party), 
-        ...
-    )
-}
-
-```
-
-
 ## Methodology
 
 In collaboration with [Who Targets Me](https://whotargets.me/), we monitored over 900 Dutch political advertisers during the 2023 Provinciale Statenverkiezingen (Provincial elections) to better understand how campaigns use different targeting methods made available by Meta. To do this, we used data from the [Meta Ad Library](https://www.facebook.com/ads/library/), using the new 'Audience' data which gives some detail on how pages target their ads.
@@ -158,6 +160,29 @@ To better understand the regional election, we kept only advertisers who:
 > Note: Meta only provides 7, 30 and 90 days windows for the targeting data in their Ad Library. Meta's data also lags by a few days. We will update this report as soon as new data is available.
 
 ## Topline Statistics  {.tabset .tabset-fade .tabset-pills}
+
+
+
+
+```{r, fig.width=12, fig.height=8, dpi=300}
+nlsb <- read_csv("data/NL-SpendingsByAdvertisers.csv")
+nl_advertisers <- read_csv("data/nl_advertisers.csv")
+
+
+nlsb %>% 
+    janitor::clean_names() %>% 
+    left_join(nl_advertisers %>% rename(advertiser_id = page_id)) %>% 
+    drop_na(party) %>% 
+    group_by(create_date, party) %>% 
+    summarize(spend  = sum(spend)) %>% 
+    ggplot(aes(create_date, spend, color = party)) +
+    geom_line() +
+    scale_color_parties() +
+    facet_wrap(~party) +
+    ggthemes::theme_hc() +
+    theme(legend.position = "none") +
+    labs(y = "Daily Spend in Euro", x = "Day")
+```
 
 
 ```{r}
