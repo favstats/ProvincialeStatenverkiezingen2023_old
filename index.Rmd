@@ -41,6 +41,13 @@ options(scipen = 999)
 #   filter(left_vs_right == "All Republican-supporting pages")
 
 # source("utils.R")
+library(tidyverse)
+
+# %>% 
+# 
+#     walk(browseURL)
+
+
 ```
 
 
@@ -660,7 +667,7 @@ contested_dat7 %>%
 
 ## Top Contested Audiences {.tabset .tabset-fade .tabset-pills}
 
-Here, we show the *top most contested audiences*, i.e. where all parties have spent considerable amounts of money competing to reach voters with the same interests. Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.
+Here, we show the *top most contested audiences*, i.e. where all parties have spent considerable amounts of money competing to reach voters with the same interests. Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”. In each row on the right hand side, you can see how much in total was spend on that specific target audience.
 
 ### `r last30days_string` (Last 30 days)
 
@@ -703,7 +710,7 @@ interest_targeting <-  ppp %>%
 contested_dat <- interest_targeting %>% 
   filter(!is_exclusion) %>% 
   # filter(total_spend >= 40000) %>% 
-  filter(total_spend >= 10) %>%
+  filter(total_spend >= 25) %>%
   add_count(value) %>% 
   filter(n >= 2) %>% 
   group_by(value) %>% 
@@ -769,10 +776,10 @@ contested_dat %>% #count(party) %>% pull(party) %>% unique() %>% dput()
 # D66	214		
 # FvD	177		
 # Ja21	149	
-main_parties <- c("VVD", "FvD", "GroenLinks", "PvdA", "CDA", "SP", "PVV", "D66", "PvdD", "Ja21")
+main_parties <- c("VVD", "FvD", "GroenLinks", "PvdA", "CDA", "SP", "PVV", "D66", "PvdD", "Ja21", "CDA")
 # debugonce(get_contested_graph)
 election_dat30 %>% 
-    filter(party %in% main_parties) %>% 
+    # filter(party %in% main_parties) %>% 
     get_contested_graph()  +
     scale_fill_parties()
 
@@ -785,7 +792,7 @@ election_dat30 %>%
 ```{r, fig.width  = 10, fig.height=15}
 
 election_dat7 %>% 
-    filter(party %in% main_parties) %>% 
+    # filter(party %in% main_parties) %>% 
     get_contested_graph() +
     scale_fill_parties()
 ```
