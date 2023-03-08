@@ -43,6 +43,9 @@ dir.create("provincies/30")
 internal_page_ids <- read_csv("data/nl_advertisers.csv") %>%
   mutate(page_id = as.character(page_id))
 
+internal_page_ids <- read_csv("https://raw.githubusercontent.com/favstats/ProvincialeStatenverkiezingen2023/main/data/nl_advertisers.csv") %>%
+    mutate(page_id = as.character(page_id))
+
 # internal_page_ids %>%
 #     count(party, sort = T) %>% View
 
@@ -75,11 +78,79 @@ wtm_data <- read_csv("data/wtm-advertisers-nl-2023-02-28.csv") %>% #names
   )) #%>% #View
     # count(party, sort = T)
 
-all_dat <- internal_page_ids %>%
+# wtm_data %>% count(party)
+
+rep <- read_csv("data/FacebookAdLibraryReport_2023-03-05_NL_last_30_days_advertisers.csv") %>% janitor::clean_names()  %>%
+    mutate(page_id = as.character(page_id)) %>%
+    mutate(party1 = case_when(
+        str_detect(page_name, "VVD") ~ "VVD",
+        str_detect(page_name, "\\bCDA\\b") ~ "CDA",
+        str_detect(page_name, "PvdA|Jonge Socialisten") ~ "PvdA",
+        str_detect(page_name, "D66|Jonge Democraten") ~ "D66",
+        str_detect(page_name, "GroenLinks|GL") ~ "GroenLinks",
+        str_detect(page_name, "ChristenUnie|CU") ~ "ChristenUnie",
+        str_detect(page_name, "\\bSP\\b") ~ "SP",
+        str_detect(page_name, "FvD|FVD|Forum voor Democratie") ~ "FvD",
+        str_detect(page_name, "50Plus|50PLUS") ~ "50PLUS",
+        str_detect(page_name, "\\bSGP\\b") ~ "SGP",
+        str_detect(page_name, "PvdD|Partij voor de Dieren") ~ "PvdD",
+        str_detect(page_name, "PVV") ~ "PVV",
+        str_detect(page_name, "DENK") ~ "DENK",
+        str_detect(page_name, "Volt|VOLT") ~ "Volt Nederland",
+        str_detect(page_name, "BIJ1|BiJ") ~ "BIJ1",
+        str_detect(page_name, "BVNL") ~ "BVNL",
+        str_detect(page_name, "Ja21") ~ "JA21",
+        str_detect(page_name, "Alliantie") ~ "Alliantie",
+        str_detect(page_name, "BBB") ~ "BBB",
+        T ~ NA_character_
+    )) %>%
+    mutate(party2 = case_when(
+        str_detect(disclaimer, "VVD") ~ "VVD",
+        str_detect(disclaimer, "\\bCDA\\b") ~ "CDA",
+        str_detect(disclaimer, "PvdA|Jonge Socialisten") ~ "PvdA",
+        str_detect(disclaimer, "D66|Jonge Democraten") ~ "D66",
+        str_detect(disclaimer, "GroenLinks|GL") ~ "GroenLinks",
+        str_detect(disclaimer, "ChristenUnie|CU") ~ "ChristenUnie",
+        str_detect(disclaimer, "\\bSP\\b") ~ "SP",
+        str_detect(disclaimer, "FvD|FVD|Forum voor Democratie") ~ "FvD",
+        str_detect(disclaimer, "50Plus|50PLUS") ~ "50PLUS",
+        str_detect(disclaimer, "\\bSGP\\b") ~ "SGP",
+        str_detect(disclaimer, "PvdD|Partij voor de Dieren") ~ "PvdD",
+        str_detect(disclaimer, "PVV") ~ "PVV",
+        str_detect(disclaimer, "DENK") ~ "DENK",
+        str_detect(disclaimer, "Volt|VOLT") ~ "Volt Nederland",
+        str_detect(disclaimer, "BIJ1|BiJ") ~ "BIJ1",
+        str_detect(disclaimer, "BVNL") ~ "BVNL",
+        str_detect(disclaimer, "Ja21") ~ "JA21",
+        str_detect(disclaimer, "BBB") ~ "BBB",
+        T ~ NA_character_
+    )) %>%
+    mutate(party = ifelse(is.na(party1), party2, party1)) %>%
+    drop_na(party) %>%
+    distinct(page_id, .keep_all = T) %>%
+    filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T))
+
+338750440106782
+
+all_dat <- #read_csv("nl_advertisers.csv") %>%
+    # mutate(page_id = as.character(page_id)) %>%
+    bind_rows(internal_page_ids) %>%
     bind_rows(wtm_data) %>%
+    bind_rows(rep) %>%
     distinct(page_id, .keep_all = T)
 
-# write_csv(all_dat, file = "nl_advertisers.csv")
+# all_dat %>%
+#     count(party, sort  =T)
+
+# all_dat %>%
+#     bind_rows(rep %>% select(page_name, page_id, disclaimer, party))  %>%
+#     distinct(page_id, .keep_all = T) %>%
+#     filter(!(page_id %in% all_dat$page_id)) %>%
+#     filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T)) %>% View
+
+# all_dat %>% filter(str_detect(page_name, "BBB")) %>% View
+
+write_csv(all_dat, file = "data/nl_advertisers.csv")
 
 # janitor::clean_names() %>%
 # arrange(desc(amount_spent_usd)) %>%
@@ -166,10 +237,13 @@ scraper <- possibly(scraper, otherwise = NULL, quiet = F)
 # if(F){
 #     # dir("provincies/7", full.names
 # }
+da30 <- readRDS("data/election_dat30.rds")
+da7 <- readRDS("data/election_dat7.rds")
 
 ### save seperately
 yo <- all_dat %>% #count(cntry, sort  =T) %>%
-  # filter(!(page_id %in% already_there)) %>%
+    # filter(!(page_id %in% already_there)) %>%
+  filter(!(page_id %in% unique(da7$page_id))) %>%
   # filter(cntry == "GB") %>%
   # slice(1:10) %>%
   split(1:nrow(.)) %>%
@@ -177,6 +251,7 @@ yo <- all_dat %>% #count(cntry, sort  =T) %>%
 
 yo <- all_dat %>% #count(cntry, sort  =T) %>%
     # filter(!(page_id %in% already_there)) %>%
+    filter(!(page_id %in% unique(da30$page_id))) %>%
     # filter(cntry == "GB") %>%
     # slice(1:10) %>%
     split(1:nrow(.)) %>%
@@ -198,6 +273,10 @@ da7  <- dir("provincies/7", full.names = T) %>%
 
 saveRDS(da30, "data/election_dat30.rds")
 saveRDS(da7, "data/election_dat7.rds")
+
+
+
+bbb %>% filter(str_detect(funding_, "Strijker"))
 
 # da7 %>%
 #   distinct(internal_id, .keep_all = T) %>%

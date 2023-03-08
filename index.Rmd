@@ -56,8 +56,8 @@ library(tidyverse)
 # count(party,sort = T)
 
 color_dat <- tibble(
-  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83"),
-  party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland"))
+  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83", "#698c0c"),
+  party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland", "BBB"))
 
 
 scale_fill_parties <- function(...){
@@ -175,20 +175,25 @@ To better understand the regional election, we kept only advertisers who:
 nlsb <- read_csv("data/NL-SpendingsByAdvertisers.csv")
 nl_advertisers <- read_csv("data/nl_advertisers.csv")
 
+# nl_advertisers %>% 
+#     filter(party == "SP")
 
 nlsb %>% 
     janitor::clean_names() %>% 
-    left_join(nl_advertisers %>% rename(advertiser_id = page_id)) %>% 
-    drop_na(party) %>% 
+    left_join(nl_advertisers %>% rename(advertiser_id = page_id) %>% 
+                  select(advertiser_id, party)) %>% 
+    drop_na(party) %>%
     group_by(create_date, party) %>% 
     summarize(spend  = sum(spend)) %>% 
+    ungroup() %>% 
+    # filter(party == "SP")
     ggplot(aes(create_date, spend, color = party)) +
-    geom_line() +
+    geom_line(size = 1.5) +
     scale_color_parties() +
-    facet_wrap(~party) +
+    facet_wrap(~party, ncol = 3) +
     ggthemes::theme_hc() +
     theme(legend.position = "none") +
-    labs(y = "Daily Spend in Euro", x = "Day")
+    labs(y = "Daily Spend in Euro", x = "Day") 
 ```
 
 
@@ -309,6 +314,7 @@ get_table_dat(election_dat30, party) %>%
     add_ribbons("PvdD", "#006b28") %>%
     add_ribbons("PVV", "#012758") %>%
     add_ribbons("SGP", "#ea5b0b") %>%
+    add_ribbons("BBB", "#698c0c") %>%
     add_ribbons("Volt Nederland", "#582c83")
   # tab_options(table.width = pct(100))  #%>%
   # tab_style(
@@ -400,6 +406,7 @@ get_table_dat(election_dat7, party) %>%
     add_ribbons("PvdD", "#006b28") %>%
     add_ribbons("PVV", "#012758") %>%
     add_ribbons("SGP", "#ea5b0b") %>%
+    add_ribbons("BBB", "#698c0c") %>%
     add_ribbons("Volt Nederland", "#582c83")
 
 ```
@@ -765,7 +772,7 @@ contested_dat30 %>%
     mutate(value = reorder_within(value, total_spend, party)) %>% 
     ggplot(aes(value, total_spend, fill = party)) +
     geom_col() +
-    facet_wrap(~party, scales = "free")+
+    facet_wrap(~party, scales = "free", ncol = 3)+
     coord_flip()  +
     scale_x_reordered() +
     scale_fill_parties() +
@@ -787,7 +794,7 @@ contested_dat7 %>%
     mutate(value = reorder_within(value, total_spend, party)) %>% 
     ggplot(aes(value, total_spend, fill = party)) +
     geom_col() +
-    facet_wrap(~party, scales = "free")+
+    facet_wrap(~party, scales = "free", ncol = 3)+
     coord_flip()  +
     scale_x_reordered() +
     scale_fill_parties() +
