@@ -411,8 +411,76 @@ get_table_dat(election_dat7, party) %>%
 
 How much did campaigns spend on different targeting methods?
 
-### `r last30days_string` (Last 30 days)
 
+
+### `r last30days_string` (Last 30 days) {.tabset .tabset-fade .tabset-pills}
+
+
+#### Overall
+
+
+```{r, fig.width=8, fig.height=5, dpi=300}
+coltototal30 <- election_dat30 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(main_currency == "EUR") %>% 
+        calc_targeting() 
+
+gg <- coltototal30 %>% 
+  filter(perc >= 0.01) %>%
+  add_count(target) %>% 
+  # filter(n == 3) %>% 
+  mutate(target = case_when(
+    target == "custom_audience" ~ "Custom Audiences",
+    target == "countries" ~ "GEOGRAPHY: Netherlands",
+    target == "regions" ~ "GEOGRAPHY: Regions",
+    target == "lookalike_audience" ~ "Lookalike Audiences",
+    target == "interest" ~ "Interests",
+    target == "age" ~ "Age",
+    target == "zips" ~ "GEOGRAPHY: Postal Code",
+    target == "CITY" ~ "GEOGRAPHY: City",
+    target == "language" ~ "Language",
+    target == "gender" ~ "Gender",
+    target == "COMUNE" ~ "GEOGRAPHY: Municipality",
+    target == "electoral_districts" ~ "GEOGRAPHY: Electoral Districts",
+    target == "COUNTY" ~ "GEOGRAPHY: Counties",
+    str_detect(target, "NEIGHBOR") ~ "GEOGRAPHY: Neighborhood",
+    T ~ target
+  )) %>% 
+    filter(target != "Unknown") %>% 
+    arrange(desc(perc))  #%>% 
+    # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+    #                               "Terzo Polo",
+    #                               "Coalizione di centro-destra")))
+
+library(tidytext)
+
+the_order <- gg %>% 
+    complete(target, fill = list(perc= 0)) %>% 
+    # filter(coalition == "Coalizione di centro-sinistra")  %>% 
+    mutate(target = fct_reorder(target, perc, .desc = F)) %>% 
+    pull(target) %>% levels
+
+gg %>% 
+    mutate(target = fct_relevel(target, the_order)) %>%
+    # mutate(target = reorder_within(target, perc)) %>%
+    ggplot(aes(target, perc)) +
+    geom_col(fill = "darkgrey", alpha = 0.7) +
+    # scale_x_reordered() +
+    coord_flip() +
+    # facet_wrap(~party, scales = "free", ncol = 3) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1"))   +
+  geom_text(size = 2.5,
+             aes(y = perc + 3, label = paste0(round(perc, 1), "%")),
+             position = position_dodge(width = 0.9)) +
+  theme(legend.position = "none", text=element_text(family="mono", face = "bold")) +
+  labs(x = "", y = "\nBudget spent on targeting method (% of Total spend)", caption = "Source: Meta Ad Library. Data Viz: Fabio Votta (@favstats).") 
+
+
+```
+
+
+#### By Party
 
 
 ```{r, fig.width=14, fig.height=12, dpi=300}
@@ -503,8 +571,74 @@ plot_geography(col_each30) +
 
 
 
+### `r last7days_string` (Last 7 days)  {.tabset .tabset-fade .tabset-pills}
 
-### `r last7days_string` (Last 7 days)
+
+#### Overall
+
+
+```{r, fig.width=8, fig.height=5, dpi=300}
+coltototal7 <- election_dat7 %>% 
+    mutate(total_spend = total_spend_formatted) %>% 
+    filter(main_currency == "EUR") %>% 
+        calc_targeting() 
+
+gg <- coltototal7 %>% 
+  filter(perc >= 0.01) %>%
+  add_count(target) %>% 
+  # filter(n == 3) %>% 
+  mutate(target = case_when(
+    target == "custom_audience" ~ "Custom Audiences",
+    target == "countries" ~ "GEOGRAPHY: Netherlands",
+    target == "regions" ~ "GEOGRAPHY: Regions",
+    target == "lookalike_audience" ~ "Lookalike Audiences",
+    target == "interest" ~ "Interests",
+    target == "age" ~ "Age",
+    target == "zips" ~ "GEOGRAPHY: Postal Code",
+    target == "CITY" ~ "GEOGRAPHY: City",
+    target == "language" ~ "Language",
+    target == "gender" ~ "Gender",
+    target == "COMUNE" ~ "GEOGRAPHY: Municipality",
+    target == "electoral_districts" ~ "GEOGRAPHY: Electoral Districts",
+    target == "COUNTY" ~ "GEOGRAPHY: Counties",
+    str_detect(target, "NEIGHBOR") ~ "GEOGRAPHY: Neighborhood",
+    T ~ target
+  )) %>% 
+    filter(target != "Unknown") %>% 
+    arrange(desc(perc))  #%>% 
+    # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+    #                               "Terzo Polo",
+    #                               "Coalizione di centro-destra")))
+
+library(tidytext)
+
+the_order <- gg %>% 
+    complete(target, fill = list(perc= 0)) %>% 
+    # filter(coalition == "Coalizione di centro-sinistra")  %>% 
+    mutate(target = fct_reorder(target, perc, .desc = F)) %>% 
+    pull(target) %>% levels
+
+gg %>% 
+    mutate(target = fct_relevel(target, the_order)) %>%
+    # mutate(target = reorder_within(target, perc)) %>%
+    ggplot(aes(target, perc)) +
+    geom_col(fill = "darkgrey", alpha = 0.7) +
+    # scale_x_reordered() +
+    coord_flip() +
+    # facet_wrap(~party, scales = "free", ncol = 3) +
+    ggthemes::theme_hc() +
+    # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1"))   +
+  geom_text(size = 2.5,
+             aes(y = perc + 3, label = paste0(round(perc, 1), "%")),
+             position = position_dodge(width = 0.9)) +
+  theme(legend.position = "none", text=element_text(family="mono", face = "bold")) +
+  labs(x = "", y = "\nBudget spent on targeting method (% of Total spend)", caption = "Source: Meta Ad Library. Data Viz: Fabio Votta (@favstats).") 
+
+
+```
+
+
+#### By Party
 
 ```{r, fig.width=14, fig.height=12, dpi=300}
 
