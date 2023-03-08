@@ -10,6 +10,12 @@ tstamp <- Sys.time()
 
 source("utils.R")
 
+unlink("provincies/7", recursive = T, force = T)
+unlink("provincies/30", recursive = T, force = T)
+
+dir.create("provincies/7")
+dir.create("provincies/30")
+
 # rawadvertisers <- read_csv("data/advertisers - advertisers.csv")  %>%
 #   mutate(party_lab = case_when(
 #     str_detect(advertiser_name, "VVD") ~ "VVD",
@@ -193,30 +199,30 @@ da7  <- dir("provincies/7", full.names = T) %>%
 saveRDS(da30, "data/election_dat30.rds")
 saveRDS(da7, "data/election_dat7.rds")
 
-da7 %>%
-  distinct(internal_id, .keep_all = T) %>%
-  mutate(total_spend = parse_number(total_spend_formatted)) %>%
-  rename(page_id = internal_id) %>%
-  left_join(internal_page_ids) %>%
-  group_by(party) %>%
-  summarize(total_spend = sum(total_spend))
-
-
-amgna <- da7 %>%
-  mutate(total_spend = parse_number(total_spend_formatted)) %>%
-  rename(page_id = internal_id) %>%
-  left_join(internal_page_ids)
-
-
-amgna %>%
-  filter(type == "gender") %>%
-  filter(value == "Women") %>%
-  # mutate(total_spend = total_spend*total_spend_pct) %>%
-  ggplot(aes(party, total_spend_pct)) +
-  geom_boxplot() #+
-  # scale_y_log10()
-
-
-
-amgna %>%
-  filter(type == "detailed")
+# da7 %>%
+#   distinct(internal_id, .keep_all = T) %>%
+#   mutate(total_spend = parse_number(total_spend_formatted)) %>%
+#   rename(page_id = internal_id) %>%
+#   left_join(internal_page_ids) %>%
+#   group_by(party) %>%
+#   summarize(total_spend = sum(total_spend))
+#
+#
+# amgna <- da7 %>%
+#   mutate(total_spend = parse_number(total_spend_formatted)) %>%
+#   rename(page_id = internal_id) %>%
+#   left_join(internal_page_ids)
+#
+#
+# amgna %>%
+#   filter(type == "gender") %>%
+#   filter(value == "Women") %>%
+#   # mutate(total_spend = total_spend*total_spend_pct) %>%
+#   ggplot(aes(party, total_spend_pct)) +
+#   geom_boxplot() #+
+#   # scale_y_log10()
+#
+#
+#
+# amgna %>%
+#   filter(type == "detailed")
