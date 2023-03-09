@@ -175,19 +175,28 @@ To better understand the regional election, we kept only advertisers who:
 nlsb <- read_csv("data/NL-SpendingsByAdvertisers.csv")
 nl_advertisers <- read_csv("data/nl_advertisers.csv")
 
+more_data <- dir("data/reports", full.names = T) %>% 
+    map_dfr(~read_csv(.x) %>% mutate(path = .x)) %>% 
+    mutate(date_produced = str_remove_all(path, "data/reports/FacebookAdLibraryReport_|_NL_yesterday_advertisers\\.csv")) %>% 
+    mutate(date_produced = lubridate::ymd(date_produced)) %>% 
+    janitor::clean_names()%>% rename(advertiser_id = page_id) %>% 
+    mutate(spend = readr::parse_number(amount_spent_eur)) %>% 
+    mutate(spend = ifelse(spend == 100, 50, spend))
+
 # nl_advertisers %>% 
 #     filter(party == "SP")
 
 nlsb %>% 
     janitor::clean_names() %>% 
+    bind_rows(more_data) %>% 
     left_join(nl_advertisers %>% rename(advertiser_id = page_id) %>% 
                   select(advertiser_id, party)) %>% 
     drop_na(party) %>%
-    group_by(create_date, party) %>% 
+    group_by(date_produced, party) %>% 
     summarize(spend  = sum(spend)) %>% 
     ungroup() %>% 
     # filter(party == "SP")
-    ggplot(aes(create_date, spend, color = party)) +
+    ggplot(aes(date_produced, spend, color = party)) +
     geom_line(size = 1.5) +
     scale_color_parties() +
     facet_wrap(~party, ncol = 3) +

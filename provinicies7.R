@@ -130,7 +130,7 @@ rep <- read_csv("data/FacebookAdLibraryReport_2023-03-05_NL_last_30_days_adverti
     distinct(page_id, .keep_all = T) %>%
     filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T))
 
-338750440106782
+# 338750440106782
 
 all_dat <- #read_csv("nl_advertisers.csv") %>%
     # mutate(page_id = as.character(page_id)) %>%
@@ -150,7 +150,7 @@ all_dat <- #read_csv("nl_advertisers.csv") %>%
 
 # all_dat %>% filter(str_detect(page_name, "BBB")) %>% View
 
-write_csv(all_dat, file = "data/nl_advertisers.csv")
+# write_csv(all_dat, file = "data/nl_advertisers.csv")
 
 # janitor::clean_names() %>%
 # arrange(desc(amount_spent_usd)) %>%
@@ -237,13 +237,13 @@ scraper <- possibly(scraper, otherwise = NULL, quiet = F)
 # if(F){
 #     # dir("provincies/7", full.names
 # }
-da30 <- readRDS("data/election_dat30.rds")
-da7 <- readRDS("data/election_dat7.rds")
+# da30 <- readRDS("data/election_dat30.rds")
+# da7 <- readRDS("data/election_dat7.rds")
 
 ### save seperately
 yo <- all_dat %>% #count(cntry, sort  =T) %>%
     # filter(!(page_id %in% already_there)) %>%
-  filter(!(page_id %in% unique(da7$page_id))) %>%
+  # filter(!(page_id %in% unique(da7$page_id))) %>%
   # filter(cntry == "GB") %>%
   # slice(1:10) %>%
   split(1:nrow(.)) %>%
@@ -251,7 +251,7 @@ yo <- all_dat %>% #count(cntry, sort  =T) %>%
 
 yo <- all_dat %>% #count(cntry, sort  =T) %>%
     # filter(!(page_id %in% already_there)) %>%
-    filter(!(page_id %in% unique(da30$page_id))) %>%
+    # filter(!(page_id %in% unique(da30$page_id))) %>%
     # filter(cntry == "GB") %>%
     # slice(1:10) %>%
     split(1:nrow(.)) %>%
@@ -276,7 +276,7 @@ saveRDS(da7, "data/election_dat7.rds")
 
 
 
-bbb %>% filter(str_detect(funding_, "Strijker"))
+# bbb %>% filter(str_detect(funding_, "Strijker"))
 
 # da7 %>%
 #   distinct(internal_id, .keep_all = T) %>%
