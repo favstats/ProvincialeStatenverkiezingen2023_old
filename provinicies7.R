@@ -305,3 +305,92 @@ saveRDS(da7, "data/election_dat7.rds")
 #
 # amgna %>%
 #   filter(type == "detailed")
+
+
+
+wk_spend <- read_csv("data/google-political-ads-advertiser-weekly-spend.csv")
+
+ggl_spend <- wk_spend  %>%
+    mutate(party1 = case_when(
+        str_detect(Advertiser_Name, "VVD|Volkspartij voor Vrijheid en Democratie") ~ "VVD",
+        str_detect(Advertiser_Name, "\\bCDA\\b|Christen Democratisch Appèl") ~ "CDA",
+        str_detect(Advertiser_Name, "PvdA|Jonge Socialisten") ~ "PvdA",
+        str_detect(Advertiser_Name, "\\bD66\\b|Jonge Democraten") ~ "D66",
+        str_detect(Advertiser_Name, "GroenLinks|\\bGL\\b") ~ "GroenLinks",
+        str_detect(Advertiser_Name, "ChristenUnie|\\bCU\\b") ~ "ChristenUnie",
+        str_detect(Advertiser_Name, "\\bSP\\b") ~ "SP",
+        str_detect(Advertiser_Name, "FvD|FVD|Forum voor Democratie") ~ "FvD",
+        str_detect(Advertiser_Name, "50.lus|50PLUS") ~ "50PLUS",
+        str_detect(Advertiser_Name, "\\bSGP\\b") ~ "SGP",
+        str_detect(Advertiser_Name, "PvdD|Partij voor de Dieren") ~ "PvdD",
+        str_detect(Advertiser_Name, "PVV") ~ "PVV",
+        str_detect(Advertiser_Name, "DENK") ~ "DENK",
+        str_detect(Advertiser_Name, "Volt|VOLT") ~ "Volt Nederland",
+        str_detect(Advertiser_Name, "BIJ1|BiJ") ~ "BIJ1",
+        str_detect(Advertiser_Name, "BVNL|Belang Van Nederland") ~ "BVNL",
+        str_detect(Advertiser_Name, "Ja21|JA21") ~ "JA21",
+        str_detect(Advertiser_Name, "Alliantie") ~ "Alliantie",
+        str_detect(Advertiser_Name, "BBB|Marc-Michel Strijker") ~ "BBB",
+        T ~ NA_character_
+    )) %>%
+    # distinct(Advertiser_Name, .keep_all = T) %>%
+    filter(!(str_detect(Advertiser_Name, "Gleichheitspartei|Nieuw-Vlaamse|SP Digital LLC|MURRAY|REVOLT|Angelenos Against Higher Property Taxes|ITALIA|Volt Deutschland"))) %>%
+    drop_na(party1) %>%
+    mutate(Week_Start_Date = lubridate::ymd(Week_Start_Date)) %>%
+    filter(Week_Start_Date >= as.Date("2023-02-05"))
+    # count(Week_Start_Date)
+
+all_ads <- vroom::vroom("C:/Users/fabio/Downloads/google-political-ads-transparency-bundle/google-political-ads-creative-stats.csv")
+
+tt_ads <- all_ads %>%
+    filter(Advertiser_ID %in% ggl_spend$Advertiser_ID) %>%
+    left_join(ggl_spend %>% distinct(Advertiser_ID, party1))  %>%
+    mutate(Date_Range_Start = lubridate::ymd(Date_Range_Start)) %>%
+    # filter(Date_Range_Start >= as.Date("2023-02-05")) %>%
+    count(party1, name = "total_num_ads") %>%
+    mutate(total_num_ads = scales::comma(total_num_ads)) %>%
+    pivot_wider(names_from = party1, values_from = total_num_ads) %>%
+    mutate(`Coalizione/Partito` = "Number of Ads")
+
+
+ttl_spn <- ggl_spend %>%
+    group_by(party1) %>%
+    summarize(Spend_EUR = sum(Spend_EUR)) %>%
+    arrange(desc(Spend_EUR)) %>%
+    select(party = party1, spend = Spend_EUR) %>%
+    mutate(spend = scales::comma(spend)) %>%
+    mutate(spend = paste0("€", spend)) %>%
+    drop_na() %>%
+    pivot_wider(names_from = party, values_from = spend) %>%
+    mutate(`Coalizione/Partito` = "Total Spend")
+
+
+
+tp_spnders <- ggl_spend  %>%
+    group_by(Advertiser_Name, party1) %>%
+    summarize(Spend_EUR = sum(Spend_EUR)) %>%
+    ungroup() %>%
+    group_by(party1) %>%
+    arrange(desc(Spend_EUR)) %>%
+    slice(1:3) %>%
+    mutate(Spend_EUR = scales::comma(Spend_EUR)) %>%
+    mutate(n_words = str_count(Advertiser_Name, " ")) %>%
+    # mutate(lab = paste0(word(str_remove(page_name, "-"), 1,ifelse(n_words>=2, 3, 2), sep=" "), "<br>(€", total_spend_formatted, ")")) %>%
+    mutate(lab = paste0(Advertiser_Name, " (€", Spend_EUR, ")")) %>%
+    select(party1, lab) %>%
+    drop_na() %>%
+    summarize(lab = paste0("<br>", 1:n(), ". ", lab, collapse = "")) %>%
+    pivot_wider(names_from = party1, values_from = lab) %>%
+    mutate(`Coalizione/Partito` = "Top Spenders")
+
+ggl_all <- tt_ads %>%
+    bind_rows(tp_spnders) %>%
+    bind_rows(ttl_spn) %>%
+    t() %>%
+    as.data.frame() %>%
+    rownames_to_column("Coalizione/Partito") %>%
+    set_names(.[nrow(.),] %>% as.character()) %>%
+    slice(1:(n()-1))
+
+
+saveRDS(ggl_all, file = "data/ggl_all.rds")

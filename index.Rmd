@@ -169,7 +169,7 @@ To better understand the regional election, we kept only advertisers who:
 ## Topline Statistics  {.tabset .tabset-fade .tabset-pills}
 
 
-
+### Meta {.tabset .tabset-fade .tabset-pills}
 
 ```{r, fig.width=12, fig.height=8, dpi=300}
 nlsb <- read_csv("data/NL-SpendingsByAdvertisers.csv")
@@ -195,6 +195,9 @@ nlsb %>%
     group_by(date_produced, party) %>% 
     summarize(spend  = sum(spend)) %>% 
     ungroup() %>% 
+    # group_by(party) %>% 
+    # arrange(date_produced) %>% 
+    # mutate(spend = cumsum(spend)) %>% 
     # filter(party == "SP")
     ggplot(aes(date_produced, spend, color = party)) +
     geom_line(size = 1.5) +
@@ -202,7 +205,9 @@ nlsb %>%
     facet_wrap(~party, ncol = 3) +
     ggthemes::theme_hc() +
     theme(legend.position = "none") +
-    labs(y = "Daily Spend in Euro", x = "Day") 
+    labs(y = "Daily Spend in Euro", x = "Day")
+
+# plotly::ggplotly(ht)
 ```
 
 
@@ -233,9 +238,24 @@ add_ribbons <- function(x, adv, col) {
     ))
 }
 
+add_ribbons2 <- function(x, adv, col) {
+   x %>% 
+  # tab_options(table.width = pct(100)) %>%
+  tab_style(
+    style = cell_borders(
+      sides = c("left"),
+      color = col,
+      weight = px(18.5),
+      style = "solid"
+    ),
+    locations = cells_body(
+      columns = `Number of Ads`,
+      rows = adv
+    ))
+}
 ```
 
-### `r last30days_string` (Last 30 days)
+#### `r last30days_string` (Last 30 days)
 
 
 In total, political parties spend €`r scales::comma_format()(sum30$total_spend_formatted)` and ran `r sum30$total_num_ads` ad copies on Meta in this timeframe.
@@ -379,7 +399,7 @@ get_table_dat(election_dat30, party) %>%
 
 
 
-### `r last7days_string` (Last 7 days)
+#### `r last7days_string` (Last 7 days)
 
 In total, political parties spend €`r scales::comma_format()(sum7$total_spend_formatted)` and ran `r sum7$total_num_ads` ad copies on Meta in this timeframe.
 
@@ -421,6 +441,45 @@ get_table_dat(election_dat7, party) %>%
 ```
 
 
+
+### Google 
+
+For Google platforms, data accessed via the [Google Transparency Report](https://transparencyreport.google.com/political-ads/region/NL) provides weekly statistics on how much money was spent by parties. The table below shows spending in the timerange between *February 5th to March 5th 2023*.
+
+```{r}
+ggl_all <- readRDS("data/ggl_all.rds")
+
+ggl_all %>% 
+  arrange(desc(parse_number(`Total Spend`))) %>% 
+  gt(
+    rowname_col = "Coalizione/Partito"
+    # groupname_col = "group"
+  ) %>% 
+  fmt_markdown(columns = everything())  %>% 
+  cols_align(
+    align = "center"
+  ) %>% 
+  gtExtras::gt_theme_538() %>% 
+  tab_options(table.width = pct(100))  %>%
+    add_ribbons2("D66", "#00b13d") %>%
+    add_ribbons2("GroenLinks", "#80c31c") %>%
+    add_ribbons2("VVD", "#0a2cca") %>%
+    add_ribbons2("CDA", "#008067") %>%
+    add_ribbons2("SP", "#770100") %>%
+    # add_ribbons2("PvdA", "#ff0000") %>%
+    add_ribbons2("FvD", "#6f2421") %>%
+    add_ribbons2("ChristenUnie", "#02a6e9") %>%
+    add_ribbons2("50PLUS", "#92107d") %>%
+    # add_ribbons("Alliantie", "#04d3d4") %>%
+    add_ribbons2("BVNL", "#242b57") %>%
+    add_ribbons2("DENK", "#66cdaa") %>%
+    # add_ribbons2("Ja21", "#242b57") %>%
+    # add_ribbons("PvdD", "#006b28") %>%
+    # add_ribbons("PVV", "#012758") %>%
+    # add_ribbons("SGP", "#ea5b0b") %>%
+    add_ribbons2("BBB", "#698c0c") %>%
+    add_ribbons2("Volt Nederland", "#582c83")
+```
 
 
 ## Spending per Targeting Criteria {.tabset .tabset-fade .tabset-pills}
