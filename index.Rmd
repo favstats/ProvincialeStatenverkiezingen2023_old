@@ -56,7 +56,7 @@ library(tidyverse)
 # count(party,sort = T)
 
 color_dat <- tibble(
-  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#770100", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83", "#698c0c"),
+  colors = c("#00b13d", "#80c31c", "#0a2cca", "#008067", "#bf0000", "#ff0000", "#6f2421", "#02a6e9", "#92107d", "#04d3d4", "#242b57", "#66cdaa", "#242b57", "#006b28", "#012758", "#ea5b0b", "#582c83", "#698c0c"),
   party = c("D66", "GroenLinks", "VVD", "CDA", "SP", "PvdA", "FvD", "ChristenUnie", "50PLUS", "Alliantie", "BVNL", "DENK", "Ja21", "PvdD", "PVV", "SGP", "Volt Nederland", "BBB"))
 
 
@@ -331,7 +331,7 @@ get_table_dat(election_dat30, party) %>%
     add_ribbons("GroenLinks", "#80c31c") %>%
     add_ribbons("VVD", "#0a2cca") %>%
     add_ribbons("CDA", "#008067") %>%
-    add_ribbons("SP", "#770100") %>%
+    add_ribbons("SP", "#bf0000") %>%
     add_ribbons("PvdA", "#ff0000") %>%
     add_ribbons("FvD", "#6f2421") %>%
     add_ribbons("ChristenUnie", "#02a6e9") %>%
@@ -423,7 +423,7 @@ get_table_dat(election_dat7, party) %>%
     add_ribbons("GroenLinks", "#80c31c") %>%
     add_ribbons("VVD", "#0a2cca") %>%
     add_ribbons("CDA", "#008067") %>%
-    add_ribbons("SP", "#770100") %>%
+    add_ribbons("SP", "#bf0000") %>%
     add_ribbons("PvdA", "#ff0000") %>%
     add_ribbons("FvD", "#6f2421") %>%
     add_ribbons("ChristenUnie", "#02a6e9") %>%
@@ -465,7 +465,7 @@ ggl_all %>%
     add_ribbons2("GroenLinks", "#80c31c") %>%
     add_ribbons2("VVD", "#0a2cca") %>%
     add_ribbons2("CDA", "#008067") %>%
-    add_ribbons2("SP", "#770100") %>%
+    add_ribbons2("SP", "#bf0000") %>%
     # add_ribbons2("PvdA", "#ff0000") %>%
     add_ribbons2("FvD", "#6f2421") %>%
     add_ribbons2("ChristenUnie", "#02a6e9") %>%
