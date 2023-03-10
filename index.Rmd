@@ -743,7 +743,7 @@ interest_targeting30 <-  election_dat30 %>%
     mutate(total_spend = total_spend_formatted) %>% 
     filter(type == "detailed") %>%
     # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>%
     mutate(total_spend = total_spend * total_spend_pct) %>%
     filter(main_currency == "EUR")  %>%
     # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
@@ -778,7 +778,7 @@ interest_targeting7 <-  election_dat7 %>%
     mutate(total_spend = total_spend_formatted) %>% 
     filter(type == "detailed") %>%
     # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>%
     mutate(total_spend = total_spend * total_spend_pct) %>%
     filter(main_currency == "EUR")  %>%
     # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
@@ -904,7 +904,7 @@ interest_targeting <-  ppp %>%
     mutate(total_spend = total_spend_formatted) %>% 
     filter(type == "detailed") %>%
     # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-    mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>%
+    mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>%
     mutate(total_spend = total_spend * total_spend_pct) %>%
     filter(main_currency == "EUR")  %>%
     # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
@@ -919,13 +919,14 @@ interest_targeting <-  ppp %>%
 contested_dat <- interest_targeting %>% 
   filter(!is_exclusion) %>% 
   # filter(total_spend >= 40000) %>% 
-  filter(total_spend >= 25) %>%
+  filter(total_spend >= 50) %>%
   add_count(value) %>% 
   filter(n >= 2) %>% 
+    # distinct(party, value) %>% 
   group_by(value) %>% 
   mutate(total_spenderino = sum(total_spend)) %>% 
   mutate(perc = total_spend/total_spenderino) %>%
-  mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
+  # mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) %>% 
   mutate(value = str_replace_all(value, " \\s*\\([^\\)]+\\)", ""))
 
 
@@ -947,6 +948,8 @@ contested_dat %>% #count(party) %>% pull(party) %>% unique() %>% dput()
   left_join(lab_dat) %>% 
   mutate(value = factor(value, the_order)) %>% 
     drop_na(value) %>% 
+    # add_count(party, value, name = "db") %>% 
+    # filter(db == 1) %>% 
   # mutate(party = factor(party, col_string)) %>%
   # filter()
   ggplot(aes(value, perc)) +
@@ -1021,7 +1024,7 @@ total_sppppeen <- x %>%
   mutate(total_spend = total_spend_formatted) %>%
   distinct(internal_id, .keep_all = T)  %>%
   # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   select(internal_id, total_spend) %>% 
   arrange(desc(total_spend)) %>% 
   summarize(total_budget = sum(total_spend)) %>% 
@@ -1030,7 +1033,7 @@ total_sppppeen <- x %>%
 
 x %>% 
   mutate(total_spend = total_spend_formatted) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   # filter(coalition == "Coalizione di centro-destra") %>%  
   filter(type == var) %>%   
   # filter(total_spend_pct != 0) %>% 
@@ -1256,7 +1259,7 @@ total_sppppeen <- x %>%
   mutate(total_spend = total_spend_formatted) %>%
   distinct(internal_id, .keep_all = T)  %>%
   # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   select(internal_id, total_spend) %>% 
   arrange(desc(total_spend)) %>% 
   summarize(total_budget = sum(total_spend)) %>% 
@@ -1270,7 +1273,7 @@ x %>%
     filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree")) %>% 
     filter(str_detect(value, "Wine", negate = T)) %>% 
   mutate(total_spend = total_spend_formatted) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   # filter(coalition == "Coalizione di centro-destra") %>%  
   # filter(total_spend_pct != 0) %>% 
   # group_by(internal_id) %>%
@@ -1365,7 +1368,7 @@ total_sppppeen <- x %>%
   mutate(total_spend = total_spend_formatted) %>%
   distinct(internal_id, .keep_all = T)  %>%
   # mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   select(internal_id, total_spend) %>% 
   arrange(desc(total_spend)) %>% 
   summarize(total_budget = sum(total_spend)) %>% 
@@ -1378,7 +1381,7 @@ x %>%
     # count(value, sort = T) %>% 
     filter(str_detect(value, "grad school|degree|	|Master|[c|C]ollege|degree|[H|h]igh school|Professional degree", negate = T)) %>% 
   mutate(total_spend = total_spend_formatted) %>%
-  mutate(total_spend = ifelse(total_spend == 100, 1, total_spend)) %>% 
+  mutate(total_spend = ifelse(total_spend == 50, 1, total_spend)) %>% 
   # filter(coalition == "Coalizione di centro-destra") %>%  
   # filter(total_spend_pct != 0) %>% 
   # group_by(internal_id) %>%
