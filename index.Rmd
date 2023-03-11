@@ -832,7 +832,7 @@ contested_dat30  %>%
 ```
 
 
-```{r, fig.width=14, fig.height=9, dpi=300}
+```{r, fig.width=14, fig.height=13, dpi=300}
 contested_dat30 %>% 
     group_by(party) %>%
     arrange(desc(perc)) %>% 
@@ -854,7 +854,7 @@ contested_dat30 %>%
 
 ### `r last7days_string` (Last 7 days)
 
-```{r, fig.width=14, fig.height=9, dpi=300}
+```{r, fig.width=14, fig.height=13, dpi=300}
 contested_dat7 %>% 
     group_by(party) %>%
     arrange(desc(perc)) %>% 
