@@ -1191,6 +1191,10 @@ gender_targeting %>%
      #                              "Terzo Polo",
      #                              "Coalizione di centro-destra"))) %>% 
     filter(!(value %in% "All")) %>% 
+    group_by(party) %>% 
+    mutate(percsum = sum(perc)) %>% 
+    ungroup() %>% 
+    filter(percsum != 0) %>% 
     ggplot(aes(value, perc)) +
     geom_col(width = 0.5, aes(fill = party)) +
     facet_wrap(~party) +
@@ -1205,7 +1209,7 @@ gender_targeting %>%
     labs(y = "% Budget Spend on Gender") +
     coord_flip() +
     labs(x = "Gender\n")  +
-  geom_label(size = 3.5, color = "black",
+  geom_label(size = 3.5, color = "black", vjust="inward",hjust="inward",
              aes(y = perc, label = paste0(round(perc*100, 2), "%"))) +
     scale_fill_parties()
     
@@ -1213,7 +1217,7 @@ gender_targeting %>%
 
 ### `r last7days_string` (Last 7 days)
 
-```{r}
+```{r, fig.width= 8, fig.height=5, dpi = 300}
 
 gender_targeting <- election_dat7 %>% 
 group_split(party) %>% 
@@ -1224,6 +1228,10 @@ gender_targeting %>%
                                   # "Terzo Polo",
                                   # "Coalizione di centro-destra"))) %>% 
     filter(!(value %in% "All")) %>% 
+    group_by(party) %>% 
+    mutate(percsum = sum(perc)) %>% 
+    ungroup() %>% 
+    filter(percsum != 0) %>% 
     ggplot(aes(value, perc)) +
     geom_col(width = 0.5, aes(fill = party)) +
     facet_wrap(~party) +
